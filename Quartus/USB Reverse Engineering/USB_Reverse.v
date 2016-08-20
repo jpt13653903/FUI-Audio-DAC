@@ -47,13 +47,21 @@ always @(posedge USB_Clk) Reset <= ~nReset;
 reg [26:0]Count;
 always @(posedge USB_Clk) Count <= Count + 1'b1;
 
-assign LED = {~Count[26:23], SW};
+assign LED[8:2] = {~Count[26:24], SW};
 //------------------------------------------------------------------------------
 
 assign USB_D_P_Pull = 1'b1;
 assign USB_D_N_Pull = 1'bZ;
-assign USB_D_P      = 1'bZ;
-assign USB_D_N      = 1'bZ;
+
+USB_Tranceiver USB_Tranceiver_Inst(
+ USB_Clk, 
+ Reset,
+ 
+ USB_D_P,
+ USB_D_N,
+
+ LED[1]
+);
 //------------------------------------------------------------------------------
 
 assign TP = 0;
