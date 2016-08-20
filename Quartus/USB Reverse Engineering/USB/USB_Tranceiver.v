@@ -42,6 +42,13 @@ reg Valid;
 reg Error;
 reg [2:0]StuffCount;
 
+reg [31:0]Shift;
+reg [ 3:0]PID;
+reg [ 6:0]Address;
+reg [ 3:0]Endpoint;
+reg [ 4:0]CRC5;
+reg [15:0]HeaderCount;
+
 reg   [1:0]State;
 localparam Idle = 2'd0;
 localparam Rx   = 2'd1;
@@ -60,6 +67,8 @@ always @(posedge Clk) begin
   Valid <= 0;
   Error <= 0;
   State <= Idle;
+
+  HeaderCount <= 0;
 
  end else if(^D_P_1) begin
   Valid    <= 1'b0;
@@ -102,10 +111,34 @@ always @(posedge Clk) begin
   end
   ClkCount <= ClkCount + 1'b1;
  end
+
+ if(Valid) begin
+  if(Stop) begin
+   HeaderCount <= 0;
+
+  end else begin
+   Shift <= {Data, Shift[31:1]};
+   if(HeaderCount == 16'd31) begin
+    PID      <=        Shift[12: 9];
+    Address  <=        Shift[23:17];
+    Endpoint <=        Shift[27:24];
+    CRC5     <= {Data, Shift[31:28]};
+   end
+   HeaderCount <= HeaderCount + 1'b1;
+  end
+ end
 end
 //------------------------------------------------------------------------------
 
-assign Output = Data | Stop | Valid | Error;
+assign Output = Data 
+              | Stop 
+              | Valid 
+              | Error 
+              | &Shift 
+              | &PID
+              | &Address
+              | &Endpoint
+              | &CRC5;
 endmodule
 //------------------------------------------------------------------------------
 
