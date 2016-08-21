@@ -1,13 +1,47 @@
 module USB_Tranceiver(
-  input Clk,
+  input Clk, // 48 MHz, exactly
   input Reset,
 
-  inout reg D_P, D_N,
+  // Global fields
+  output reg       Reset_Request, // Reset-condition on the bus
+  input      [ 6:0]Address,       // Reset to zero
+  output reg [10:0]FrameNumber,   // Incremented every 1 ms (+/- 500 ns)
+  output reg [ 3:0]Endpoint,      // Current endpoint, set by IN, OUT and SETUP
 
-  output Output
+  // Setup port of control endpoints
+  output reg [ 3:0]Setup_Endpoint,
+  output reg [ 7:0]Setup_RequestType,
+  output reg [ 7:0]Setup_Request,
+  output reg [15:0]Setup_Value,
+  output reg [15:0]Setup_Index,
+  output reg [15:0]Setup_Length,
+  output reg       Setup_Valid, // Goes high on new transaction
+  input            Setup_Ack,   // Signals that the endpoint received the setup
+
+  // Out port (Host -> Device)
+  input           Out_UseHandshaking, // 0 => Isochronous, 1 => All others
+  output reg [7:0]Out_Data,
+  output reg      Out_Valid,
+  input           Out_WaitRequest, // Indicates that a NACK must be sent
+
+  // In port (Device -> Host)
+  input           In_UseHandshaking, // 0 => Isochronous, 1 => All others
+  input      [9:0]In_ByteCount, // Number of bytes to send (can be 0)
+  output reg      In_ClkEnable, // Read port clock-enable of the FIFO queue
+  output reg [9:0]In_Address,   // Address into the FIFO queue (always from 0)
+  input      [7:0]In_Data,      // Directly from the FIFO queue
+  input           In_Send,      // All is set up and ready, so send the bytes
+  output reg      In_Busy,      // Busy sending the bytes (goes low on success)
+
+  // The physical bus
+  inout reg DP, DM
 );
 //------------------------------------------------------------------------------
 
+// Todo:
+//
+// Propagate port changes to module above
+//
 // Physical:
 // - Catch the reset condition: SE0 >= 2.5 μs)
 // - Clock-recover (as below)
