@@ -53,15 +53,33 @@ assign LED[8:2] = {~Count[26:24], SW};
 assign USB_D_P_Pull = 1'b1;
 assign USB_D_N_Pull = 1'bZ;
 
-USB_Tranceiver USB_Tranceiver_Inst(
- USB_Clk, 
- Reset,
- 
- USB_D_P,
- USB_D_N,
+wire USB_Reset_Request;
 
- LED[1]
+USB_Tranceiver USB_Tranceiver_Inst(
+  .Clk  (USB_Clk), // 48 MHz, exactly
+  .Reset(Reset),
+
+  .Reset_Request(USB_Reset_Request),
+  .Address      (USB_Address),
+
+  .In_ClkEnable(LED[1]),
+
+  .DP(USB_D_P),
+  .DM(USB_D_N)
 );
+//------------------------------------------------------------------------------
+
+reg tReset;
+
+always @(posedge USB_Clk) begin
+ tReset <= Reset | USB_Reset_Request;
+
+ if(tReset) begin
+  USB_Address <= 0;
+
+ end else begin
+ end
+end
 //------------------------------------------------------------------------------
 
 assign TP = 0;
