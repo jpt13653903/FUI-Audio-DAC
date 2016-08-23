@@ -1,0 +1,58 @@
+Standard Device Descriptor
+ 0 - Length            = 17
+ 1 - DescriptorType    = DEVICE
+ 2 - bcdUSB            = 0x0200
+ 4 - DeviceClass       = 
+ 5 - DeviceSubClass    =  
+ 6 - DeviceProtocol    = 
+ 7 - MaxPacketSize     = 64
+ 8 - VendorID          = 0x1209
+10 - ProductID         = 0x0001
+12 - bcdDevice         = 0x0100
+14 - Manufacturer      = String index to "JPT"
+15 - Product           = String index to "USB Amplifier"
+16 - SerialNumber      = String index to "JPT_AUD_1.0"
+17 - NumConfigurations = 1
+
+Device Qualifier -- Only applicable to high speed
+- Respond with "Request Error"
+
+Configuration Descriptor
+ 0 - Length             = 8
+ 1 - DescriptorType     = CONFIGURATION
+ 2 - TotalLength        =
+ 4 - NumInterfaces      =
+ 5 - ConfigurationValue =
+ 6 - Configuration      = String index to configuration description
+ 7 - Attributes         = 0b11000000
+ 8 - MaxPower           = 50 (100 mA)
+ 
+Interface Descriptor
+ 0 - Length            = 
+ 1 - DescriptorType    = INTERFACE
+ 2 - InterfaceNumber   = 
+ 3 - AlternateSetting  = 
+ 4 - NumEndpoints      =
+ 5 - InterfaceClass    = 
+ 6 - InterfaceSubClass = 
+ 7 - InterfaceProtocol = 
+ 8 - Interface         = String index to description
+
+Endpoint Descriptor
+ 0 - Length            = 6
+ 1 - DescriptorType    = ENDPOINT
+ 2 - EndpointAddress   = 
+ 3 - Attributes        = 
+ 4 - MaxPacketSize     = 
+ 6 - Interval          = 
+
+String Descriptor Zero (Languages)
+ 0 - Length         = 2
+ 1 - DescriptorType = STRING
+ 2 - LangID[0]      = 0x0809 (English UK)
+
+String Descriptor
+ 0 - Length
+ 1 - DescriptorType = STRING
+ 2 - Unicode String (UTF-16)
+
