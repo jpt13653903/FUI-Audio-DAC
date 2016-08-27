@@ -3,6 +3,7 @@ localparam J = 2'b10; // -- also the "Idle" state
 localparam K = 2'b01;
 localparam H = 2'b11;
 localparam L = 2'b00;
+localparam Z = 2'bZZ;
 //------------------------------------------------------------------------------
 
 // Standard Request Codes
@@ -27,6 +28,6 @@ localparam INTERFACE                 = 8'd4;
 localparam ENDPOINT                  = 8'd5;
 localparam DEVICE_QUALIFIER          = 8'd6;
 localparam OTHER_SPEED_CONFIGURATION = 8'd7;
-localparam INTERFACE_POWER1          = 8'd8;
+localparam INTERFACE_POWER           = 8'd8;
 //------------------------------------------------------------------------------
 

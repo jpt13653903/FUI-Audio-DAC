@@ -136,12 +136,6 @@ set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[24] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to "USB_PLL:USB_PLL_Inst|c0" -section_id auto_signaltap_0
-set_global_assignment -name VERILOG_FILE USB/USB_Tranceiver.v
-set_global_assignment -name SDC_FILE USB_Reverse.sdc
-set_global_assignment -name VERILOG_FILE USB_Reverse.v
-set_global_assignment -name CDF_FILE USB_Reverse.cdf
-set_global_assignment -name SIGNALTAP_FILE USB_Reverse.stp
-set_global_assignment -name QIP_FILE Mega/USB_PLL.qip
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to USB_D_P -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to USB_D_P -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=2048" -section_id auto_signaltap_0
@@ -266,7 +260,6 @@ set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[46] -t
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[47] -to "USB_Tranceiver:USB_Tranceiver_Inst|FrameNumber[8]" -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[48] -to "USB_Tranceiver:USB_Tranceiver_Inst|FrameNumber[9]" -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT storage_enable -to "USB_Tranceiver:USB_Tranceiver_Inst|Valid" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=1" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_GAP_RECORD=1" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_MODE=PORT" -section_id auto_signaltap_0
@@ -377,5 +370,13 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=100"
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_BITS=100" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=326" -section_id auto_signaltap_0
-set_global_assignment -name SLD_FILE db/USB_Reverse_auto_stripped.stp
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_instance_assignment -name CONNECT_PIN_TO_SLD_NODE_ENTITY_PORT storage_enable -to "USB_Tranceiver:USB_Tranceiver_Inst|Valid" -section_id auto_signaltap_0
+set_global_assignment -name SLD_FILE db/USB_Reverse_auto_stripped.stp
+set_global_assignment -name VERILOG_FILE USB/USB_NRZI.v
+set_global_assignment -name VERILOG_FILE USB/USB_Transceiver.v
+set_global_assignment -name SDC_FILE USB_Reverse.sdc
+set_global_assignment -name VERILOG_FILE USB_Reverse.v
+set_global_assignment -name CDF_FILE USB_Reverse.cdf
+set_global_assignment -name SIGNALTAP_FILE USB_Reverse.stp
+set_global_assignment -name QIP_FILE Mega/USB_PLL.qip

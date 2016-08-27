@@ -1,5 +1,5 @@
 Standard Device Descriptor
- 0 - Length            = 17
+ 0 - Length            = 18
  1 - DescriptorType    = DEVICE
  2 - bcdUSB            = 0x0200
  4 - DeviceClass       = 
@@ -18,7 +18,7 @@ Device Qualifier -- Only applicable to high speed
 - Respond with "Request Error"
 
 Configuration Descriptor
- 0 - Length             = 8
+ 0 - Length             = 9
  1 - DescriptorType     = CONFIGURATION
  2 - TotalLength        =
  4 - NumInterfaces      =
@@ -28,7 +28,7 @@ Configuration Descriptor
  8 - MaxPower           = 50 (100 mA)
  
 Interface Descriptor
- 0 - Length            = 
+ 0 - Length            = 9
  1 - DescriptorType    = INTERFACE
  2 - InterfaceNumber   = 
  3 - AlternateSetting  = 
@@ -39,7 +39,7 @@ Interface Descriptor
  8 - Interface         = String index to description
 
 Endpoint Descriptor
- 0 - Length            = 6
+ 0 - Length            = 7
  1 - DescriptorType    = ENDPOINT
  2 - EndpointAddress   = 
  3 - Attributes        = 
@@ -47,12 +47,12 @@ Endpoint Descriptor
  6 - Interval          = 
 
 String Descriptor Zero (Languages)
- 0 - Length         = 2
+ 0 - Length         = 4
  1 - DescriptorType = STRING
  2 - LangID[0]      = 0x0809 (English UK)
 
 String Descriptor
- 0 - Length
+ 0 - Length         = 
  1 - DescriptorType = STRING
  2 - Unicode String (UTF-16)
 
