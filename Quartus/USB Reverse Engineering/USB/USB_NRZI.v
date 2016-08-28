@@ -33,26 +33,23 @@ performs the following functions:
   - Translate bit-stream to NRZI signalling
 //----------------------------------------------------------------------------*/
 
-`include "USB_Interfaces.vh"
-//----------------------------------------------------------------------------*/
-
 module USB_NRZI(
  input Clk, // 48 MHz, exactly
  input Reset,
 
  // Global fields
  output reg ResetRequest, // Reset-condition on the bus
- output reg StuffError;   // Cleared just after receiving stop condition
+ output reg StuffError,   // Cleared just after receiving stop condition
 
  // Receiver
- output reg RxData;  // Bit received
- output reg RxStop;  // Stop condition received (RxData is not valid)
- output reg RxValid; // Either RxData or RxStop is valid
+ output reg RxData,  // Bit received
+ output reg RxStop,  // Stop condition received (RxData is not valid)
+ output reg RxValid, // Either RxData or RxStop is valid
 
  // Transmitter
- input      TxData; // Bit to send
- input      TxSend; // Make high to signal that transmit mode is required
- output reg TxNext; // Asks for next bit (must be valid in the next cycle)
+ input      TxData, // Bit to send
+ input      TxSend, // Make high to signal that transmit mode is required
+ output reg TxNext, // Asks for next bit (must be valid in the next cycle)
 
  // The physical bus
  inout reg DP, DM
@@ -114,16 +111,17 @@ always @(posedge Clk) begin
    Idle: begin
     {DP, DM}   <= Z;
     RxData     <= 0;
-    ClkCount   <= 0;
     StuffCount <= 0;
     Symbol_4   <= Symbol;
 
     if({Symbol_1, Symbol} == {K, K}) begin
-     RxValid <= 1'b1;
-     State   <= Receiving;
+     ClkCount <= 0;
+     RxValid  <= 1'b1;
+     State    <= Receiving;
 
-    end else if((Symbol == J) && TxSend) begin
-     State <= Transmitting;
+    end else if(TxSend) begin
+     ClkCount <= 2'd3;
+     State    <= Transmitting;
     end
    end
 //------------------------------------------------------------------------------
@@ -167,54 +165,57 @@ always @(posedge Clk) begin
        StuffError <= 0;
        State      <= Idle;
       end
-//------------------------------------------------------------------------------
-
-      Transmitting: begin
-       ClkCount <= ClkCount + 1'b1;
- 
-       if(&ClkCount) begin
-        if(TxSend) begin
-         if(TxData) begin
-          if(StuffCount == 3'd6) begin
-           {DP, DM}   <= ~Symbol;
-           StuffCount <= 0;
-          end else begin
-           TxNext     <= 1'b1;
-           StuffCount <= StuffCount + 1'b1;
-          end
-
-         end else begin // ~ TxData
-          {DP, DM}   <= ~Symbol;
-          TxNext     <= 1'b1;
-          StuffCount <= 0;
-         end
-
-        end else begin // ~TxSend
-         {DP, DM}   <= L;
-         StuffCount <= 0;
-         State      <= SendStop;
-        end
-
-       end else begin // ~&ClkCount
-        TxNext <= 1'b0;
-       end
-      end
-//------------------------------------------------------------------------------
-
-      SendStop: begin
-       if(StuffCount[0]) begin
-        {DP, DM} <= J;
-        State    <= Idle;
-       end
-       StuffCount <= StuffCount + 1'b1;
-      end
-//------------------------------------------------------------------------------
 
       default:;
      endcase
     end else begin
      RxValid <= 1'b0;
     end
+   end
+//------------------------------------------------------------------------------
+
+   Transmitting: begin
+    if(&ClkCount) begin
+     if(TxSend) begin
+      if(TxData) begin
+       if(StuffCount == 3'd6) begin
+        {DP, DM}   <= ~Symbol;
+        StuffCount <= 0;
+       end else begin
+        TxNext     <= 1'b1;
+        StuffCount <= StuffCount + 1'b1;
+       end
+
+      end else begin // ~ TxData
+       {DP, DM}   <= ~Symbol;
+       TxNext     <= 1'b1;
+       StuffCount <= 0;
+      end
+
+     end else begin // ~TxSend
+      {DP, DM}   <= L;
+      StuffCount <= 0;
+      State      <= SendStop;
+     end
+
+    end else begin // ~&ClkCount
+     TxNext <= 1'b0;
+    end
+
+    ClkCount <= ClkCount + 1'b1;
+   end
+//------------------------------------------------------------------------------
+
+   SendStop: begin
+    if(&ClkCount) begin
+     if(StuffCount[0]) begin
+      {DP, DM} <= J;
+      State    <= Idle;
+     end
+     StuffCount <= StuffCount + 1'b1;
+    end
+    
+    ClkCount <= ClkCount + 1'b1;
    end
 //------------------------------------------------------------------------------
 

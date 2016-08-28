@@ -1,3 +1,48 @@
+Notes:
+- Make the audio endpoints Synchronous: synchronised to SOF packets
+- Endpoint 0 is used for the audio control interface
+- Must have feedback endpoints
+- For feedback description, see section 5.12.4.2
+
+Logical channel clusters in the mixer can be empty (all zero)
+
+DESKTOP_SPEAKER = 0x01
+
+INTERFACE_SUBCLASS_UNDEFINED 0x00
+AUDIOCONTROL 0x01
+AUDIOSTREAMING 0x02
+MIDISTREAMING 0x03
+
+Interface Descriptor sub-types:
+AC_DESCRIPTOR_UNDEFINED 0x00
+HEADER 0x01
+INPUT_TERMINAL 0x02
+OUTPUT_TERMINAL 0x03
+MIXER_UNIT 0x04
+SELECTOR_UNIT 0x05
+FEATURE_UNIT 0x06
+EFFECT_UNIT 0x07
+PROCESSING_UNIT 0x08
+EXTENSION_UNIT 0x09
+CLOCK_SOURCE 0x0A
+CLOCK_SELECTOR 0x0B
+CLOCK_MULTIPLIER 0x0C
+SAMPLE_RATE_CONVERTER 0x0D
+
+AS_DESCRIPTOR_UNDEFINED 0x00
+AS_GENERAL 0x01
+FORMAT_TYPE 0x02
+ENCODER 0x03
+DECODER 0x04
+
+Request Codes
+REQUEST_CODE_UNDEFINED 0x00
+CUR 0x01
+RANGE 0x02
+MEM 0x03
+
+
+
 Standard Device Descriptor
  0 - Length            = 18
  1 - DescriptorType    = DEVICE
