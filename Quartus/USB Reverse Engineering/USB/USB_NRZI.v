@@ -177,19 +177,18 @@ always @(posedge Clk) begin
    Transmitting: begin
     if(&ClkCount) begin
      if(TxSend) begin
-      if(TxData) begin
-       if(StuffCount == 3'd6) begin
+      if(StuffCount == 3'd6) begin
+       {DP, DM}   <= ~Symbol;
+       StuffCount <= 0;
+
+      end else begin
+       if(TxData) begin
+        StuffCount <= StuffCount + 1'b1;
+       end else begin
         {DP, DM}   <= ~Symbol;
         StuffCount <= 0;
-       end else begin
-        TxNext     <= 1'b1;
-        StuffCount <= StuffCount + 1'b1;
        end
-
-      end else begin // ~ TxData
-       {DP, DM}   <= ~Symbol;
-       TxNext     <= 1'b1;
-       StuffCount <= 0;
+       TxNext <= 1'b1;
       end
 
      end else begin // ~TxSend

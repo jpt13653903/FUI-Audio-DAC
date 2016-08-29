@@ -48,6 +48,13 @@ localparam SET_CONFIGURATION = 8'd_9;
 localparam GET_INTERFACE     = 8'd10;
 localparam SET_INTERFACE     = 8'd11;
 localparam SYNCH_FRAME       = 8'd12;
+
+// Audio Class Request Codes
+localparam SET_CUR = 8'h01;
+localparam GET_CUR = 8'h81;
+localparam GET_MIN = 8'h82;
+localparam GET_MAX = 8'h83;
+localparam GET_RES = 8'h84;
 //------------------------------------------------------------------------------
 
 // Descriptor Types
@@ -63,5 +70,10 @@ localparam INTERFACE_POWER           = 8'h8;
 localparam CS_UNDEFINED     = 8'h20;
 localparam CS_DEVICE        = 8'h21;
 localparam CS_CONFIGURATION = 8'h22;
+//------------------------------------------------------------------------------
+
+// Control Constants
+localparam MUTE_CONTROL   = 8'h01;
+localparam VOLUME_CONTROL = 8'h02;
 //------------------------------------------------------------------------------
 

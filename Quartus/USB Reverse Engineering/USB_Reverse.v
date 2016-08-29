@@ -51,7 +51,8 @@ always @(posedge USB_Clk) Reset <= ~nReset;
 reg [26:0]Count;
 always @(posedge USB_Clk) Count <= Count + 1'b1;
 
-assign LED = ~{Count[26:24], ~SW, Keeper};
+//assign LED = ~{Count[26:24], ~SW, Keeper};
+assign LED = Mute ? 8'hFF : ~{VolumeLeft[15:8]};
 //------------------------------------------------------------------------------
 
 wire       ResetRequest;
@@ -64,15 +65,15 @@ wire       Error;
 wire      OUT_Setup;
 wire      OUT_SoP;
 wire      OUT_EoP;
-reg       OUT_WaitRequest;
+wire      OUT_WaitRequest = (Endpoint > 1);
 wire [7:0]OUT_Data;
 wire      OUT_Valid;
-reg       OUT_Isochronous;
- 
+wire      OUT_Isochronous = (Endpoint == 1);
+
 reg       IN_Sequence;
 reg  [7:0]IN_Data;
 reg       IN_Ready;
-reg       IN_ZeroLength;
+wire      IN_ZeroLength;
 wire      IN_WaitRequest;
 wire      IN_Ack;
 reg       IN_Isochronous;
@@ -90,6 +91,11 @@ wire Keeper =
  |  OUT_Valid
  |  IN_WaitRequest
  |  IN_Ack
+ |  Trigger
+ |  AlternateSetting
+ |  Mute
+ | &VolumeLeft
+ | &VolumeRight
 ;
 
 USB_Transceiver USB_Transceiver_Inst(
@@ -111,7 +117,7 @@ USB_Transceiver USB_Transceiver_Inst(
  .OUT_Valid      (OUT_Valid),
  .OUT_Isochronous(OUT_Isochronous),
  .OUT_Stall      (Stall),
- 
+
  .IN_Sequence   (IN_Sequence),
  .IN_Data       (IN_Data),
  .IN_Ready      (IN_Ready),
@@ -128,7 +134,7 @@ USB_Transceiver USB_Transceiver_Inst(
 
 reg  [9:0]Descriptor_Address;
 wire      Descriptor_ClockEnable = 1'b1;
-wire [7:0]Descriptor_Data;
+reg  [7:0]Descriptor_Data;
 
 USB_Descriptors USB_Descriptors_Inst(
  .address(Descriptor_Address),
@@ -141,79 +147,99 @@ USB_Descriptors USB_Descriptors_Inst(
 `include "USB/USB_Constants.vh"
 //------------------------------------------------------------------------------
 
+reg       AlternateSetting; // Only one bit required for this application
+reg       Mute;        // True / False
+reg [15:0]VolumeLeft;  // Units of 1/256 dB, 2's compliment
+reg [15:0]VolumeRight; // Units of 1/256 dB, 2's compliment
+
 reg       Direction;
 reg [ 1:0]Type;
 reg [ 4:0]Recipient;
-reg [ 7:0]RequestType;
 reg [ 7:0]Request;
 reg [15:0]Value;
 reg [15:0]Index;
 reg [15:0]Length;
 reg [ 6:0]ByteCount;
-reg [ 7:0]DataSize;
+reg [15:0]DataSize;
+
+reg [15:0]Temp;
+
+assign IN_ZeroLength = ~|DataSize;
 //------------------------------------------------------------------------------
 
 reg   [5:0]State;
-localparam Idle          = 6'd_0;
-localparam GetRequest    = 6'd_1;
-localparam GetValueLow   = 6'd_2;
-localparam GetValueHigh  = 6'd_3;
-localparam GetIndexLow   = 6'd_4;
-localparam GetIndexHigh  = 6'd_5;
-localparam GetLengthLow  = 6'd_6;
-localparam GetLengthHigh = 6'd_7;
-localparam GetDescriptor = 6'd_8;
-localparam SendData      = 6'd_9;
-localparam GetAck        = 6'd10;
+localparam Idle             = 6'd_0;
+localparam GetRequest       = 6'd_1;
+localparam GetValueLow      = 6'd_2;
+localparam GetValueHigh     = 6'd_3;
+localparam GetIndexLow      = 6'd_4;
+localparam GetIndexHigh     = 6'd_5;
+localparam GetLengthLow     = 6'd_6;
+localparam GetLengthHigh    = 6'd_7;
+localparam GetEoP           = 6'd_8;
+localparam GetDescriptor    = 6'd_9;
+localparam SetAddress       = 6'd10;
+localparam SetConfiguration = 6'd11;
+localparam SetInterface     = 6'd12;
+
+localparam SetControl  = 6'd13;
+localparam GetControl  = 6'd14;
+localparam SendControl = 6'd15;
+
+localparam SendData      = 6'd62;
+localparam GetAck        = 6'd63;
 //------------------------------------------------------------------------------
 
-wire Descriptor_Type  = Value[15:8];
-wire Descriptor_Index = Value[ 7:0];
+wire [7:0]Descriptor_Type  = Value[15:8];
+wire [7:0]Descriptor_Index = Value[ 7:0];
+wire [7:0]ControlSelect    = Value[15:8];
+wire [7:0]ChannelSelect    = Value[ 7:0];
+wire [7:0]UnitID           = Index[15:8];
+wire [7:0]Interface        = Index[ 7:0];
 //------------------------------------------------------------------------------
 
-reg tReset;
+reg tReset, Trigger;
 always @(posedge USB_Clk) begin
  tReset <= Reset | ResetRequest;
 //------------------------------------------------------------------------------
 
  if(tReset) begin
-  Address         <= 0;
-  Stall           <= 0;
-  OUT_WaitRequest <= 0;
-  OUT_Isochronous <= 0;
- 
+  Trigger <= 0;
+
+  AlternateSetting <= 0; // Idle (i.e. no sound)
+  Mute             <= 0; // False
+  VolumeLeft       <= 0; // 0 dB
+  VolumeRight      <= 0; // 0 dB
+
+  Address <= 0;
+  Stall   <= 0;
+
   IN_Sequence    <= 0;
-  IN_Data        <= 0;
   IN_Ready       <= 0;
   IN_Isochronous <= 0;
-  IN_ZeroLength  <= 0;
 
   State <= Idle;
 
   ByteCount <= 0;
 //------------------------------------------------------------------------------
 
- end else begin
-  OUT_WaitRequest <= ~(Endpoint == 0);
+ end else if(OUT_Valid & OUT_SoP & OUT_Setup) begin
+   IN_Ready    <= 1'b0;
+   Stall       <= 0;
+   IN_Sequence <= 1'b1;
+   {Direction, Type, Recipient} <= OUT_Data;
+   State <= GetRequest;
 //------------------------------------------------------------------------------
 
+ end else if(Endpoint == 0) begin
   case(State)
-   Idle: begin
-    if(OUT_Valid & OUT_SoP) begin
-     if(OUT_Setup) begin
-      Stall       <= 0;
-      IN_Sequence <= 0;
-      {Direction, Type, Recipient} <= OUT_Data;
-      State <= GetRequest;
-     end
-    end
-   end
+   Idle:; // Wait for SETUP, which is the short-circuit state above
 //------------------------------------------------------------------------------
 
    GetRequest: begin
     if(OUT_Valid) begin
-     RequestType <= OUT_Data;
-     State       <= GetValueLow;
+     Request <= OUT_Data;
+     State   <= GetValueLow;
     end
    end
 //------------------------------------------------------------------------------
@@ -261,18 +287,33 @@ always @(posedge USB_Clk) begin
    GetLengthHigh: begin
     if(OUT_Valid) begin
      Length[15:8] <= OUT_Data;
-     case(Request)
-//      GET_STATUS:        State <= GetStatus;
-//      CLEAR_FEATURE:     State <= ClearFeature;
-//      SET_FEATURE:       State <= SetFeature;
-//      SET_ADDRESS:       State <= SetAddress;
-      GET_DESCRIPTOR:    State <= GetDescriptor;
-//      SET_DESCRIPTOR:    State <= SetDescriptor;
-//      GET_CONFIGURATION: State <= GetConfiguration;
-//      SET_CONFIGURATION: State <= SetConfiguration;
-//      GET_INTERFACE:     State <= GetInterface;
-//      SET_INTERFACE:     State <= SetInterface;
-//      SYNCH_FRAME:       State <= SynchFrame;
+     State        <= GetEoP;
+    end
+   end
+//------------------------------------------------------------------------------
+
+   GetEoP: begin
+    if(OUT_Valid & OUT_EoP) begin
+     case({Type, Request})
+      // Standard
+//      {2'b00, GET_STATUS}:        State <= GetStatus;
+//      {2'b00, CLEAR_FEATURE}:     State <= ClearFeature;
+//      {2'b00, SET_FEATURE}:       State <= SetFeature;
+      {2'b00, SET_ADDRESS}:       State <= SetAddress;
+      {2'b00, GET_DESCRIPTOR}:    State <= GetDescriptor;
+//      {2'b00, SET_DESCRIPTOR}:    State <= SetDescriptor;
+//      {2'b00, GET_CONFIGURATION}: State <= GetConfiguration;
+      {2'b00, SET_CONFIGURATION}: State <= SetConfiguration;
+//      {2'b00, GET_INTERFACE}:     State <= GetInterface;
+      {2'b00, SET_INTERFACE}:     State <= SetInterface;
+//      {2'b00, SYNCH_FRAME}:       State <= SynchFrame;
+
+      // Audio Class Specific
+      {2'b01, SET_CUR}: State <= SetControl;
+      {2'b01, GET_CUR},
+      {2'b01, GET_MIN},
+      {2'b01, GET_MAX},
+      {2'b01, GET_RES}: State <= GetControl;
 
       default: begin
        Stall <= 1'b1;
@@ -284,6 +325,8 @@ always @(posedge USB_Clk) begin
 //------------------------------------------------------------------------------
 
    GetDescriptor: begin
+    ByteCount <= 0;
+
     if(Error) begin
      Stall <= 1'b1;
      State <= Idle;
@@ -292,14 +335,18 @@ always @(posedge USB_Clk) begin
      case(Descriptor_Type)
       DEVICE: begin
        Descriptor_Address <= 0;
-       ByteCount          <= 0;
-       DataSize           <= 8'd18;
        State              <= SendData;
+       if(Length < 16'd18) DataSize <= Length;
+       else                DataSize <= 16'd18;
       end
 
-//      CONFIGURATION: begin
-//      end
-//
+      CONFIGURATION: begin
+       Descriptor_Address <= 10'h12;
+       State              <= SendData;
+       if(Length < 16'd113) DataSize <= Length;
+       else                 DataSize <= 16'd113;
+      end
+
 //      STRING: begin
 //      end
 
@@ -312,24 +359,186 @@ always @(posedge USB_Clk) begin
    end
 //------------------------------------------------------------------------------
 
-   SendData: begin
-    IN_Data       <= Descriptor_Data;
-    IN_Ready      <= (Endpoint == 0);
-    IN_ZeroLength <= ~|DataSize;
+   SetAddress: begin
+    // Set-up for status
+    DataSize <= 0;
 
-    if(IN_WaitRequest) begin
-     if(IN_Ack) begin // Possible for zero-length packets
+    if(IN_Ack) begin
+     Address  <= Value[6:0];
+     IN_Ready <= 1'b0;
+     State    <= Idle;
+    end else begin
+     IN_Ready <= 1'b1;
+    end
+   end
+//------------------------------------------------------------------------------
+
+   SetConfiguration: begin
+    // Configuration <= Value[7:0]; Not applicable to this application
+
+    // Set-up for status
+    DataSize <= 0;
+
+    if(IN_Ack) begin
+     IN_Ready <= 1'b0;
+     State    <= Idle;
+    end else begin
+     IN_Ready <= 1'b1;
+    end
+   end
+//------------------------------------------------------------------------------
+
+   SetInterface: begin
+    if(Index == 16'd1) begin
+     AlternateSetting <= Value[0]; // Only one bit in this application
+    end
+
+    // Set-up for status
+    DataSize <= 0;
+
+    if(IN_Ack) begin
+     IN_Ready <= 1'b0;
+     State    <= Idle;
+    end else begin
+     IN_Ready <= 1'b1;
+    end
+   end
+//------------------------------------------------------------------------------
+
+   SetControl: begin
+    // Set-up for status
+    DataSize <= 0;
+
+    if(IN_Ack) begin
+     IN_Ready <= 1'b0;
+     State    <= Idle;
+
+    end else if(OUT_Valid) begin
+     IN_Ready <= 1'b1;
+
+     if(OUT_EoP) begin
+      case({Request, ChannelSelect, ControlSelect, Interface, UnitID})
+       {SET_CUR, 8'h_00, MUTE_CONTROL  , 16'h_00_02}: Mute        <= Temp[8];
+       {SET_CUR, 8'h_01, VOLUME_CONTROL, 16'h_00_02}: VolumeLeft  <= Temp;
+       {SET_CUR, 8'h_02, VOLUME_CONTROL, 16'h_00_02}: VolumeRight <= Temp;
+
+       default: begin
+        Stall <= 1'b1;
+        State <= Idle;
+       end
+      endcase
+     end else begin // Not EoP
+      Temp <= {OUT_Data, Temp[15:8]};
+     end
+    end else begin
+     IN_Ready <= 1'b1;
+    end
+   end
+//------------------------------------------------------------------------------
+
+   GetControl: begin
+    ByteCount <= 0;
+
+    case({Request, ChannelSelect, ControlSelect, Interface, UnitID})
+     {GET_CUR, 8'h_00, MUTE_CONTROL, 16'h_00_02}: begin
+      IN_Data  <= {7'd0, Mute};
+      DataSize <= 16'd1;
+      IN_Ready <= 1'b1;
+      State    <= SendControl;
+     end
+
+     {GET_CUR, 8'h_01, VOLUME_CONTROL, 16'h_00_02}: begin
+      {Temp, IN_Data} <= VolumeLeft;
+      DataSize <= 16'd2;
+      IN_Ready <= 1'b1;
+      State    <= SendControl;
+     end
+
+     {GET_CUR, 8'h_02, VOLUME_CONTROL, 16'h_00_02}: begin
+      {Temp, IN_Data} <= VolumeRight;
+      DataSize <= 16'd2;
+      IN_Ready <= 1'b1;
+      State    <= SendControl;
+     end
+
+     {GET_MIN, 8'h_01, VOLUME_CONTROL, 16'h_00_02},
+     {GET_MIN, 8'h_02, VOLUME_CONTROL, 16'h_00_02}: begin
+      {Temp, IN_Data} <= 16'h8001;
+      DataSize <= 16'd2;
+      IN_Ready <= 1'b1;
+      State    <= SendControl;
+     end
+
+     {GET_MAX, 8'h_01, VOLUME_CONTROL, 16'h_00_02},
+     {GET_MAX, 8'h_02, VOLUME_CONTROL, 16'h_00_02}: begin
+      {Temp, IN_Data} <= 16'h7FFF;
+      DataSize <= 16'd2;
+      IN_Ready <= 1'b1;
+      State    <= SendControl;
+     end
+
+     {GET_RES, 8'h_01, VOLUME_CONTROL, 16'h_00_02},
+     {GET_RES, 8'h_02, VOLUME_CONTROL, 16'h_00_02}: begin
+      {Temp, IN_Data} <= 16'h0001;
+      DataSize <= 16'd2;
+      IN_Ready <= 1'b1;
+      State    <= SendControl;
+     end
+
+     default: begin
+      Stall <= 1'b1;
+      State <= Idle;
+     end
+    endcase
+   end
+//------------------------------------------------------------------------------
+
+   SendControl: begin
+Trigger <= 1'b1;
+
+    if(IN_Ready) begin
+     if(IN_Ack) IN_Sequence <= ~IN_Sequence;
+
+     if(~IN_WaitRequest) begin
+      if(ByteCount == (DataSize-1'b1)) IN_Ready <= 1'b0;
+
+      ByteCount       <= ByteCount + 1'b1;
+      {Temp, IN_Data} <= {8'd0, Temp};
+     end
+
+     if(OUT_Valid & OUT_EoP) begin
       IN_Ready <= 1'b0;
       State    <= Idle;
-     end else begin
-      IN_Ready <= 1'b1;
      end
+
+    end else begin // Waiting for Ack
+     if(Error) begin
+      State <= GetControl;
+
+     end else if(IN_Ack) begin
+      IN_Sequence <= ~IN_Sequence;
+      DataSize    <= 0;
+      ByteCount   <= 0;
+      IN_Ready    <= 1'b1;
+     end
+    end
+   end
+//------------------------------------------------------------------------------
+
+   SendData: begin
+    IN_Data <= Descriptor_Data;
+
+    if(IN_WaitRequest) begin
+     IN_Ready <= 1'b1;
+
+     // In the case of zero-length packets:
+     if(IN_Ack) IN_Sequence <= ~IN_Sequence;
 
     end else begin
      if(
       (ByteCount == 7'd63) ||
       (ByteCount == (DataSize-1'b1))
-     )begin
+     ) begin
       IN_Ready <= 1'b0;
       State    <= GetAck;
 
@@ -339,6 +548,11 @@ always @(posedge USB_Clk) begin
 
      ByteCount          <= ByteCount + 1'b1;
      Descriptor_Address <= Descriptor_Address + 1'b1;
+    end
+
+    if(OUT_Valid) begin
+     IN_Ready <= 1'b0;
+     if(OUT_EoP) State <= Idle;
     end
    end
 //------------------------------------------------------------------------------
@@ -352,16 +566,14 @@ always @(posedge USB_Clk) begin
     end else if(IN_Ack) begin
      IN_Sequence <= ~IN_Sequence;
      DataSize    <= DataSize - ByteCount;
-     if(ByteCount == 7'd64) State <= SendData;
-     else                   State <= Idle;
-
-     ByteCount <= 0;
+     ByteCount   <= 0;
+     State       <= SendData;
     end
    end
 //------------------------------------------------------------------------------
 
    default:;
-  endcase  
+  endcase
  end
 end
 //------------------------------------------------------------------------------
