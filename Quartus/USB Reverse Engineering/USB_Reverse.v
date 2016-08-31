@@ -11,7 +11,7 @@ module USB_Reverse(
  inout  USB_D_P,          // K15
  inout  USB_D_N,          // E15
 
- output [6:1]TP,          // C13, C14, J13, H14, C17, D17
+ output reg [6:1]TP,      // C13, C14, J13, H14, C17, D17
 
  input       S_PDIF_In,   // B14
  output reg nS_PDIF,      // A14
@@ -77,6 +77,33 @@ wire      IN_ZeroLength;
 wire      IN_WaitRequest;
 wire      IN_Ack;
 reg       IN_Isochronous;
+//------------------------------------------------------------------------------
+            
+reg [9:0]FIFO_WriteAddress;
+wire     FIFO_Write = (Endpoint == 1) & OUT_Valid & ~OUT_EoP;
+
+reg [ 7:0]FIFO_ReadAddress;
+reg [31:0]FIFO_Out;
+
+USB_FIFO USB_FIFO_Inst(
+ .clock    (USB_Clk),
+
+ .wraddress(FIFO_WriteAddress),
+ .wren     (FIFO_Write),
+ .data     (OUT_Data),
+
+ .rdaddress(FIFO_ReadAddress),
+ .q        (FIFO_Out)
+);
+
+always @(posedge USB_Clk) begin
+      if(tReset | ~AlternateSetting) FIFO_WriteAddress <= 0;
+ else if(FIFO_Write                ) FIFO_WriteAddress <= FIFO_WriteAddress + 1'b1;
+
+ // Resynchronise in the very rare case where a byte is lost:
+ else if((Endpoint == 1) & OUT_Valid & OUT_EoP) FIFO_WriteAddress[1:0] <= 0;
+end
+//------------------------------------------------------------------------------
 
 wire Keeper =
  |  ResetRequest
@@ -186,8 +213,8 @@ localparam SetControl  = 6'd13;
 localparam GetControl  = 6'd14;
 localparam SendControl = 6'd15;
 
-localparam SendData      = 6'd62;
-localparam GetAck        = 6'd63;
+localparam SendData = 6'd62;
+localparam GetAck   = 6'd63;
 //------------------------------------------------------------------------------
 
 wire [7:0]Descriptor_Type  = Value[15:8];
@@ -208,8 +235,8 @@ always @(posedge USB_Clk) begin
 
   AlternateSetting <= 0; // Idle (i.e. no sound)
   Mute             <= 0; // False
-  VolumeLeft       <= 0; // 0 dB
-  VolumeRight      <= 0; // 0 dB
+  VolumeLeft       <= 16'h1400; // 20 dB
+  VolumeRight      <= 16'h1400; // 20 dB
 
   Address <= 0;
   Stall   <= 0;
@@ -334,21 +361,55 @@ always @(posedge USB_Clk) begin
     end else begin
      case(Descriptor_Type)
       DEVICE: begin
-       Descriptor_Address <= 0;
+       Descriptor_Address <= DEVICE_POINTER;
        State              <= SendData;
        if(Length < 16'd18) DataSize <= Length;
        else                DataSize <= 16'd18;
       end
 
       CONFIGURATION: begin
-       Descriptor_Address <= 10'h12;
+       Descriptor_Address <= CONFIGURATION_POINTER;
        State              <= SendData;
-       if(Length < 16'd113) DataSize <= Length;
-       else                 DataSize <= 16'd113;
+       if(Length < CONFIGURATION_LENGTH) DataSize <= Length;
+       else                              DataSize <= CONFIGURATION_LENGTH;
       end
 
-//      STRING: begin
-//      end
+      STRING: begin
+       case(Descriptor_Index)
+        10'd_0: begin
+         Descriptor_Address <= STRING__0_POINTER;
+         State              <= SendData;
+         if(Length < STRING__0_LENGTH) DataSize <= Length;
+         else                          DataSize <= STRING__0_LENGTH;
+        end
+
+        10'd_1: begin
+         Descriptor_Address <= STRING__1_POINTER;
+         State              <= SendData;
+         if(Length < STRING__1_LENGTH) DataSize <= Length;
+         else                          DataSize <= STRING__1_LENGTH;
+        end
+
+        10'd_2: begin
+         Descriptor_Address <= STRING__2_POINTER;
+         State              <= SendData;
+         if(Length < STRING__2_LENGTH) DataSize <= Length;
+         else                          DataSize <= STRING__2_LENGTH;
+        end
+
+        10'd_3: begin
+         Descriptor_Address <= STRING__3_POINTER;
+         State              <= SendData;
+         if(Length < STRING__3_LENGTH) DataSize <= Length;
+         else                          DataSize <= STRING__3_LENGTH;
+        end
+
+        default: begin
+         Stall <= 1'b1;
+         State <= Idle;
+        end
+       endcase
+      end
 
       default: begin
        Stall <= 1'b1;
@@ -463,7 +524,8 @@ always @(posedge USB_Clk) begin
 
      {GET_MIN, 8'h_01, VOLUME_CONTROL, 16'h_00_02},
      {GET_MIN, 8'h_02, VOLUME_CONTROL, 16'h_00_02}: begin
-      {Temp, IN_Data} <= 16'h8001;
+//      {Temp, IN_Data} <= 16'h8001;
+      {Temp, IN_Data} <= 16'h0000;
       DataSize <= 16'd2;
       IN_Ready <= 1'b1;
       State    <= SendControl;
@@ -578,9 +640,6 @@ Trigger <= 1'b1;
 end
 //------------------------------------------------------------------------------
 
-assign TP = {4'd0, FrameNumber[0]};
-//------------------------------------------------------------------------------
-
 always @(posedge USB_Clk) begin
  if(&Count) begin
   nS_PDIF     <= ~S_PDIF_In;
@@ -589,7 +648,112 @@ always @(posedge USB_Clk) begin
 end
 //------------------------------------------------------------------------------
 
-assign Audio = 0;
+reg [31:0]ClkCount;
+reg [22:0]ClkFrequency;
+wire      Clk_48k = ClkCount[31];
+reg      pClk_48k;
+reg       Clk_500;
+reg [ 5:0]Clk_500_Count;
+reg      pSoF;
+reg [16:0]PhaseCount;
+reg [16:0]Phase_Abs;
+reg [24:0]Phase_Scaled_Abs;
+reg [24:0]Phase_Scaled;
+reg [24:0]Phase_Filtered_Large;
+reg [16:0]Phase_Filtered;
+
+always @(posedge USB_Clk) begin
+ pSoF     <= FrameNumber[0];
+ pClk_48k <= Clk_48k;
+ ClkCount <= ClkCount + ClkFrequency;
+
+ if(tReset) begin
+  ClkFrequency   <= 32'h418937; // 48 kHz
+  Phase_Filtered <= 0;
+
+ end else begin
+  if({pClk_48k, Clk_48k} == 2'b01) begin
+   if(Clk_500_Count == 6'd47) begin
+    Clk_500       <= ~Clk_500;
+    Clk_500_Count <= 0;
+   end else begin
+    Clk_500_Count <= Clk_500_Count + 1'b1;
+   end
+  end
+
+  Phase_Filtered   <= Phase_Filtered_Large[23:7];
+  Phase_Abs        <= Phase_Filtered[16] ? -Phase_Filtered : Phase_Filtered;
+  Phase_Scaled_Abs <= Phase_Abs * 8'd127;
+  Phase_Scaled     <= Phase_Filtered[16] ? -Phase_Scaled_Abs : Phase_Scaled_Abs;
+
+  if(pSoF ^ FrameNumber[0]) begin // 1 ms interval
+   Phase_Filtered_Large <= Phase_Scaled + {{8{PhaseCount[16]}}, PhaseCount};
+
+   ClkFrequency <= 23'h418937 + 
+    {{6{Phase_Filtered[16]}}, Phase_Filtered};
+   PhaseCount   <= 0;
+  end else begin
+   if(Clk_500 ^ FrameNumber[0]) PhaseCount <= PhaseCount + 1'b1;
+   else                         PhaseCount <= PhaseCount - 1'b1;
+
+        if(ClkFrequency < 23'h402BB1) ClkFrequency = 23'h402BB1; // 47 kHz
+   else if(ClkFrequency > 23'h42E6BE) ClkFrequency = 23'h42E6BE; // 49 kHz
+  end
+ end
+end
+assign TP = {1'b0, Left_PWM, Right_PWM, Clk_500, Clk_48k, FrameNumber[0]};
+//------------------------------------------------------------------------------
+
+reg [15:0]Left;
+reg [15:0]Right;
+
+reg FIFO_Ready;
+
+always @(posedge USB_Clk) begin 
+ if(tReset | ~AlternateSetting) begin
+  FIFO_Ready       <= 0;
+  FIFO_ReadAddress <= 0;
+
+  Left  <= 0;
+  Right <= 0;
+  
+ end else begin
+  if(FIFO_Ready) begin
+   if({pClk_48k, Clk_48k} == 2'b10) begin
+    {Right, Left}    <= FIFO_Out;
+    FIFO_ReadAddress <= FIFO_ReadAddress + 1'b1;
+   end
+  end else begin
+   if(FIFO_WriteAddress == 10'd384) FIFO_Ready <= 1'b1; // 2 ms
+  end
+ end
+end
+
+reg [9:0]Left_D;
+reg [9:0]Right_D;
+reg [9:0]PWM_Count;
+reg Left_PWM, Right_PWM;
+
+always @(posedge USB_Clk) begin
+ if(tReset) begin
+  PWM_Count <= 0;
+
+ end else begin
+  if({pClk_48k, Clk_48k} == 2'b01) begin
+   Left_D    <= {Left [15], Left [15:7]} + 10'd500;
+   Right_D   <= {Right[15], Right[15:7]} + 10'd500;
+   PWM_Count <= 0;
+   
+  end else begin
+   PWM_Count <= PWM_Count + 1;
+  end
+
+  Left_PWM  <= (Left_D  > PWM_Count);
+  Right_PWM <= (Right_D > PWM_Count);
+ end
+end
+
+assign Audio = Mute ? 0 : {Left_PWM, Right_PWM};
 //------------------------------------------------------------------------------
 
 assign LV_LCD_RS   = 1'b1;
