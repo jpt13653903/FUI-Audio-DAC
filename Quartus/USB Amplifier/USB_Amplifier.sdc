@@ -4,6 +4,13 @@ derive_pll_clocks -create_base_clocks -use_net_name
 derive_clock_uncertainty
 #-------------------------------------------------------------------------------
 
+
+# Mutually exclusive clock groups
+set_clock_groups -exclusive                        \
+                 -group [get_clocks Clk]           \
+                 -group [get_clocks USB_PLL*]
+#-------------------------------------------------------------------------------
+
 set_input_delay  -clock altera_reserved_tck -clock_fall 3 \
                  [get_ports altera_reserved_tdi]
 set_input_delay  -clock altera_reserved_tck -clock_fall 3 \

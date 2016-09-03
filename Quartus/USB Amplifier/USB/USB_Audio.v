@@ -1,67 +1,30 @@
-module USB_Reverse(
- input Clk,               // N14 (50 MHz)
+// For all arrays, 0 => Left, 1 => Right
+//------------------------------------------------------------------------------
 
- // On-board the BeMicro
- input  [4:1]SW,          // AB5,  V5, R1, M1
- output [8:1]LED,         // AA5, AB4, T6, V4, T1, R2, N1, M2
+module USB_Audio(
+ input  Clk,
+ input  Reset,
 
- // Daughter-board
- output USB_D_P_Pull,     // K14
- output USB_D_N_Pull,     // E16
- inout  USB_D_P,          // K15
- inout  USB_D_N,          // E15
+ output [10:0]FrameNumber,
 
- output reg [6:1]TP,      // C13, C14, J13, H14, C17, D17
+ output reg       Active,
+ output reg       Mute,
+ output reg [15:0]Volume[1:0],
 
- input       S_PDIF_In,   // B14
- output reg nS_PDIF,      // A14
- output reg  S_PDIF_Out,  // A9
+ input            Audio_Clk,  // 48 kHz
+ output reg [15:0]Audio[1:0], // Registered just after falling edge of Audio_Clk
 
- output [2:1]Audio,       // B8, B10
-
- output      LV_LCD_RS,   // D14
- output      LV_LCD_R_nW, // E13
- output      LV_LCD_E,    // E12
- output [7:4]LV_LCD_D,    // C9, J11, H12, D13
-
- output [3:0]Red,         // B3, A3, C3, A2
- output [3:0]Green,       // B5, A5, B4, A4
- output [3:0]Blue,        // A7, A8, B7, A6
- output      H_Sync,      // B1
- output      V_Sync       // B2
+ inout DP, DM
 );
-//------------------------------------------------------------------------------
-
-assign USB_D_P_Pull = 1'b1;
-assign USB_D_N_Pull = 1'bZ;
-//------------------------------------------------------------------------------
-
-wire USB_Clk;
-wire nReset;
-wire  Reset;
-
-USB_PLL USB_PLL_Inst(
- .inclk0(Clk),
- .c0    (USB_Clk),
- .locked(nReset)
-);
-always @(posedge USB_Clk) Reset <= ~nReset;
-//------------------------------------------------------------------------------
-
-reg [26:0]Count;
-always @(posedge USB_Clk) Count <= Count + 1'b1;
-
-//assign LED = ~{Count[26:24], ~SW, Keeper};
-assign LED = Mute ? 8'hFF : ~{VolumeLeft[15:8]};
 //------------------------------------------------------------------------------
 
 wire       ResetRequest;
 reg  [ 6:0]Address;
 wire [ 3:0]Endpoint;
-wire [10:0]FrameNumber;
 reg        Stall;
 wire       Error;
 
+wire      OUT_Sequence;
 wire      OUT_Setup;
 wire      OUT_SoP;
 wire      OUT_EoP;
@@ -82,11 +45,11 @@ reg       IN_Isochronous;
 reg [9:0]FIFO_WriteAddress;
 wire     FIFO_Write = (Endpoint == 1) & OUT_Valid & ~OUT_EoP;
 
-reg [ 7:0]FIFO_ReadAddress;
-reg [31:0]FIFO_Out;
+reg  [ 7:0]FIFO_ReadAddress;
+wire [31:0]FIFO_Out;
 
-USB_FIFO USB_FIFO_Inst(
- .clock    (USB_Clk),
+USB_FIFO FIFO(
+ .clock    (Clk),
 
  .wraddress(FIFO_WriteAddress),
  .wren     (FIFO_Write),
@@ -96,37 +59,51 @@ USB_FIFO USB_FIFO_Inst(
  .q        (FIFO_Out)
 );
 
-always @(posedge USB_Clk) begin
-      if(tReset | ~AlternateSetting) FIFO_WriteAddress <= 0;
- else if(FIFO_Write                ) FIFO_WriteAddress <= FIFO_WriteAddress + 1'b1;
+always @(posedge Clk) begin
+      if(tReset | ~Active) FIFO_WriteAddress <= 0;
+ else if(FIFO_Write      ) FIFO_WriteAddress <= FIFO_WriteAddress + 1'b1;
 
- // Resynchronise in the very rare case where a byte is lost:
+ // Resynchronise in the very rare case where a byte is lost and resynchronise:
  else if((Endpoint == 1) & OUT_Valid & OUT_EoP) FIFO_WriteAddress[1:0] <= 0;
 end
 //------------------------------------------------------------------------------
 
-wire Keeper =
- |  ResetRequest
- | &Endpoint
- | &FrameNumber
- |  Error
- |  OUT_Setup
- |  OUT_SoP
- |  OUT_EoP
- | &OUT_Data
- |  OUT_Sequence
- |  OUT_Valid
- |  IN_WaitRequest
- |  IN_Ack
- |  Trigger
- |  AlternateSetting
- |  Mute
- | &VolumeLeft
- | &VolumeRight
-;
+reg [1:0]Clk_48k;
+reg      FIFO_Ready;
+reg [7:0]FIFO_Length;
+
+always @(posedge Clk) begin 
+ Clk_48k <= {Clk_48k[0], Audio_Clk};
+
+ FIFO_Length <= FIFO_WriteAddress[9:2] - FIFO_ReadAddress;
+
+ if(tReset | ~Active) begin
+  FIFO_Ready       <= 0;
+  FIFO_ReadAddress <= 0;
+
+  {Audio[1], Audio[0]} <= 0;
+   
+ end else begin
+  if(FIFO_Ready) begin
+   if(FIFO_Length < 8'h20) FIFO_Ready <= 1'b0;
+  end else begin
+   if(FIFO_Length > 8'h80) FIFO_Ready <= 1'b1;
+  end
+
+  if(FIFO_Ready) begin
+   if(Clk_48k == 2'b10) begin
+    {Audio[1], Audio[0]} <= FIFO_Out;
+    FIFO_ReadAddress     <= FIFO_ReadAddress + 1'b1;
+   end
+  end else begin
+   {Audio[1], Audio[0]} <= 0;
+  end
+ end
+end
+//------------------------------------------------------------------------------
 
 USB_Transceiver USB_Transceiver_Inst(
- .Clk  (USB_Clk),
+ .Clk  (Clk),
  .Reset(Reset),
 
  .ResetRequest(ResetRequest),
@@ -154,8 +131,8 @@ USB_Transceiver USB_Transceiver_Inst(
  .IN_Isochronous(IN_Isochronous),
  .IN_Stall      (Stall),
 
- .DP(USB_D_P),
- .DM(USB_D_N)
+ .DP(DP),
+ .DM(DM)
 );
 //------------------------------------------------------------------------------
 
@@ -166,18 +143,13 @@ reg  [7:0]Descriptor_Data;
 USB_Descriptors USB_Descriptors_Inst(
  .address(Descriptor_Address),
  .clken  (Descriptor_ClockEnable),
- .clock  (USB_Clk),
+ .clock  (Clk),
  .q      (Descriptor_Data)
 );
 //------------------------------------------------------------------------------
 
-`include "USB/USB_Constants.vh"
+`include "USB_Constants.vh"
 //------------------------------------------------------------------------------
-
-reg       AlternateSetting; // Only one bit required for this application
-reg       Mute;        // True / False
-reg [15:0]VolumeLeft;  // Units of 1/256 dB, 2's compliment
-reg [15:0]VolumeRight; // Units of 1/256 dB, 2's compliment
 
 reg       Direction;
 reg [ 1:0]Type;
@@ -225,18 +197,16 @@ wire [7:0]UnitID           = Index[15:8];
 wire [7:0]Interface        = Index[ 7:0];
 //------------------------------------------------------------------------------
 
-reg tReset, Trigger;
-always @(posedge USB_Clk) begin
+reg tReset;
+always @(posedge Clk) begin
  tReset <= Reset | ResetRequest;
 //------------------------------------------------------------------------------
 
  if(tReset) begin
-  Trigger <= 0;
-
-  AlternateSetting <= 0; // Idle (i.e. no sound)
-  Mute             <= 0; // False
-  VolumeLeft       <= 16'h1400; // 20 dB
-  VolumeRight      <= 16'h1400; // 20 dB
+  Active    <= 0;       // Idle (i.e. no sound)
+  Mute      <= 0;       // False
+  Volume[0] <= 16'd868; // "20" on the Windows 10 volume slider
+  Volume[1] <= 16'd868;
 
   Address <= 0;
   Stall   <= 0;
@@ -451,7 +421,7 @@ always @(posedge USB_Clk) begin
 
    SetInterface: begin
     if(Index == 16'd1) begin
-     AlternateSetting <= Value[0]; // Only one bit in this application
+     Active <= Value[0]; // Only one bit in this application
     end
 
     // Set-up for status
@@ -479,9 +449,9 @@ always @(posedge USB_Clk) begin
 
      if(OUT_EoP) begin
       case({Request, ChannelSelect, ControlSelect, Interface, UnitID})
-       {SET_CUR, 8'h_00, MUTE_CONTROL  , 16'h_00_02}: Mute        <= Temp[8];
-       {SET_CUR, 8'h_01, VOLUME_CONTROL, 16'h_00_02}: VolumeLeft  <= Temp;
-       {SET_CUR, 8'h_02, VOLUME_CONTROL, 16'h_00_02}: VolumeRight <= Temp;
+       {SET_CUR, 8'h_00, MUTE_CONTROL  , 16'h_00_02}: Mute      <= Temp[8];
+       {SET_CUR, 8'h_01, VOLUME_CONTROL, 16'h_00_02}: Volume[0] <= Temp;
+       {SET_CUR, 8'h_02, VOLUME_CONTROL, 16'h_00_02}: Volume[1] <= Temp;
 
        default: begin
         Stall <= 1'b1;
@@ -509,14 +479,14 @@ always @(posedge USB_Clk) begin
      end
 
      {GET_CUR, 8'h_01, VOLUME_CONTROL, 16'h_00_02}: begin
-      {Temp, IN_Data} <= VolumeLeft;
+      {Temp, IN_Data} <= Volume[0];
       DataSize <= 16'd2;
       IN_Ready <= 1'b1;
       State    <= SendControl;
      end
 
      {GET_CUR, 8'h_02, VOLUME_CONTROL, 16'h_00_02}: begin
-      {Temp, IN_Data} <= VolumeRight;
+      {Temp, IN_Data} <= Volume[1];
       DataSize <= 16'd2;
       IN_Ready <= 1'b1;
       State    <= SendControl;
@@ -524,7 +494,6 @@ always @(posedge USB_Clk) begin
 
      {GET_MIN, 8'h_01, VOLUME_CONTROL, 16'h_00_02},
      {GET_MIN, 8'h_02, VOLUME_CONTROL, 16'h_00_02}: begin
-//      {Temp, IN_Data} <= 16'h8001;
       {Temp, IN_Data} <= 16'h0000;
       DataSize <= 16'd2;
       IN_Ready <= 1'b1;
@@ -556,8 +525,6 @@ always @(posedge USB_Clk) begin
 //------------------------------------------------------------------------------
 
    SendControl: begin
-Trigger <= 1'b1;
-
     if(IN_Ready) begin
      if(IN_Ack) IN_Sequence <= ~IN_Sequence;
 
@@ -638,135 +605,6 @@ Trigger <= 1'b1;
   endcase
  end
 end
-//------------------------------------------------------------------------------
-
-always @(posedge USB_Clk) begin
- if(&Count) begin
-  nS_PDIF     <= ~S_PDIF_In;
-   S_PDIF_Out <=  S_PDIF_In;
- end
-end
-//------------------------------------------------------------------------------
-
-reg [31:0]ClkCount;
-reg [22:0]ClkFrequency;
-wire      Clk_48k = ClkCount[31];
-reg      pClk_48k;
-reg       Clk_500;
-reg [ 5:0]Clk_500_Count;
-reg      pSoF;
-reg [16:0]PhaseCount;
-reg [16:0]Phase_Abs;
-reg [24:0]Phase_Scaled_Abs;
-reg [24:0]Phase_Scaled;
-reg [24:0]Phase_Filtered_Large;
-reg [16:0]Phase_Filtered;
-
-always @(posedge USB_Clk) begin
- pSoF     <= FrameNumber[0];
- pClk_48k <= Clk_48k;
- ClkCount <= ClkCount + ClkFrequency;
-
- if(tReset) begin
-  ClkFrequency   <= 32'h418937; // 48 kHz
-  Phase_Filtered <= 0;
-
- end else begin
-  if({pClk_48k, Clk_48k} == 2'b01) begin
-   if(Clk_500_Count == 6'd47) begin
-    Clk_500       <= ~Clk_500;
-    Clk_500_Count <= 0;
-   end else begin
-    Clk_500_Count <= Clk_500_Count + 1'b1;
-   end
-  end
-
-  Phase_Filtered   <= Phase_Filtered_Large[23:7];
-  Phase_Abs        <= Phase_Filtered[16] ? -Phase_Filtered : Phase_Filtered;
-  Phase_Scaled_Abs <= Phase_Abs * 8'd127;
-  Phase_Scaled     <= Phase_Filtered[16] ? -Phase_Scaled_Abs : Phase_Scaled_Abs;
-
-  if(pSoF ^ FrameNumber[0]) begin // 1 ms interval
-   Phase_Filtered_Large <= Phase_Scaled + {{8{PhaseCount[16]}}, PhaseCount};
-
-   ClkFrequency <= 23'h418937 + 
-    {{6{Phase_Filtered[16]}}, Phase_Filtered};
-   PhaseCount   <= 0;
-  end else begin
-   if(Clk_500 ^ FrameNumber[0]) PhaseCount <= PhaseCount + 1'b1;
-   else                         PhaseCount <= PhaseCount - 1'b1;
-
-        if(ClkFrequency < 23'h402BB1) ClkFrequency = 23'h402BB1; // 47 kHz
-   else if(ClkFrequency > 23'h42E6BE) ClkFrequency = 23'h42E6BE; // 49 kHz
-  end
- end
-end
-assign TP = {1'b0, Left_PWM, Right_PWM, Clk_500, Clk_48k, FrameNumber[0]};
-//------------------------------------------------------------------------------
-
-reg [15:0]Left;
-reg [15:0]Right;
-
-reg FIFO_Ready;
-
-always @(posedge USB_Clk) begin 
- if(tReset | ~AlternateSetting) begin
-  FIFO_Ready       <= 0;
-  FIFO_ReadAddress <= 0;
-
-  Left  <= 0;
-  Right <= 0;
-  
- end else begin
-  if(FIFO_Ready) begin
-   if({pClk_48k, Clk_48k} == 2'b10) begin
-    {Right, Left}    <= FIFO_Out;
-    FIFO_ReadAddress <= FIFO_ReadAddress + 1'b1;
-   end
-  end else begin
-   if(FIFO_WriteAddress == 10'd384) FIFO_Ready <= 1'b1; // 2 ms
-  end
- end
-end
-
-reg [9:0]Left_D;
-reg [9:0]Right_D;
-reg [9:0]PWM_Count;
-reg Left_PWM, Right_PWM;
-
-always @(posedge USB_Clk) begin
- if(tReset) begin
-  PWM_Count <= 0;
-
- end else begin
-  if({pClk_48k, Clk_48k} == 2'b01) begin
-   Left_D    <= {Left [15], Left [15:7]} + 10'd500;
-   Right_D   <= {Right[15], Right[15:7]} + 10'd500;
-   PWM_Count <= 0;
-   
-  end else begin
-   PWM_Count <= PWM_Count + 1;
-  end
-
-  Left_PWM  <= (Left_D  > PWM_Count);
-  Right_PWM <= (Right_D > PWM_Count);
- end
-end
-
-assign Audio = Mute ? 0 : {Left_PWM, Right_PWM};
-//------------------------------------------------------------------------------
-
-assign LV_LCD_RS   = 1'b1;
-assign LV_LCD_R_nW = 1'b1;
-assign LV_LCD_E    = 1'b1;
-assign LV_LCD_D    = 0;
-//------------------------------------------------------------------------------
-
-assign Red    = 0;
-assign Green  = 0;
-assign Blue   = 0;
-assign H_Sync = 0;
-assign V_Sync = 0;
 //------------------------------------------------------------------------------
 
 endmodule

@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M08DAF484ES) Path("C:/JPT/Projects/16/1610 - USB Sound/Quartus/USB Reverse Engineering/output_files/") File("USB_Reverse.sof") MfrSpec(OpMask(1));
+		Device PartName(10M08DAF484ES) Path("C:/JPT/Projects/16/1610 - USB Sound/Quartus/USB Amplifier/output_files/") File("USB_Amplifier.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
