@@ -27,9 +27,9 @@ module USB_Audio(
 
  output [10:0]FrameNumber,
 
- output reg       Active,
- output reg       Mute,
- output reg [15:0]Volume[1:0],
+ output reg      Active,
+ output reg      Mute,
+ output reg [7:0]Volume[1:0],
 
  input            Audio_Clk,  // 48 kHz
  output reg [15:0]Audio[1:0], // Registered just after falling edge of Audio_Clk
@@ -223,10 +223,10 @@ always @(posedge Clk) begin
 //------------------------------------------------------------------------------
 
  if(tReset) begin
-  Active    <= 0;       // Idle (i.e. no sound)
-  Mute      <= 0;       // False
-  Volume[0] <= 16'd868; // "20" on the Windows 10 volume slider
-  Volume[1] <= 16'd868;
+  Active    <= 0; // Idle (i.e. no sound)
+  Mute      <= 0; // False
+  Volume[0] <= 8'hBD; // 75%
+  Volume[1] <= 8'hBD;
 
   Address <= 0;
   Stall   <= 0;
@@ -470,8 +470,8 @@ always @(posedge Clk) begin
      if(OUT_EoP) begin
       case({Request, ChannelSelect, ControlSelect, Interface, UnitID})
        {SET_CUR, 8'h_00, MUTE_CONTROL  , 16'h_00_02}: Mute      <= Temp[8];
-       {SET_CUR, 8'h_01, VOLUME_CONTROL, 16'h_00_02}: Volume[0] <= Temp;
-       {SET_CUR, 8'h_02, VOLUME_CONTROL, 16'h_00_02}: Volume[1] <= Temp;
+       {SET_CUR, 8'h_01, VOLUME_CONTROL, 16'h_00_02}: Volume[0] <= Temp[7:0];
+       {SET_CUR, 8'h_02, VOLUME_CONTROL, 16'h_00_02}: Volume[1] <= Temp[7:0];
 
        default: begin
         Stall <= 1'b1;
@@ -499,14 +499,14 @@ always @(posedge Clk) begin
      end
 
      {GET_CUR, 8'h_01, VOLUME_CONTROL, 16'h_00_02}: begin
-      {Temp, IN_Data} <= Volume[0];
+      {Temp, IN_Data} <= {8'd0, Volume[0]};
       DataSize <= 16'd2;
       IN_Ready <= 1'b1;
       State    <= SendControl;
      end
 
      {GET_CUR, 8'h_02, VOLUME_CONTROL, 16'h_00_02}: begin
-      {Temp, IN_Data} <= Volume[1];
+      {Temp, IN_Data} <= {8'd0, Volume[1]};
       DataSize <= 16'd2;
       IN_Ready <= 1'b1;
       State    <= SendControl;
@@ -522,7 +522,7 @@ always @(posedge Clk) begin
 
      {GET_MAX, 8'h_01, VOLUME_CONTROL, 16'h_00_02},
      {GET_MAX, 8'h_02, VOLUME_CONTROL, 16'h_00_02}: begin
-      {Temp, IN_Data} <= 16'h7FFF;
+      {Temp, IN_Data} <= 16'h00FF;
       DataSize <= 16'd2;
       IN_Ready <= 1'b1;
       State    <= SendControl;

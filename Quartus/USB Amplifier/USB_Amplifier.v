@@ -56,6 +56,18 @@ assign USB_D_P_Pull = 1'b1;
 assign USB_D_N_Pull = 1'bZ;
 //------------------------------------------------------------------------------
 
+wire [4:1]SW_Debounced;
+wire [4:1]SW_Repeated;
+
+genvar g;
+generate
+ for(g = 1; g <= 4; g++) begin: Gen_Buttons
+  Debounce Debounce_Inst(Clk, ~SW          [g], SW_Debounced[g]); 
+  Repeater Repeater_Inst(Clk,  SW_Debounced[g], SW_Repeated [g]);
+ end
+endgenerate
+//------------------------------------------------------------------------------
+
 wire USB_Clk;
 wire nReset;
 wire  Reset;
@@ -72,8 +84,8 @@ wire [10:0]FrameNumber;
 
 wire       Active;
 wire       Mute;
-wire [15:0]Volume[1:0];
-wire [15:0]Audio [1:0]; // Registered just after falling edge of Audio_Clk
+wire [ 7:0]Volume_USB[1:0];
+wire [15:0]Audio     [1:0]; // Registered just after falling edge of Audio_Clk
 
 USB_Audio USB_Audio_inst(
  .Clk  (USB_Clk),
@@ -83,7 +95,7 @@ USB_Audio USB_Audio_inst(
 
  .Active(Active),
  .Mute  (Mute),
- .Volume(Volume),
+ .Volume(Volume_USB),
 
  .Audio_Clk(Clk_48k),
  .Audio    (Audio),
@@ -93,10 +105,7 @@ USB_Audio USB_Audio_inst(
 );
 //------------------------------------------------------------------------------
 
-assign LED = Mute ? 8'hFF : ~{
- Volume[0][14], Volume[0][12], Volume[0][10], Volume[0][ 8],
- Volume[0][ 6], Volume[0][ 4], Volume[0][ 2], Volume[0][ 0]
-};
+assign LED = SW_Debounced[1] ? ~Volume_USB[0] : ~Volume_Buttons;
 //------------------------------------------------------------------------------
 
 wire Clk_384k, Clk_48k, Clk_500;
@@ -110,71 +119,89 @@ ClockRecovery ClockRecovery_inst(
 assign TP = {FrameNumber[0], PWM, Clk_384k, Clk_48k, Clk_500};
 //------------------------------------------------------------------------------
 
+reg [1:0]Volume_Up;
+reg [1:0]Volume_Down;
+reg [7:0]Volume_Buttons;
+
+always @(posedge Clk) begin
+ Volume_Up   <= {Volume_Up  [0], SW_Repeated[4]};
+ Volume_Down <= {Volume_Down[0], SW_Repeated[3]};
+ 
+ if(tReset) begin
+  Volume_Buttons <= 8'hBD;
+
+ end else if(Volume_Up == 2'b01) begin
+  if(~&Volume_Buttons) Volume_Buttons <= Volume_Buttons + 1'b1;
+
+ end else if(Volume_Down == 2'b01) begin
+  if(|Volume_Buttons) Volume_Buttons <= Volume_Buttons - 1'b1;
+ end
+end
+//------------------------------------------------------------------------------
+
+reg [15:0]Volume_Log[1:0];
+
+generate
+ for(g = 0; g < 2; g++) begin: Gen_Volume
+  Volume Volume_Inst(
+   .clock  (Clk),
+   .address({1'b0, Volume_Buttons} + {1'b0, Volume_USB[g]} + 1'b1),
+   .q      (Volume_Log[g])
+  );
+ end
+endgenerate
+//------------------------------------------------------------------------------
+
 reg [ 1:0]pClk_384k;
 reg [ 1:0]pClk_48k;
 
 reg [ 1:0]Audio_Sign;
 reg [15:0]Audio_Abs       [1:0];
-reg [30:0]Audio_Scaled_Abs[1:0];
-reg [30:0]Audio_Scaled    [1:0];
+reg [31:0]Audio_Scaled_Abs[1:0];
+reg [31:0]Audio_Scaled    [1:0];
+
+integer j;
 
 always @(posedge Clk) begin
  pClk_384k <= {pClk_384k[0], Clk_384k};
 
- if(pClk_384k == 2'b10) begin
-  pClk_48k <= {pClk_48k[0], Clk_48k};
+ for(j = 0; j < 2; j++) begin
+  if(pClk_384k == 2'b10) begin
+   pClk_48k <= {pClk_48k[0], Clk_48k};
 
-  if(pClk_48k == 2'b01) begin
-   Audio_Sign[0] <= Audio[0][15];
-   Audio_Abs [0] <= Audio[0][15] ? -Audio[0] : Audio[0];
+   if(pClk_48k == 2'b01) begin
+    Audio_Sign[j] <= Audio[j][15];
+    Audio_Abs [j] <= Audio[j][15] ? -Audio[j] : Audio[j];
+   end
 
-   Audio_Sign[1] <= Audio[1][15];
-   Audio_Abs [1] <= Audio[1][15] ? -Audio[1] : Audio[1];
+   Audio_Scaled[j] <= Audio_Sign[j] ? -Audio_Scaled_Abs[j] : Audio_Scaled_Abs[j];
   end
 
-  Audio_Scaled[0] <= Audio_Sign[0] ? -Audio_Scaled_Abs[0] : Audio_Scaled_Abs[0];
-  Audio_Scaled[1] <= Audio_Sign[1] ? -Audio_Scaled_Abs[1] : Audio_Scaled_Abs[1];
- end
-
- if(Mute) begin
-  Audio_Scaled_Abs[0] <= 0;
-  Audio_Scaled_Abs[1] <= 0;
- end else begin
-  Audio_Scaled_Abs[0] <= Audio_Abs[0] * Volume[0];
-  Audio_Scaled_Abs[1] <= Audio_Abs[1] * Volume[1];
+  if(Mute) Audio_Scaled_Abs[j] <= 0;
+  else     Audio_Scaled_Abs[j] <= Audio_Abs[j] * Volume_Log[j];
  end
 end
 //------------------------------------------------------------------------------
 
 wire [6:0]Audio_D[1:0];
 
-NoiseShaper #(
- .InputN (31),
- .OutputN( 7),
- .N      ( 4)
+generate
+ for(g = 0; g < 2; g++) begin: Gen_PWM
+  NoiseShaper #(
+   .InputN (32),
+   .OutputN( 7),
+   .N      ( 4)
 
-)NoiseShaper_0(
- .Clk    (Clk),
- .Reset  (Reset),
- .Clk_Ena(pClk_384k == 2'b01),
+  )NoiseShaper_0(
+   .Clk    (Clk),
+   .Reset  (Reset),
+   .Clk_Ena(pClk_384k == 2'b01),
 
- .Input (Audio_Scaled[0] + 31'h4100_0000),
- .Output(Audio_D     [0])
-);
-
-NoiseShaper #(
- .InputN (31),
- .OutputN( 7),
- .N      ( 4)
-
-)NoiseShaper_1(
- .Clk    (Clk),
- .Reset  (Reset),
- .Clk_Ena(pClk_384k == 2'b01),
-
- .Input (Audio_Scaled[1] + 31'h4100_0000),
- .Output(Audio_D     [1])
-);
+   .Input ({~Audio_Scaled[g][31], Audio_Scaled[g][30:0]}),
+   .Output(  Audio_D     [g])
+  );
+ end
+endgenerate
 //------------------------------------------------------------------------------
 
 assign nS_PDIF    = 1'bZ;
