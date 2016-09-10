@@ -61,7 +61,7 @@ module USB_Transceiver(
  input           IN_ZeroLength, // Make high to means zero-length packet
  output reg      IN_WaitRequest,
  output reg      IN_Ack, // Pulsed for one cycle when packet sent successfully
- input  reg      IN_Isochronous, // Disables hand-shaking
+ input           IN_Isochronous, // Disables hand-shaking
  input           IN_Stall, // Always return a "Stall" hand-shake
 
  // The physical bus
