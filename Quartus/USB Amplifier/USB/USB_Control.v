@@ -44,7 +44,7 @@ module USB_Control(
  output          IN_ZeroLength,
  input           IN_WaitRequest,
  input           IN_Ack,
- output reg      IN_Isochronous,
+ output          IN_Isochronous,
 
  output reg      Active,
  output reg      Mute,
@@ -57,6 +57,8 @@ module USB_Control(
 
 assign OUT_WaitRequest = 1'b0;
 assign OUT_Isochronous = 1'b0;
+
+assign IN_Isochronous  = 1'b0;
 //------------------------------------------------------------------------------
 
 reg  [9:0]Descriptor_Address;
@@ -133,7 +135,6 @@ always @(posedge Clk) begin
 
   IN_Sequence    <= 0;
   IN_Ready       <= 0;
-  IN_Isochronous <= 0;
 
   State <= Idle;
 

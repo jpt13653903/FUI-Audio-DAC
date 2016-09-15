@@ -101,18 +101,18 @@ localparam VOLUME_CONTROL = 8'h02;
 localparam DEVICE_POINTER        = 10'h000;
 
 localparam CONFIGURATION_POINTER = 10'h012;
-localparam CONFIGURATION_LENGTH  = 16'd113;
+localparam CONFIGURATION_LENGTH  = 16'd189;
 
-localparam STRING__0_POINTER = 10'h083; // Languages: English (UK)
+localparam STRING__0_POINTER = 10'h100; // Languages: English (UK)
 localparam STRING__0_LENGTH  = 16'd_4;
 
-localparam STRING__1_POINTER = 10'h087; // Manufacturer = "J Taylor"
+localparam STRING__1_POINTER = 10'h140; // Manufacturer = "J Taylor"
 localparam STRING__1_LENGTH  = 16'd18;
 
-localparam STRING__2_POINTER = 10'h0A0; // Product = Interface 0 = "JPT Amplifier"
+localparam STRING__2_POINTER = 10'h180; // Product = Interface 0 = HID Interface = "JPT Amplifier"
 localparam STRING__2_LENGTH  = 16'd28;
 
-localparam STRING__3_POINTER = 10'h0C0; // Terminal ID3 = "Amplifier and Speakers"
+localparam STRING__3_POINTER = 10'h1C0; // Terminal ID3 = "Amplifier and Speakers"
 localparam STRING__3_LENGTH  = 16'd46;
 //------------------------------------------------------------------------------
 

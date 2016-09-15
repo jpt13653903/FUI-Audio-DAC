@@ -100,6 +100,15 @@ USB_Audio USB_Audio_inst(
  .Audio_Clk(Clk_48k),
  .Audio    (Audio),
 
+ .HID_Status({
+  1'b0,            // Stop
+  SW_Debounced[1], // Previous
+  SW_Debounced[2], // Next
+  1'b0,            // Play / Pause
+  SW_Debounced[3], // Volume Down
+  SW_Debounced[4]  // Volume Up
+ }),
+
  .DP(USB_D_P),
  .DM(USB_D_N)
 );
@@ -124,11 +133,11 @@ reg [1:0]Volume_Down;
 reg [7:0]Volume_Buttons;
 
 always @(posedge Clk) begin
- Volume_Up   <= {Volume_Up  [0], SW_Repeated[4]};
- Volume_Down <= {Volume_Down[0], SW_Repeated[3]};
+ Volume_Up   <= 0; //{Volume_Up  [0], SW_Repeated[4]};
+ Volume_Down <= 0; //{Volume_Down[0], SW_Repeated[3]};
  
  if(tReset) begin
-  Volume_Buttons <= 8'hBD;
+  Volume_Buttons <= 8'hFF; //8'hBD;
 
  end else if(Volume_Up == 2'b01) begin
   if(~&Volume_Buttons) Volume_Buttons <= Volume_Buttons + 1'b1;

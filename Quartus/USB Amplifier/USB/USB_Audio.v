@@ -34,6 +34,8 @@ module USB_Audio(
  input            Audio_Clk,  // 48 kHz
  output reg [15:0]Audio[1:0], // Registered just after falling edge of Audio_Clk
 
+ input [5:0]HID_Status, // Stop | Prev | Next | Play/Pause | Vol Down | Vol Up
+
  inout DP, DM
 );
 //------------------------------------------------------------------------------
@@ -170,6 +172,31 @@ USB_Stream USB_Stream_inst(
 );
 //------------------------------------------------------------------------------
 
+wire      HID_IN_Sequence;
+wire [7:0]HID_IN_Data;
+wire      HID_IN_Ready;
+wire      HID_IN_ZeroLength;
+reg       HID_IN_WaitRequest;
+reg       HID_IN_Ack;
+wire      HID_IN_Isochronous;
+
+USB_HID USB_HID_inst(
+ .Clk           (Clk),
+ .Reset         (Reset | ResetRequest),
+ .Error         (Error),
+
+ .IN_Sequence   (HID_IN_Sequence),
+ .IN_Data       (HID_IN_Data),
+ .IN_Ready      (HID_IN_Ready),
+ .IN_ZeroLength (HID_IN_ZeroLength),
+ .IN_WaitRequest(HID_IN_WaitRequest),
+ .IN_Ack        (HID_IN_Ack),
+ .IN_Isochronous(HID_IN_Isochronous),
+
+ .Status        (HID_Status)
+);
+//------------------------------------------------------------------------------
+
 always @(*) begin
  case(Endpoint)
   4'd0: begin
@@ -194,6 +221,9 @@ always @(*) begin
    Stream_OUT_EoP   = 0;
    Stream_OUT_Data  = 0;
    Stream_OUT_Valid = 0;
+
+   HID_IN_WaitRequest = 1'b1;
+   HID_IN_Ack         = 0;
   end
 
   4'd1: begin
@@ -212,12 +242,42 @@ always @(*) begin
    Control_OUT_Data       = 0;
    Control_OUT_Sequence   = 0;
    Control_OUT_Valid      = 0;
-   Control_IN_WaitRequest = 0;
+   Control_IN_WaitRequest = 1'b1;
    Control_IN_Ack         = 0;
 
    Stream_OUT_EoP   = OUT_EoP;
    Stream_OUT_Data  = OUT_Data;
    Stream_OUT_Valid = OUT_Valid;
+
+   HID_IN_WaitRequest = 1'b1;
+   HID_IN_Ack         = 0;
+  end
+
+  4'd2: begin
+   Stall           = 0;
+   OUT_WaitRequest = 1'b1;
+   OUT_Isochronous = 0;
+   IN_Sequence     = HID_IN_Sequence;
+   IN_Data         = HID_IN_Data;
+   IN_Ready        = HID_IN_Ready;
+   IN_ZeroLength   = HID_IN_ZeroLength;
+   IN_Isochronous  = HID_IN_Isochronous;
+
+   Control_OUT_Setup      = 0;
+   Control_OUT_SoP        = 0;
+   Control_OUT_EoP        = 0;
+   Control_OUT_Data       = 0;
+   Control_OUT_Sequence   = 0;
+   Control_OUT_Valid      = 0;
+   Control_IN_WaitRequest = 1'b1;
+   Control_IN_Ack         = 0;
+
+   Stream_OUT_EoP   = 0;
+   Stream_OUT_Data  = 0;
+   Stream_OUT_Valid = 0;
+
+   HID_IN_WaitRequest = IN_WaitRequest;
+   HID_IN_Ack         = IN_Ack;
   end
 
   default: begin
@@ -236,12 +296,15 @@ always @(*) begin
    Control_OUT_Data       = 0;
    Control_OUT_Sequence   = 0;
    Control_OUT_Valid      = 0;
-   Control_IN_WaitRequest = 0;
+   Control_IN_WaitRequest = 1'b1;
    Control_IN_Ack         = 0;
 
    Stream_OUT_EoP   = 0;
    Stream_OUT_Data  = 0;
    Stream_OUT_Valid = 0;
+
+   HID_IN_WaitRequest = 1'b1;
+   HID_IN_Ack         = 0;
   end
  endcase
 end
