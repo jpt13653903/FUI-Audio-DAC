@@ -101,7 +101,10 @@ localparam VOLUME_CONTROL = 8'h02;
 localparam DEVICE_POINTER        = 10'h000;
 
 localparam CONFIGURATION_POINTER = 10'h012;
-localparam CONFIGURATION_LENGTH  = 16'd189;
+localparam CONFIGURATION_LENGTH  = 16'd138;
+
+localparam HID_REPORT_DESCRIPTOR_POINTER = 10'h09C;
+localparam HID_REPORT_DESCRIPTOR_LENGTH  = 16'd51;
 
 localparam STRING__0_POINTER = 10'h100; // Languages: English (UK)
 localparam STRING__0_LENGTH  = 16'd_4;
