@@ -57,13 +57,13 @@ assign USB_D_N_Pull = 1'bZ;
 //------------------------------------------------------------------------------
 
 wire [4:1]SW_Debounced;
-wire [4:1]SW_Repeated;
+//wire [4:1]SW_Repeated;
 
 genvar g;
 generate
  for(g = 1; g <= 4; g++) begin: Gen_Buttons
   Debounce Debounce_Inst(Clk, ~SW          [g], SW_Debounced[g]); 
-  Repeater Repeater_Inst(Clk,  SW_Debounced[g], SW_Repeated [g]);
+//  Repeater Repeater_Inst(Clk,  SW_Debounced[g], SW_Repeated [g]);
  end
 endgenerate
 //------------------------------------------------------------------------------
@@ -101,12 +101,12 @@ USB_Audio USB_Audio_inst(
  .Audio    (Audio),
 
  .HID_Status({
-  1'b0,            // Stop
-  SW_Debounced[1], // Previous
-  SW_Debounced[2], // Next
-  1'b0,            // Play / Pause
-  SW_Debounced[3], // Volume Down
-  SW_Debounced[4]  // Volume Up
+   SW_Debounced[1] & SW_Debounced[3], // Stop
+   SW_Debounced[1] & SW_Debounced[2], // Previous
+  ~SW_Debounced[1] & SW_Debounced[2], // Next
+   SW_Debounced[1] & SW_Debounced[4], // Play / Pause
+  ~SW_Debounced[1] & SW_Debounced[3], // Volume Down
+  ~SW_Debounced[1] & SW_Debounced[4]  // Volume Up
  }),
 
  .DP(USB_D_P),
@@ -114,7 +114,7 @@ USB_Audio USB_Audio_inst(
 );
 //------------------------------------------------------------------------------
 
-assign LED = SW_Debounced[1] ? ~Volume_USB[0] : ~Volume_Buttons;
+assign LED = SW_Debounced[1] ? ~Volume_USB[1] : ~Volume_USB[0];
 //------------------------------------------------------------------------------
 
 wire Clk_384k, Clk_48k, Clk_500;
@@ -128,33 +128,13 @@ ClockRecovery ClockRecovery_inst(
 assign TP = {FrameNumber[0], PWM, Clk_384k, Clk_48k, Clk_500};
 //------------------------------------------------------------------------------
 
-reg [1:0]Volume_Up;
-reg [1:0]Volume_Down;
-reg [7:0]Volume_Buttons;
-
-always @(posedge Clk) begin
- Volume_Up   <= 0; //{Volume_Up  [0], SW_Repeated[4]};
- Volume_Down <= 0; //{Volume_Down[0], SW_Repeated[3]};
- 
- if(tReset) begin
-  Volume_Buttons <= 8'hFF; //8'hBD;
-
- end else if(Volume_Up == 2'b01) begin
-  if(~&Volume_Buttons) Volume_Buttons <= Volume_Buttons + 1'b1;
-
- end else if(Volume_Down == 2'b01) begin
-  if(|Volume_Buttons) Volume_Buttons <= Volume_Buttons - 1'b1;
- end
-end
-//------------------------------------------------------------------------------
-
 reg [15:0]Volume_Log[1:0];
 
 generate
  for(g = 0; g < 2; g++) begin: Gen_Volume
   Volume Volume_Inst(
    .clock  (Clk),
-   .address({1'b0, Volume_Buttons} + {1'b0, Volume_USB[g]} + 1'b1),
+   .address(Volume_USB[g]),
    .q      (Volume_Log[g])
   );
  end

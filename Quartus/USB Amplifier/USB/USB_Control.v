@@ -133,8 +133,8 @@ always @(posedge Clk) begin
   Address <= 0;
   Stall   <= 0;
 
-  IN_Sequence    <= 0;
-  IN_Ready       <= 0;
+  IN_Sequence <= 0;
+  IN_Ready    <= 0;
 
   State <= Idle;
 
@@ -226,12 +226,15 @@ always @(posedge Clk) begin
       {2'b00, SET_INTERFACE}:     State <= SetInterface;
 //      {2'b00, SYNCH_FRAME}:       State <= SynchFrame;
 
-      // Audio Class Specific
-      {2'b01, SET_CUR}: State <= SetControl;
-      {2'b01, GET_CUR},
-      {2'b01, GET_MIN},
-      {2'b01, GET_MAX},
-      {2'b01, GET_RES}: State <= GetControl;
+      // Class Specific
+      {2'b01, SET_CUR   }: State <= SetControl; // Set Current    (Audio)
+      {2'b01, GET_CUR   },                      // Get Current    (Audio)
+      {2'b01, GET_MIN   },                      // Get Minimum    (Audio)
+      {2'b01, GET_MAX   },                      // Get Maximum    (Audio)
+      {2'b01, GET_RES   },                      // Get Resolution (Audio)
+      {2'b01, GET_REPORT}: State <= GetControl; // Get Report     (HID)
+
+      // HID Class Specific
 
       default: begin
        Stall <= 1'b1;
@@ -300,6 +303,19 @@ always @(posedge Clk) begin
          State <= Idle;
         end
        endcase
+      end
+
+      CS_CONFIGURATION: begin
+        if(Interface == 8'd2) begin
+         Descriptor_Address <= HID_REPORT_DESCRIPTOR_POINTER;
+         State              <= SendData;
+         if(Length < HID_REPORT_DESCRIPTOR_LENGTH) DataSize <= Length;
+         else                DataSize <= HID_REPORT_DESCRIPTOR_LENGTH;
+
+        end else begin
+         Stall <= 1'b1;
+         State <= Idle;
+        end
       end
 
       default: begin
@@ -391,7 +407,8 @@ always @(posedge Clk) begin
    GetControl: begin
     ByteCount <= 0;
 
-    case({Request, ChannelSelect, ControlSelect, Interface, UnitID})
+    // HID: Request  Report_ID      Report_Type    Interface, Null
+    case(  {Request, ChannelSelect, ControlSelect, Interface, UnitID})
      {GET_CUR, 8'h_00, MUTE_CONTROL, 16'h_00_02}: begin
       IN_Data  <= {7'd0, Mute};
       DataSize <= 16'd1;
@@ -400,14 +417,14 @@ always @(posedge Clk) begin
      end
 
      {GET_CUR, 8'h_01, VOLUME_CONTROL, 16'h_00_02}: begin
-      {Temp, IN_Data} <= {8'd0, Volume[0]};
+      {Temp, IN_Data} <= {16'd0, Volume[0]};
       DataSize <= 16'd2;
       IN_Ready <= 1'b1;
       State    <= SendControl;
      end
 
      {GET_CUR, 8'h_02, VOLUME_CONTROL, 16'h_00_02}: begin
-      {Temp, IN_Data} <= {8'd0, Volume[1]};
+      {Temp, IN_Data} <= {16'd0, Volume[1]};
       DataSize <= 16'd2;
       IN_Ready <= 1'b1;
       State    <= SendControl;
@@ -415,7 +432,7 @@ always @(posedge Clk) begin
 
      {GET_MIN, 8'h_01, VOLUME_CONTROL, 16'h_00_02},
      {GET_MIN, 8'h_02, VOLUME_CONTROL, 16'h_00_02}: begin
-      {Temp, IN_Data} <= 16'h0000;
+      {Temp, IN_Data} <= 24'h0000;
       DataSize <= 16'd2;
       IN_Ready <= 1'b1;
       State    <= SendControl;
@@ -423,7 +440,7 @@ always @(posedge Clk) begin
 
      {GET_MAX, 8'h_01, VOLUME_CONTROL, 16'h_00_02},
      {GET_MAX, 8'h_02, VOLUME_CONTROL, 16'h_00_02}: begin
-      {Temp, IN_Data} <= 16'h00FF;
+      {Temp, IN_Data} <= 24'h00FF;
       DataSize <= 16'd2;
       IN_Ready <= 1'b1;
       State    <= SendControl;
@@ -431,8 +448,15 @@ always @(posedge Clk) begin
 
      {GET_RES, 8'h_01, VOLUME_CONTROL, 16'h_00_02},
      {GET_RES, 8'h_02, VOLUME_CONTROL, 16'h_00_02}: begin
-      {Temp, IN_Data} <= 16'h0001;
+      {Temp, IN_Data} <= 24'h0001;
       DataSize <= 16'd2;
+      IN_Ready <= 1'b1;
+      State    <= SendControl;
+     end
+
+     {GET_REPORT, 8'h01, INPUT_REPORT, 16'h_02_00}: begin
+      {Temp, IN_Data} <= 24'h_00_00_01; // ID 1, nothing pressed
+      DataSize <= 16'd3;
       IN_Ready <= 1'b1;
       State    <= SendControl;
      end

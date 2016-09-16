@@ -39,6 +39,7 @@ assign IN_ZeroLength  = 1'b0;
 assign IN_Isochronous = 1'b0;
 //------------------------------------------------------------------------------
 
+reg [ 5:0]tStatus;
 reg [15:0]Temp;
 reg [ 1:0]ByteCount;
 //------------------------------------------------------------------------------
@@ -56,6 +57,7 @@ always @(posedge Clk) begin
   IN_Ready    <= 0;
   IN_Sequence <= 0;
   State       <= Idle;
+  tStatus     <= 0;
 //------------------------------------------------------------------------------
 
  end else begin
@@ -63,15 +65,18 @@ always @(posedge Clk) begin
    Idle: begin
     ByteCount <= 0;
 
-    {Temp, IN_Data} <= {10'd0, Status, 8'h01};
-    IN_Ready <= 1'b1;
-    State    <= SendControl;
+    if(tStatus != Status) begin
+     {Temp, IN_Data} <= {10'd0, Status, 8'h01};
+     IN_Ready <= 1'b1;
+     State    <= SendControl;
+     tStatus  <= Status;
+    end
    end
 //------------------------------------------------------------------------------
 
    SendControl: begin
     if(IN_Ready) begin
-     if(~IN_WaitRequest) begin
+     if(~Error && ~IN_WaitRequest) begin
       if(ByteCount == 2'd2) IN_Ready <= 1'b0;
 
       ByteCount       <= ByteCount + 1'b1;
@@ -80,7 +85,8 @@ always @(posedge Clk) begin
 
     end else begin // Waiting for Ack
      if(Error) begin
-      State <= Idle;
+      {Temp, IN_Data} <= {10'd0, tStatus, 8'h01};
+      IN_Ready <= 1'b1;
 
      end else if(IN_Ack) begin
       IN_Sequence <= ~IN_Sequence;

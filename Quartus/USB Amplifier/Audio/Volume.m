@@ -23,11 +23,12 @@ format long eng;
 
 %% 
 
-x = 0:511;
-y = linspace(-120, 0, length(x));
+x = 0:255;
+y = linspace(-80, 0, length(x));
 
 figure; plot(x, y); grid on;
-y = 10.^(y./20);
+y    = 10.^(y./20);
+y(1) = 0;
 figure; plot(x, y); grid on;
 
 y = [x; round(y.*(2^16-1))];
@@ -36,11 +37,11 @@ File = fopen('Volume.mif', 'w');
  fprintf(File, '-- Auto-generated from Volume.m\n');
  fprintf(File, '\n');
  fprintf(File, 'WIDTH=16;\n');
- fprintf(File, 'DEPTH=512;\n');
+ fprintf(File, 'DEPTH=256;\n');
  fprintf(File, 'ADDRESS_RADIX=HEX;\n');
  fprintf(File, 'DATA_RADIX=HEX;\n');
  fprintf(File, '\n');
  fprintf(File, 'CONTENT BEGIN\n');
- fprintf(File, ' %03X : %04X;\n', y);
+ fprintf(File, ' %02X : %04X;\n', y);
  fprintf(File, 'END;\n');
 fclose(File);

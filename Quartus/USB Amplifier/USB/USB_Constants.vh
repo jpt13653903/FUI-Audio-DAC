@@ -75,6 +75,12 @@ localparam GET_CUR = 8'h81;
 localparam GET_MIN = 8'h82;
 localparam GET_MAX = 8'h83;
 localparam GET_RES = 8'h84;
+
+// HID Class Request Codes
+localparam GET_REPORT     = 8'h01;
+localparam INPUT_REPORT   = 8'h01;
+localparam OUTPUT_REPORT  = 8'h02;
+localparam FEATURE_REPORT = 8'h03;
 //------------------------------------------------------------------------------
 
 // Descriptor Types
