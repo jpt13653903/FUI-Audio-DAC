@@ -1,4 +1,5 @@
 *.swp
+*.autosave
 
 **/db/*
 **/incremental_db/*
