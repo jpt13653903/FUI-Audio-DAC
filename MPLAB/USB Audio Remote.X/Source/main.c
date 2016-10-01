@@ -171,7 +171,8 @@ void main(){
  OPTION_REGbits.PSA    = 0; // Prescaler assigned to Timer 0
  OPTION_REGbits.PS     = 0; // Timer 0 rate = 1:2 => 500 μs clock
 
- CMCONbits.CM = 7; // Switch off comparators
+ CMCONbits .CM   = 7; // Switch off the comparators
+ ADCON0bits.ADON = 0; // Switch off the ADC
 
  ANSEL = 0; // Disable analogue functionality
  WPUA  = 0; // Disable weak pull-up on port A

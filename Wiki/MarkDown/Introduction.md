@@ -2,7 +2,9 @@
 
 [TOC]
 
-# 1. Overview
+# Introduction
+
+## 1. Overview
 
 The FUI Audio DAC is an open-hardware and -firmware project that implements a USB-input fully-digital class-D audio amplifier.  A Microchip PIC-based remote control is also included.
 
@@ -14,17 +16,17 @@ The block diagram below provides a system overview.  The FPGA used for this proj
 
 <center markdown>![System Block Diagram](https://sourceforge.net/p/fui-audio-dac/source/ci/master/tree/InkScape/Block%20Diagrams/USB_Amp_Block.svg?format=raw)</center>
 
-# 2. Firmware
+## 2. Firmware
 
 All processing is done on FPGA, including the USB-physical, USB-SIE, HID interface, clock-recovery, bus voltage regulation, noise-shaping and PWM output.  An overview of the firmware is provided in the block diagram below.
 
 <center markdown>![Firmware Block Diagram](https://sourceforge.net/p/fui-audio-dac/source/ci/master/tree/InkScape/Block%20Diagrams/USB_Amp_FPGA_Block.svg?format=raw)</center>
 
-# 3. USB Vendor ID and Product ID
+## 3. USB Vendor ID and Product ID
 
 At present, the project uses the Test ID provided by [PID Codes](http://pid.codes/1209/0001).  It is not unique and may therefore not be used outside test environments.
 
-# 4. Development Software
+## 4. Development Software
 
 The project is developed using:
 
