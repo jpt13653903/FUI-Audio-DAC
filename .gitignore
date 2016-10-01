@@ -5,5 +5,7 @@
 **/incremental_db/*
 **/output_files/*
 
+InkScape/**/*.png
+
 Oscilloscope/*
 

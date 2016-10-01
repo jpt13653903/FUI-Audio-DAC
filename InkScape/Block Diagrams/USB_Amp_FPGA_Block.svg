@@ -9,13 +9,16 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 744.09448819 1052.3622047"
+   width="148.25mm"
+   height="72.250008mm"
+   viewBox="0 0 525.29528 256.00396"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="USB_Amp_FPGA_Block.svg">
+   sodipodi:docname="USB_Amp_FPGA_Block.svg"
+   inkscape:export-filename="C:\JPT\Projects\16\1610 - USB Sound\InkScape\Block Diagrams\USB_Amp_FPGA_Block.png"
+   inkscape:export-xdpi="150"
+   inkscape:export-ydpi="150">
   <defs
      id="defs4">
     <pattern
@@ -34,15 +37,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="378.59421"
-     inkscape:cy="916.03083"
+     inkscape:cx="275.18173"
+     inkscape:cy="122.77296"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     inkscape:window-x="3512"
-     inkscape:window-y="-6"
+     inkscape:window-x="1592"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:snap-text-baseline="true"
      inkscape:object-nodes="true"
@@ -50,14 +53,20 @@
      inkscape:snap-smooth-nodes="true"
      inkscape:snap-grids="true"
      inkscape:object-paths="false"
-     inkscape:snap-center="false">
+     inkscape:snap-center="false"
+     fit-margin-top="8"
+     fit-margin-left="8"
+     fit-margin-bottom="8"
+     fit-margin-right="8">
     <inkscape:grid
        type="xygrid"
        id="grid4136"
        units="mm"
        spacingx="3.5433071"
        spacingy="3.5433072"
-       empspacing="8" />
+       empspacing="8"
+       originx="-27.903573"
+       originy="-793.25785" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -67,14 +76,15 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-27.903573,-3.1003604)">
     <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.88582677;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4138-6-0-6-5"
@@ -155,7 +165,7 @@
          x="240.94493"
          sodipodi:role="line"
          id="tspan4429-7">Endpoint 1</tspan><tspan
-         y="140.05907"
+         y="140.05905"
          x="240.94493"
          sodipodi:role="line"
          id="tspan4433-4">(Audio)</tspan></text>
@@ -498,7 +508,7 @@
          id="tspan4812"
          sodipodi:role="line"
          x="425.1969"
-         y="140.05907">Unit</tspan></text>
+         y="140.05905">Unit</tspan></text>
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.63779527;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 368.50396,131.10235 28.34646,0"
@@ -528,7 +538,7 @@
          sodipodi:role="line"
          id="tspan4822">MOSFET</tspan><tspan
          id="tspan4824"
-         y="140.05907"
+         y="140.05905"
          x="496.06305"
          sodipodi:role="line">Drivers</tspan></text>
     <path
@@ -583,7 +593,7 @@
          id="tspan4874"
          sodipodi:role="line"
          x="340.1575"
-         y="97.53936">Control</tspan></text>
+         y="97.539368">Control</tspan></text>
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.63779527;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 269.29134,88.582667 42.51968,0"
