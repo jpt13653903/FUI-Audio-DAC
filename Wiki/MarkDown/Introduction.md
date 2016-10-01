@@ -2,7 +2,7 @@
 
 [TOC]
 
-# Introduction
+# Overview
 
 The FUI Audio DAC is an open-hardware and -firmware project that implements a USB-input fully-digital class-D audio amplifier.  A Microchip PIC-based remote control is also included.
 
@@ -10,7 +10,7 @@ In overview, the generic Windows USB~audio driver is used to stream 48~kSps~ster
 
 Volume control is implemented as a combination of bus voltage control and audio stream gain control.
 
-The block diagram below provides a system overview.
+The block diagram below provides a system overview.  The FPGA used for this project is an [Altera Max 10](https://www.altera.com/products/fpga/max-series/max-10/overview.html), which is on a [BeMicro Max 10](https://www.arrow.com/en/products/bemicromax10/arrow-development-tools) development kit.  The microprocessor used for the remote control is a [Microchip PIC16F676](http://www.microchip.com/wwwproducts/en/PIC16F676).
 
 <center markdown>![System Block Diagram](https://sourceforge.net/p/fui-audio-dac/source/ci/master/tree/InkScape/Block%20Diagrams/USB_Amp_Block.svg?format=raw)</center>
 
@@ -20,11 +20,9 @@ All processing is done on FPGA, including the USB-physical, USB-SIE, HID interfa
 
 <center markdown>![Firmware Block Diagram](https://sourceforge.net/p/fui-audio-dac/source/ci/master/tree/InkScape/Block%20Diagrams/USB_Amp_FPGA_Block.svg?format=raw)</center>
 
-The FPGA used for this project is a [BeMicro Max 10](https://www.arrow.com/en/products/bemicromax10/arrow-development-tools).
-
 # USB Vendor ID and Product ID
 
-At present, the project uses the Test ID (1209 | 0001) provided by [PID Codes](http://pid.codes/1209/0001).  It is not unique and may therefore not be used outside test environments.
+At present, the project uses the Test ID provided by [PID Codes](http://pid.codes/1209/0001).  It is not unique and may therefore not be used outside test environments.
 
 [[include repo=source path=Wiki/MarkDown/Footer.md]]
 
