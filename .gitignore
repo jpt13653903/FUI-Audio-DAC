@@ -1,6 +1,7 @@
 *.swp
 *.autosave
 *.obj
+*.bak
 
 **/db/*
 **/incremental_db/*

@@ -2,3 +2,5 @@
 
 - Implement the OUT endpoints sequence checks
 
+- The volume knob decoder doesn't catch fast knob-turns... Fix this
+
