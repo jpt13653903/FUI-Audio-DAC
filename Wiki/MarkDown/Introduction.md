@@ -32,6 +32,7 @@ The project is developed using:
 - [FreePCB](http://freepcb.com/) (or you can use [the fork](https://bitbucket.org/mplough/freepcb/wiki/Home))
 - [MPLAB-X](http://www.microchip.com/mplab/mplab-x-ide), which comes with a free version of the [XC&nbsp;compiler](http://www.microchip.com/mplab/compilers)
 - [Quartus Prime Lite](https://www.altera.com/products/design-software/fpga-design/quartus-prime/overview.html)
+- [InkScape](https://inkscape.org/)
 
 [[include repo=source path=Wiki/MarkDown/Footer.md]]
 

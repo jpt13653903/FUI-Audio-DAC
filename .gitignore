@@ -1,5 +1,6 @@
 *.swp
 *.autosave
+*.obj
 
 **/db/*
 **/incremental_db/*
@@ -8,4 +9,9 @@
 InkScape/**/*.png
 
 Oscilloscope/*
+
+MPLAB/**/build/*
+MPLAB/**/dist/*
+MPLAB/**/funclist
+
 
