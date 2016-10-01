@@ -1,9 +1,0 @@
-Specification:
-- Device Requests (page 276)
-  - Setup token followed by 8-byte data packet
-  - Device responds with an ack
-  - This is followed by optional OUT or IN transactions
-
-- The idea is to have any number of endpoints connect to the ports of the
-  "physical".  The physical sees no difference.
-

@@ -1,2 +1,4 @@
 - Remember to remove the local volume control
 
+- Implement the OUT endpoints sequence checks
+

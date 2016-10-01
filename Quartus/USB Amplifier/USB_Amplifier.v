@@ -105,8 +105,8 @@ USB_Audio USB_Audio_inst(
   ( SW_Debounced[1] & SW_Debounced[2]) | RemoteButtons[2], // Previous
   (~SW_Debounced[1] & SW_Debounced[2]) | RemoteButtons[0], // Next
   ( SW_Debounced[1] & SW_Debounced[4]) | RemoteButtons[3], // Play / Pause
-  (~SW_Debounced[1] & SW_Debounced[3]), // Volume Down
-  (~SW_Debounced[1] & SW_Debounced[4])  // Volume Up
+  (~SW_Debounced[1] & SW_Debounced[3]) | RemoteVolumeDown, // Volume Down
+  (~SW_Debounced[1] & SW_Debounced[4]) | RemoteVolumeUp    // Volume Up
  }),
 
  .DP(USB_D_P),
@@ -114,7 +114,7 @@ USB_Audio USB_Audio_inst(
 );
 //------------------------------------------------------------------------------
 
-assign LED = ~(SW_Debounced[1] ? RemoteKnob : {RemoteKnob[7:4], RemoteButtons});
+assign LED = ~(SW_Debounced[1] ? RemoteKnob : {RemoteKnob[5:2], RemoteButtons});
 //------------------------------------------------------------------------------
 
 wire Clk_384k, Clk_48k, Clk_500;
@@ -226,18 +226,30 @@ end
 assign Audio_Out = Active ? PWM : 2'd0;
 //------------------------------------------------------------------------------
 
-wire Remote;
+wire      RemoteStream;
 wire [3:0]RemoteButtons;
 wire [7:0]RemoteKnob;
+wire      RemoteVolumeUp;
+wire      RemoteVolumeDown;
 
-RemoteCleaner RemoteCleaner_inst(Clk, Reset, LV_LCD_RS, Remote);
+RemoteCleaner RemoteCleaner_inst(Clk, Reset, LV_LCD_RS, RemoteStream);
+
 RemoteDecoder RemoteDecoder_inst(
  Clk, Reset,
 
- Remote,
+ RemoteStream,
 
  RemoteButtons,
  RemoteKnob
+);
+
+RemoteVolume RemoteVolume_inst(
+ Clk, Reset,
+
+ RemoteKnob[3:2],
+
+ RemoteVolumeUp,
+ RemoteVolumeDown
 );
 //------------------------------------------------------------------------------
 

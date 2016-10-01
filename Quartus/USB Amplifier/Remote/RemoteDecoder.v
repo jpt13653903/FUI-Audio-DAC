@@ -85,6 +85,7 @@ always @(posedge Clk) begin
    (~|Count        ) && // Previous clock shifted data
    (~|Stream[35:32]) && // Synchronisation blank
    ( &ValidEdges   ) && // Inter-bit edges
+   (~|Decoded[3: 1]) && // Unused bits set to zero (reserved for future use)
    ( ^Decoded      )    // Odd parity
   ) begin
    Buttons <= Decoded[15:12];

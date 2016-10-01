@@ -1,4 +1,0 @@
-The bus voltage is noisy -- use a BIG capacitor
-
-The 48 MHz PLL-generated clock is noisy -- use the 50 MHz instead.
-

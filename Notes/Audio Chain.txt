@@ -1,6 +1,0 @@
-USB -> Volume -> PWM
-
-Volume = (Windows setting) * (digital pot setting)
-
-Maybe take (Windows setting [dB]) + 20*log(digital pot setting) ?
-
