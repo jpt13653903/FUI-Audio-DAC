@@ -226,7 +226,10 @@ end
 assign Audio_Out = Active ? PWM : 2'd0;
 //------------------------------------------------------------------------------
 
-wire Remote = LV_LCD_RS;
+wire Remote;
+
+RemoteCleaner RemoteCleaner__inst(Clk, Reset, LV_LCD_RS, Remote);
+//------------------------------------------------------------------------------
 
 //assign LV_LCD_RS   = 1'b1;
 assign LV_LCD_R_nW = 1'b1;

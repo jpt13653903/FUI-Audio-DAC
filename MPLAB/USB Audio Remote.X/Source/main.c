@@ -156,11 +156,11 @@ interrupt void OnInterrupt(){
 
   OnTimer();
 
-  INTCONbits.T0IE = Active;
-  LED             = Active;
-
   INTCONbits.T0IF = 0;
  }
+
+ INTCONbits.T0IE = Active;
+ LED             = Active;
 }
 //------------------------------------------------------------------------------
 
@@ -169,7 +169,7 @@ void main(){
  OPTION_REGbits.INTEDG = 0; // Interrupt on falling edge of INT pin
  OPTION_REGbits.T0CS   = 0; // Timer 0 uses internal clock
  OPTION_REGbits.PSA    = 0; // Prescaler assigned to Timer 0
- OPTION_REGbits.PS     = 0; // Timer 0 rate = 1:2 => 500 μs clock
+ OPTION_REGbits.PS     = 0; // Timer 0 rate => 2 μs clock / 512 μs interrupt
 
  CMCONbits .CM   = 7; // Switch off the comparators
  ADCON0bits.ADON = 0; // Switch off the ADC
