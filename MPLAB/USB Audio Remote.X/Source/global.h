@@ -33,8 +33,8 @@
 
 #define LED       PORTCbits.RC4
 #define Tx        PORTCbits.RC5
-#define Volume1   PORTAbits.RA4
-#define Volume2   PORTAbits.RA5
+#define Knob1     PORTAbits.RA4
+#define Knob2     PORTAbits.RA5
 #define Buttons  (PORTC & 0x0F)
 #define Interrupt PORTAbits.RA2
 //------------------------------------------------------------------------------

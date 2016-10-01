@@ -18,7 +18,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>
 //============================================================================== 
 
-// This module removes positive glitches from the received data stream
+// This module removes glitches from the received data stream
 
 module RemoteCleaner(
  input Clk,

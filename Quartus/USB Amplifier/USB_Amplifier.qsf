@@ -338,6 +338,7 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_T
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION=1" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_PIPELINE=1" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_ADVANCED_CONDITION_ENTITY=sld_reserved_sq_USB_Amplifier_auto_signaltap_0_1_cc3e," -section_id auto_signaltap_0
+set_global_assignment -name VERILOG_FILE Remote/RemoteDecoder.v
 set_global_assignment -name VERILOG_FILE Remote/RemoteCleaner.v
 set_global_assignment -name VERILOG_FILE USB/USB_HID.v
 set_global_assignment -name VERILOG_FILE USB/USB_Stream.v

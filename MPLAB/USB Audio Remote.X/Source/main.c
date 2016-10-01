@@ -24,7 +24,7 @@
 
 bool Active      = false;
 byte ActiveCount = 0;
-byte Volume      = 0;
+byte Knob        = 0;
 //------------------------------------------------------------------------------
 
 void MakeActive(){
@@ -40,24 +40,24 @@ void MakeActive(){
 }
 //------------------------------------------------------------------------------
 
-void OnVolumeChange(){
+void OnKnobChange(){
  static byte Prev = 0;
  
- byte Next = (Volume2 << 1) | Volume1;
+ byte Next = (Knob2 << 1) | Knob1;
 
  switch((Prev << 4) | Next){
   case 0x01:
   case 0x13:
   case 0x32:
   case 0x20:
-   Volume++;
+   Knob++;
    break;
 
   case 0x02:
   case 0x10:
   case 0x31:
   case 0x23:
-   Volume--;
+   Knob--;
    break;
 
   default:
@@ -97,7 +97,7 @@ void OnTimer(){
    Count++;
    if(Count == 3){
     Data = Buttons;
-    Data = (Data << 8) | Volume;
+    Data = (Data << 8) | Knob;
     Data = (Data << 4) | Parity(Data);
 
     Count = 0;
@@ -152,7 +152,7 @@ interrupt void OnInterrupt(){
  if(INTCONbits.T0IF){
   if(Buttons) ActiveCount = 0;
 
-  OnVolumeChange(); // Uses slow-sampling to de-bounce: sample every 500 μs
+  OnKnobChange(); // Uses slow-sampling to de-bounce: sample every 500 μs
 
   OnTimer();
 
