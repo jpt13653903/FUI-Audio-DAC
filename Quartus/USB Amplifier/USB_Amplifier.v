@@ -39,7 +39,7 @@ module USB_Amplifier(
 
  output [2:1]Audio_Out,   // B8, B10
 
- output      LV_LCD_RS,   // D14
+ input       LV_LCD_RS,   // D14
  output      LV_LCD_R_nW, // E13
  output      LV_LCD_E,    // E12
  output [7:4]LV_LCD_D,    // C9, J11, H12, D13
@@ -125,7 +125,7 @@ ClockRecovery ClockRecovery_inst(
  Clk_384k, Clk_48k, Clk_500
 );
 
-assign TP = {FrameNumber[0], PWM, Clk_384k, Clk_48k, Clk_500};
+assign TP = {FrameNumber[0], PWM, Clk_384k, Clk_500, Remote};
 //------------------------------------------------------------------------------
 
 reg [15:0]Volume_Log[1:0];
@@ -226,7 +226,9 @@ end
 assign Audio_Out = Active ? PWM : 2'd0;
 //------------------------------------------------------------------------------
 
-assign LV_LCD_RS   = 1'b1;
+wire Remote = LV_LCD_RS;
+
+//assign LV_LCD_RS   = 1'b1;
 assign LV_LCD_R_nW = 1'b1;
 assign LV_LCD_E    = 1'b1;
 assign LV_LCD_D    = 0;

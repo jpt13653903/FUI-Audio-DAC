@@ -2,13 +2,41 @@
 #include "global.h"
 //------------------------------------------------------------------------------
 
+bool Active = false;
+word Count  = 0;
+//------------------------------------------------------------------------------
+
 interrupt void OnInterrupt(){
- static word j = 0;
- j = (j+1) % 1953;
+ if(INTCONbits.T0IF){
+  if(Active){
+   Count++;
+   if(Count > 1000) Active = false;
 
- if(j == 0) LED = !LED;
+  }else{
+   Active = true;
+   Count  = 0;
+  }
+  LED = Active;
 
- INTCONbits.T0IF = 0;
+  NOP();
+  NOP();
+
+  Tx = !Tx;
+  INTCONbits.T0IF = 0;
+ }
+
+ if(INTCONbits.RAIF){
+  Active = true;
+  Count  = 0;
+  byte Temp = PORTA;
+  INTCONbits.RAIF = 0;
+ }
+
+ if(INTCONbits.INTF){
+  Active = true;
+  Count  = 0;
+  INTCONbits.INTF = 0;
+ }
 }
 //------------------------------------------------------------------------------
 
@@ -28,9 +56,16 @@ void main(){
  TRISA = 0xFF;
  TRISC = 0xC0;
 
- INTCONbits.T0IE = 1;
- INTCONbits.GIE  = 1;
+ IOCA = 0x30; // Interrupt-on-change on A4 and A5
 
- while(1); // Everything else is interrupt-driven...
+ INTCONbits.RAIE = 1; // Enable port A interrupt-on-change
+ INTCONbits.INTE = 1; // Enable INT pin interrupt
+
+ INTCONbits.T0IE = 1; // Enable interrupt on Timer 0
+ INTCONbits.GIE  = 1; // Enable global interrupts
+
+ while(1){
+  if(!Active) SLEEP();
+ }
 }
 //------------------------------------------------------------------------------
