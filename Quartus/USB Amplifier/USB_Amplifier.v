@@ -125,7 +125,7 @@ ClockRecovery ClockRecovery_inst(
  Clk_384k, Clk_48k, Clk_500
 );
 
-assign TP = {FrameNumber[0], PWM, Clk_384k, Clk_500, Remote};
+assign TP = {FrameNumber[0], PWM, Clk_384k, Clk_500, RemoteStream};
 //------------------------------------------------------------------------------
 
 reg [15:0]Volume_Log[1:0];

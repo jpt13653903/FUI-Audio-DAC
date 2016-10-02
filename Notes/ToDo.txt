@@ -1,8 +1,2 @@
-- Remember to remove the local volume control
-
 - Implement the OUT endpoints sequence checks
-
-- The volume knob decoder doesn't catch fast knob-turns... Fix this
-  - Making the USB interval 5 ms instead of 10 ms makes the buttons more
-    likely to stick -- also needs fixing.
 

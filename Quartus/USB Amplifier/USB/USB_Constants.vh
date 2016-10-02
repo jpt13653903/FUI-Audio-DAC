@@ -118,7 +118,7 @@ localparam STRING__0_LENGTH  = 16'd_4;
 localparam STRING__1_POINTER = 10'h140; // Manufacturer = "J Taylor"
 localparam STRING__1_LENGTH  = 16'd18;
 
-localparam STRING__2_POINTER = 10'h180; // Product = Interface 0 = HID Interface = "JPT Amplifier"
+localparam STRING__2_POINTER = 10'h180; // Product = Interface 0 = HID Interface = "FUI Audio DAC"
 localparam STRING__2_LENGTH  = 16'd28;
 
 localparam STRING__3_POINTER = 10'h1C0; // Terminal ID3 = "Amplifier and Speakers"

@@ -39,7 +39,7 @@ assign IN_ZeroLength  = 1'b0;
 assign IN_Isochronous = 1'b0;
 //------------------------------------------------------------------------------
 
-reg [ 5:0]tStatus;
+reg [ 5:0]tStatus[1:0];
 reg [15:0]Temp;
 reg [ 1:0]ByteCount;
 //------------------------------------------------------------------------------
@@ -50,14 +50,15 @@ localparam SendControl = 1'd1;
 
 reg tReset;
 always @(posedge Clk) begin
- tReset <= Reset;
+ tReset     <= Reset;
+ tStatus[0] <= Status;
 //------------------------------------------------------------------------------
 
  if(tReset) begin
   IN_Ready    <= 0;
   IN_Sequence <= 0;
   State       <= Idle;
-  tStatus     <= 0;
+  tStatus[1]  <= 0;
 //------------------------------------------------------------------------------
 
  end else begin
@@ -65,11 +66,11 @@ always @(posedge Clk) begin
    Idle: begin
     ByteCount <= 0;
 
-    if(tStatus != Status) begin
-     {Temp, IN_Data} <= {10'd0, Status, 8'h01};
-     IN_Ready <= 1'b1;
-     State    <= SendControl;
-     tStatus  <= Status;
+    if(tStatus[1] != tStatus[0]) begin
+     {Temp, IN_Data} <= {10'd0, tStatus[0], 8'h01};
+     IN_Ready   <= 1'b1;
+     State      <= SendControl;
+     tStatus[1] <= tStatus[0];
     end
    end
 //------------------------------------------------------------------------------
@@ -85,7 +86,7 @@ always @(posedge Clk) begin
 
     end else begin // Waiting for Ack
      if(Error) begin
-      {Temp, IN_Data} <= {10'd0, tStatus, 8'h01};
+      {Temp, IN_Data} <= {10'd0, tStatus[1], 8'h01};
       IN_Ready <= 1'b1;
 
      end else if(IN_Ack) begin
