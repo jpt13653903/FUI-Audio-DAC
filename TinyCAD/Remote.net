@@ -18,7 +18,7 @@ R7      100k@0603
 R5      100k@0603
 J5      RF-Link@RF433_Tx
 C5      100n@0603
-D1      Blue@LED_3mm
+D1      Tx@LED_3mm
 R12     330e@0603
 C4      100n@0603
 S3      Stop@Push-Button-THT

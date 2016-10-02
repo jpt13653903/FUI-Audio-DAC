@@ -996,6 +996,7 @@ download the executable.-->
 			<FIELD type='1' description='Package' value='Push-Button-THT' show='0' pos='-4.00000,6.80000'/>
 			<FIELD type='0' description='Value' value='Prev' show='1' pos='1.00000,-5.60000'/>
 			<FIELD type='3' description='Mantech' value='72M1689' show='0' pos='-4.00000,9.20000'/>
+			<FIELD type='3' description='RS-Components' value=' 479-1457' show='0' pos='-4.00000,11.60000'/>
 		</SYMBOL>
 		<WIRE a='205.00000,101.00000' b='205.00000,103.00000'/>
 		<WIRE a='208.00000,103.00000' b='208.00000,101.00000'/>
@@ -1084,7 +1085,7 @@ download the executable.-->
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='1' description='Package' value='LED_3mm' show='0' pos='1.00000,-3.20000'/>
-			<FIELD type='0' description='Value' value='Blue' show='1' pos='-3.00000,-0.60000'/>
+			<FIELD type='0' description='Value' value='Tx' show='1' pos='-3.00000,-0.60000'/>
 			<FIELD type='3' description='Mantech' value='72M1878' show='0' pos='0.00000,2.40000'/>
 		</SYMBOL>
 		<SYMBOL id='12' pos='106.00000,153.00000' part='0' rotate='3' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
@@ -1164,6 +1165,7 @@ download the executable.-->
 			<FIELD type='1' description='Package' value='Push-Button-THT' show='0' pos='-4.00000,6.80000'/>
 			<FIELD type='0' description='Value' value='Stop' show='1' pos='1.00000,-5.60000'/>
 			<FIELD type='3' description='Mantech' value='72M1689' show='0' pos='-4.00000,9.20000'/>
+			<FIELD type='3' description='RS-Components' value=' 479-1457' show='0' pos='-4.00000,11.60000'/>
 		</SYMBOL>
 		<SYMBOL id='9' pos='252.00000,121.00000' part='0' rotate='3' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='S4' show='1' pos='1.00000,-10.00000'/>
@@ -1173,6 +1175,7 @@ download the executable.-->
 			<FIELD type='1' description='Package' value='Push-Button-THT' show='0' pos='-4.00000,6.80000'/>
 			<FIELD type='0' description='Value' value='Next' show='1' pos='1.00000,-5.60000'/>
 			<FIELD type='3' description='Mantech' value='72M1689' show='0' pos='-4.00000,9.20000'/>
+			<FIELD type='3' description='RS-Components' value=' 479-1457' show='0' pos='-4.00000,11.60000'/>
 		</SYMBOL>
 		<JUNCTION pos='59.00000,20.00000'/>
 		<JUNCTION pos='65.00000,20.00000'/>
