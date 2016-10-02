@@ -15,4 +15,6 @@ MPLAB/**/build/*
 MPLAB/**/dist/*
 MPLAB/**/funclist
 
+FreePCB/**/CAM/*
+
 

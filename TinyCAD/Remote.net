@@ -1,0 +1,73 @@
+*PADS-PCB*
+*PART*
+U2      PICkit3@SIN-6
+R1      10k@0603
+C3      100n@0603
+R4      470e@0603
+J4      Mount
+J6      Mount
+J7      Mount
+J8      Mount
+U1      PIC16F676@SOIC-14
+C1      47u@SMT-6mm
+C2      100n@0603
+S1      Volume@D-Pot
+S2      Prev@Push-Button-THT
+R11     10k@0603
+R7      100k@0603
+R5      100k@0603
+J5      RF-Link@RF433_Tx
+C5      100n@0603
+D1      Blue@LED_3mm
+R12     330e@0603
+C4      100n@0603
+S3      Stop@Push-Button-THT
+S4      Next@Push-Button-THT
+J1      AAA-1.5V@Clip-AAA
+J2      AAA-1.5V@Clip-AAA-SMT
+J3      AAA-1.5V@Clip-AAA
+R10     10k@0603
+R9      10k@0603
+R8      10k@0603
+R6      10k@0603
+R2      10k@0603
+R3      10k@0603
+
+*NET*
+*SIGNAL*  nReset
+U2.1 R1.2 U1.4 R4.1
+*SIGNAL*  5V
+C2.1 U1.1 C5.1 J5.2 C4.1 U2.2 R6.1 R2.1 R3.1 R5.1 R7.2 R1.1 C1.1 J1.3 J1.4
+*SIGNAL*  Gnd
+C3.2 S1.2 J4.1 J6.1 J7.1 J8.1 C1.2 C2.2 S1.7 S1.6 R11.2 U1.14 C5.2 D1.2 J5.3 C4.2 U2.3 J3.1 J3.2 R10.2 R9.2 R8.2
+*SIGNAL*  Interrupt
+S1.4 R6.2 S3.1 S3.3 S4.1 S4.3 U1.11 S2.1 S2.3
+*SIGNAL*  Play_Pause
+S1.5 U1.7 R8.1
+*SIGNAL*  Tx
+J5.1 U1.5
+*SIGNAL*  LED
+R12.1 U1.6
+*SIGNAL*  Vol1
+R5.2 S1.1 U1.2
+*SIGNAL*  Vol2
+R7.1 S1.3 U1.3
+*SIGNAL*  Prev
+S2.2 R9.1 S2.4 U1.8
+*SIGNAL*  Stop
+S3.2 R10.1 S3.4 U1.9
+*SIGNAL*  Next
+S4.2 R11.1 S4.4 U1.10
+*SIGNAL*  N000000
+U2.5 R3.2 U1.12
+*SIGNAL*  N000001
+R4.2 C3.1
+*SIGNAL*  N000002
+U1.13 R2.2 U2.4
+*SIGNAL*  N000003
+R12.2 D1.1
+*SIGNAL*  N000004
+J2.1 J2.2 J3.3 J3.4
+*SIGNAL*  N000005
+J1.1 J1.2 J2.3 J2.4
+*END*
