@@ -1286,7 +1286,7 @@ download the executable.-->
 			<CHARSET>0</CHARSET>
 			<FACENAME>Arial</FACENAME>
 		</FONT>
-		<STYLE id='4'>
+		<STYLE id='2'>
 			<STYLE>0</STYLE>
 			<COLOR>000000</COLOR>
 			<THICKNESS>1</THICKNESS>
@@ -1336,7 +1336,7 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,40.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,40.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='53.00000,39.00000' style='4' fill='0'>
+				<POLYGON pos='53.00000,39.00000' style='2' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='0.50000,0.00000' arc='0'/>
 					<POINT pos='1.50000,2.00000' arc='0'/>
@@ -1344,11 +1344,11 @@ download the executable.-->
 					<POINT pos='3.50000,2.00000' arc='0'/>
 					<POINT pos='4.00000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='52.00000,40.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='57.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='57.00000,40.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -1391,19 +1391,19 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,43.50000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,43.50000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.00000' style='4' fill='0'>
+				<POLYGON pos='54.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.00000' style='4' fill='0'>
+				<POLYGON pos='55.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,43.40000' style='4' fill='0'>
+				<POLYGON pos='52.00000,43.40000' style='2' fill='0'>
 					<POINT pos='2.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,43.40000' style='4' fill='0'>
+				<POLYGON pos='55.40000,43.40000' style='2' fill='0'>
 					<POINT pos='2.60000,0.10000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -1445,7 +1445,7 @@ download the executable.-->
 			<REF_POINT power='0' part='0' pos='63.00000,43.00000'/>
 			<TinyCAD>
 				<PIN pos='63.00000,41.00000' which='0' elec='0' direction='2' part='0' number='1' show='3' length='20' number_pos='0' centre_name='0'></PIN>
-				<RECTANGLE a='51.00000,39.00000' b='59.00000,43.00000' style='4' fill='0'/>
+				<RECTANGLE a='51.00000,39.00000' b='59.00000,43.00000' style='2' fill='0'/>
 			</TinyCAD>
 		</SYMBOLDEF>
 		<SYMBOLDEF id='4'>
@@ -1487,7 +1487,7 @@ download the executable.-->
 				<PIN pos='62.00000,57.00000' which='0' elec='0' direction='2' part='0' number='3' show='3' length='20' number_pos='0' centre_name='0'>D+</PIN>
 				<PIN pos='62.00000,63.00000' which='0' elec='0' direction='2' part='0' number='4' show='3' length='20' number_pos='0' centre_name='0'>Gnd</PIN>
 				<PIN pos='62.00000,60.00000' which='0' elec='0' direction='2' part='0' number='2' show='3' length='20' number_pos='0' centre_name='0'>D-</PIN>
-				<RECTANGLE a='49.00000,52.00000' b='58.00000,71.00000' style='4' fill='0'/>
+				<RECTANGLE a='49.00000,52.00000' b='58.00000,71.00000' style='2' fill='0'/>
 				<PIN pos='62.00000,66.00000' which='0' elec='0' direction='2' part='0' number='5' show='3' length='20' number_pos='0' centre_name='0'>Chassis</PIN>
 				<PIN pos='62.00000,69.00000' which='0' elec='0' direction='2' part='0' number='6' show='3' length='20' number_pos='0' centre_name='0'>Chassis</PIN>
 			</TinyCAD>
@@ -1529,55 +1529,55 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='60.00000,54.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='71.00000,56.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='63.40000,52.40000' style='4' fill='0'>
+				<POLYGON pos='63.40000,52.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,52.40000' style='4' fill='0'>
+				<POLYGON pos='66.40000,52.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='63.40000,52.40000' style='4' fill='0'>
+				<POLYGON pos='63.40000,52.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='3.10000,1.60000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='62.00000,54.00000' style='4' fill='0'>
+				<POLYGON pos='62.00000,54.00000' style='2' fill='0'>
 					<POINT pos='1.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,54.00000' style='4' fill='0'>
+				<POLYGON pos='66.40000,54.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='1.60000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='63.40000,56.40000' style='4' fill='0'>
+				<POLYGON pos='63.40000,56.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,56.40000' style='4' fill='0'>
+				<POLYGON pos='66.40000,56.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='63.40000,56.40000' style='4' fill='0'>
+				<POLYGON pos='63.40000,56.40000' style='2' fill='0'>
 					<POINT pos='3.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,1.60000' arc='0'/>
 					<POINT pos='3.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='62.00000,58.00000' style='4' fill='0'>
+				<POLYGON pos='62.00000,58.00000' style='2' fill='0'>
 					<POINT pos='1.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,58.00000' style='4' fill='0'>
+				<POLYGON pos='66.40000,58.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='1.60000,0.00000' arc='0'/>
 				</POLYGON>
 				<PIN pos='60.00000,58.00000' which='0' elec='0' direction='3' part='0' number='3' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<ELLIPSE a='67.50000,55.50000' b='68.50000,56.50000' style='4' fill='1'/>
-				<POLYGON pos='68.00000,54.00000' style='4' fill='0'>
+				<ELLIPSE a='67.50000,55.50000' b='68.50000,56.50000' style='2' fill='1'/>
+				<POLYGON pos='68.00000,54.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,4.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='68.00000,56.00000' style='4' fill='0'>
+				<POLYGON pos='68.00000,56.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -1620,7 +1620,7 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,40.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,40.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='53.00000,39.00000' style='4' fill='0'>
+				<POLYGON pos='53.00000,39.00000' style='2' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='0.50000,0.00000' arc='0'/>
 					<POINT pos='1.50000,2.00000' arc='0'/>
@@ -1628,11 +1628,11 @@ download the executable.-->
 					<POINT pos='3.50000,2.00000' arc='0'/>
 					<POINT pos='4.00000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='52.00000,40.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='57.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='57.00000,40.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -1675,7 +1675,7 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='63.00000,41.00000' which='0' elec='0' direction='2' part='0' number='1' show='3' length='20' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='63.00000,44.00000' which='0' elec='0' direction='2' part='0' number='2' show='3' length='20' number_pos='0' centre_name='0'></PIN>
-				<RECTANGLE a='53.00000,39.00000' b='59.00000,46.00000' style='4' fill='0'/>
+				<RECTANGLE a='53.00000,39.00000' b='59.00000,46.00000' style='2' fill='0'/>
 			</TinyCAD>
 		</SYMBOLDEF>
 		<SYMBOLDEF id='8'>
@@ -1715,24 +1715,24 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='60.00000,52.00000' which='0' elec='0' direction='3' part='0' number='1' show='3' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='70.00000,52.00000' which='0' elec='0' direction='2' part='0' number='2' show='3' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='63.40000,50.40000' style='4' fill='0'>
+				<POLYGON pos='63.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,50.40000' style='4' fill='0'>
+				<POLYGON pos='66.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='63.40000,50.40000' style='4' fill='0'>
+				<POLYGON pos='63.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='3.10000,1.60000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='62.00000,52.00000' style='4' fill='0'>
+				<POLYGON pos='62.00000,52.00000' style='2' fill='0'>
 					<POINT pos='1.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,52.00000' style='4' fill='0'>
+				<POLYGON pos='66.40000,52.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='1.60000,0.00000' arc='0'/>
 				</POLYGON>
@@ -1775,24 +1775,24 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='60.00000,52.00000' which='0' elec='0' direction='3' part='0' number='1' show='3' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='70.00000,52.00000' which='0' elec='0' direction='2' part='0' number='2' show='3' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='63.40000,50.40000' style='4' fill='0'>
+				<POLYGON pos='63.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,50.40000' style='4' fill='0'>
+				<POLYGON pos='66.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='63.40000,50.40000' style='4' fill='0'>
+				<POLYGON pos='63.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='3.10000,1.60000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='62.00000,52.00000' style='4' fill='0'>
+				<POLYGON pos='62.00000,52.00000' style='2' fill='0'>
 					<POINT pos='1.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,52.00000' style='4' fill='0'>
+				<POLYGON pos='66.40000,52.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='1.60000,0.00000' arc='0'/>
 				</POLYGON>
@@ -1835,24 +1835,24 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='60.00000,52.00000' which='0' elec='0' direction='3' part='0' number='1' show='3' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='70.00000,52.00000' which='0' elec='0' direction='2' part='0' number='2' show='3' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='63.40000,50.40000' style='4' fill='0'>
+				<POLYGON pos='63.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,50.40000' style='4' fill='0'>
+				<POLYGON pos='66.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='63.40000,50.40000' style='4' fill='0'>
+				<POLYGON pos='63.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='3.10000,1.60000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='62.00000,52.00000' style='4' fill='0'>
+				<POLYGON pos='62.00000,52.00000' style='2' fill='0'>
 					<POINT pos='1.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,52.00000' style='4' fill='0'>
+				<POLYGON pos='66.40000,52.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='1.60000,0.00000' arc='0'/>
 				</POLYGON>
@@ -1897,7 +1897,7 @@ download the executable.-->
 				<PIN pos='77.00000,117.00000' which='1' elec='0' direction='3' part='0' number='2' show='3' length='20' number_pos='0' centre_name='0'>Trigger</PIN>
 				<PIN pos='77.00000,123.00000' which='0' elec='0' direction='3' part='0' number='1' show='3' length='20' number_pos='0' centre_name='0'>Gnd</PIN>
 				<PIN pos='105.00000,117.00000' which='0' elec='0' direction='2' part='0' number='7' show='3' length='20' number_pos='0' centre_name='0'>Discharge</PIN>
-				<RECTANGLE a='81.00000,112.00000' b='101.00000,125.00000' style='4' fill='0'/>
+				<RECTANGLE a='81.00000,112.00000' b='101.00000,125.00000' style='2' fill='0'/>
 				<PIN pos='105.00000,120.00000' which='1' elec='0' direction='2' part='0' number='4' show='3' length='20' number_pos='0' centre_name='0'>Reset</PIN>
 				<PIN pos='77.00000,120.00000' which='0' elec='0' direction='3' part='0' number='5' show='3' length='20' number_pos='0' centre_name='0'>Control</PIN>
 				<PIN pos='77.00000,114.00000' which='0' elec='0' direction='3' part='0' number='6' show='3' length='20' number_pos='0' centre_name='0'>Threshold</PIN>
@@ -1941,40 +1941,40 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='106.00000,90.00000' which='0' elec='0' direction='1' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='106.00000,100.00000' which='0' elec='0' direction='0' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='106.00000,92.00000' style='4' fill='0'>
+				<POLYGON pos='106.00000,92.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,1.00000' arc='1'/>
 					<POINT pos='0.00000,2.00000' arc='2'/>
 				</POLYGON>
-				<POLYGON pos='106.00000,94.00000' style='4' fill='0'>
+				<POLYGON pos='106.00000,94.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,1.00000' arc='1'/>
 					<POINT pos='0.00000,2.00000' arc='2'/>
 				</POLYGON>
-				<POLYGON pos='106.00000,96.00000' style='4' fill='0'>
+				<POLYGON pos='106.00000,96.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,1.00000' arc='1'/>
 					<POINT pos='0.00000,2.00000' arc='2'/>
 				</POLYGON>
-				<ELLIPSE a='107.50000,93.00000' b='108.50000,94.00000' style='4' fill='0'/>
-				<ELLIPSE a='108.50000,96.50000' b='109.50000,97.50000' style='4' fill='1'/>
-				<ELLIPSE a='109.50000,93.00000' b='110.50000,94.00000' style='4' fill='0'/>
+				<ELLIPSE a='107.50000,93.00000' b='108.50000,94.00000' style='2' fill='0'/>
+				<ELLIPSE a='108.50000,96.50000' b='109.50000,97.50000' style='2' fill='1'/>
+				<ELLIPSE a='109.50000,93.00000' b='110.50000,94.00000' style='2' fill='0'/>
 				<PIN pos='108.00000,90.00000' which='0' elec='0' direction='1' part='0' number='3' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='110.00000,90.00000' which='0' elec='0' direction='1' part='0' number='5' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='109.00000,100.00000' which='0' elec='0' direction='0' part='0' number='4' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='109.00000,97.00000' style='4' fill='0'>
+				<POLYGON pos='109.00000,97.00000' style='2' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='110.00000,92.00000' style='4' fill='0'>
+				<POLYGON pos='110.00000,92.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='108.00000,91.40000' style='4' fill='0'>
+				<POLYGON pos='108.00000,91.40000' style='2' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='0.00000,1.60000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='109.00000,93.40000' style='4' fill='0'>
+				<POLYGON pos='109.00000,93.40000' style='2' fill='0'>
 					<POINT pos='0.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,3.60000' arc='0'/>
 				</POLYGON>
@@ -2017,7 +2017,7 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,40.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,40.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='53.00000,39.00000' style='4' fill='0'>
+				<POLYGON pos='53.00000,39.00000' style='2' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='0.50000,0.00000' arc='0'/>
 					<POINT pos='1.50000,2.00000' arc='0'/>
@@ -2025,11 +2025,11 @@ download the executable.-->
 					<POINT pos='3.50000,2.00000' arc='0'/>
 					<POINT pos='4.00000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='52.00000,40.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='57.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='57.00000,40.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -2065,19 +2065,19 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,43.50000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,43.50000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.00000' style='4' fill='0'>
+				<POLYGON pos='54.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.00000' style='4' fill='0'>
+				<POLYGON pos='55.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,43.40000' style='4' fill='0'>
+				<POLYGON pos='52.00000,43.40000' style='2' fill='0'>
 					<POINT pos='2.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,43.40000' style='4' fill='0'>
+				<POLYGON pos='55.40000,43.40000' style='2' fill='0'>
 					<POINT pos='2.60000,0.10000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -2113,19 +2113,19 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,43.50000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,43.50000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.00000' style='4' fill='0'>
+				<POLYGON pos='54.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.00000' style='4' fill='0'>
+				<POLYGON pos='55.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,43.40000' style='4' fill='0'>
+				<POLYGON pos='52.00000,43.40000' style='2' fill='0'>
 					<POINT pos='2.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,43.40000' style='4' fill='0'>
+				<POLYGON pos='55.40000,43.40000' style='2' fill='0'>
 					<POINT pos='2.60000,0.10000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -2166,7 +2166,7 @@ download the executable.-->
 			</FIELD>
 			<REF_POINT power='0' part='0' pos='61.00000,41.00000'/>
 			<TinyCAD>
-				<POLYGON pos='53.00000,39.00000' style='4' fill='0'>
+				<POLYGON pos='53.00000,39.00000' style='2' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='0.50000,0.00000' arc='0'/>
 					<POINT pos='1.50000,2.00000' arc='0'/>
@@ -2174,24 +2174,24 @@ download the executable.-->
 					<POINT pos='3.50000,2.00000' arc='0'/>
 					<POINT pos='4.50000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='52.00000,40.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='58.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='58.00000,40.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='57.40000,39.00000' style='4' fill='0'>
+				<POLYGON pos='57.40000,39.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.60000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='54.40000,37.40000' style='4' fill='0'>
+				<POLYGON pos='54.40000,37.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='1.10000,1.60000' arc='0'/>
 					<POINT pos='2.10000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,37.40000' style='4' fill='0'>
+				<POLYGON pos='55.40000,37.40000' style='2' fill='0'>
 					<POINT pos='0.10000,1.60000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -2237,27 +2237,27 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,44.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,44.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.40000' style='4' fill='0'>
+				<POLYGON pos='54.40000,42.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.40000' style='4' fill='0'>
+				<POLYGON pos='55.40000,42.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,44.00000' style='4' fill='0'>
+				<POLYGON pos='52.00000,44.00000' style='2' fill='0'>
 					<POINT pos='2.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,44.00000' style='4' fill='0'>
+				<POLYGON pos='55.40000,44.00000' style='2' fill='0'>
 					<POINT pos='2.60000,0.00000' arc='0'/>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='53.40000,42.40000' style='4' fill='0'>
+				<POLYGON pos='53.40000,42.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,1.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='53.00000,43.00000' style='4' fill='0'>
+				<POLYGON pos='53.00000,43.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -2300,7 +2300,7 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,40.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,40.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='53.00000,39.00000' style='4' fill='0'>
+				<POLYGON pos='53.00000,39.00000' style='2' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='0.50000,0.00000' arc='0'/>
 					<POINT pos='1.50000,2.00000' arc='0'/>
@@ -2308,11 +2308,11 @@ download the executable.-->
 					<POINT pos='3.50000,2.00000' arc='0'/>
 					<POINT pos='4.00000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='52.00000,40.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='57.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='57.00000,40.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -2355,7 +2355,7 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,40.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,40.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='53.00000,39.00000' style='4' fill='0'>
+				<POLYGON pos='53.00000,39.00000' style='2' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='0.50000,0.00000' arc='0'/>
 					<POINT pos='1.50000,2.00000' arc='0'/>
@@ -2363,11 +2363,11 @@ download the executable.-->
 					<POINT pos='3.50000,2.00000' arc='0'/>
 					<POINT pos='4.00000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='52.00000,40.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='57.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='57.00000,40.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -2403,19 +2403,19 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,43.50000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,43.50000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.00000' style='4' fill='0'>
+				<POLYGON pos='54.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.00000' style='4' fill='0'>
+				<POLYGON pos='55.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,43.40000' style='4' fill='0'>
+				<POLYGON pos='52.00000,43.40000' style='2' fill='0'>
 					<POINT pos='2.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,43.40000' style='4' fill='0'>
+				<POLYGON pos='55.40000,43.40000' style='2' fill='0'>
 					<POINT pos='2.60000,0.10000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -2467,7 +2467,7 @@ download the executable.-->
 				<PIN pos='68.00000,55.00000' which='0' elec='0' direction='3' part='0' number='4' show='3' length='20' number_pos='0' centre_name='0'>Cap-</PIN>
 				<PIN pos='88.00000,46.00000' which='0' elec='0' direction='2' part='0' number='6' show='3' length='20' number_pos='0' centre_name='0'>V+</PIN>
 				<PIN pos='88.00000,49.00000' which='0' elec='0' direction='2' part='0' number='5' show='3' length='20' number_pos='0' centre_name='0'>V-</PIN>
-				<RECTANGLE a='72.00000,44.00000' b='84.00000,57.00000' style='4' fill='0'/>
+				<RECTANGLE a='72.00000,44.00000' b='84.00000,57.00000' style='2' fill='0'/>
 				<PIN pos='68.00000,52.00000' which='0' elec='0' direction='3' part='0' number='3' show='3' length='20' number_pos='0' centre_name='0'>Cap+</PIN>
 				<PIN pos='68.00000,49.00000' which='0' elec='0' direction='3' part='0' number='1' show='3' length='20' number_pos='0' centre_name='0'>Neutral</PIN>
 			</TinyCAD>
@@ -2518,7 +2518,7 @@ download the executable.-->
 				<PIN pos='68.00000,55.00000' which='0' elec='0' direction='3' part='0' number='4' show='3' length='20' number_pos='0' centre_name='0'>Cap-</PIN>
 				<PIN pos='88.00000,46.00000' which='0' elec='0' direction='2' part='0' number='6' show='3' length='20' number_pos='0' centre_name='0'>V+</PIN>
 				<PIN pos='88.00000,49.00000' which='0' elec='0' direction='2' part='0' number='5' show='3' length='20' number_pos='0' centre_name='0'>V-</PIN>
-				<RECTANGLE a='72.00000,44.00000' b='84.00000,57.00000' style='4' fill='0'/>
+				<RECTANGLE a='72.00000,44.00000' b='84.00000,57.00000' style='2' fill='0'/>
 				<PIN pos='68.00000,52.00000' which='0' elec='0' direction='3' part='0' number='3' show='3' length='20' number_pos='0' centre_name='0'>Cap+</PIN>
 				<PIN pos='68.00000,49.00000' which='0' elec='0' direction='3' part='0' number='1' show='3' length='20' number_pos='0' centre_name='0'>Neutral</PIN>
 			</TinyCAD>
@@ -2553,19 +2553,19 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,43.50000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,43.50000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.00000' style='4' fill='0'>
+				<POLYGON pos='54.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.00000' style='4' fill='0'>
+				<POLYGON pos='55.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,43.40000' style='4' fill='0'>
+				<POLYGON pos='52.00000,43.40000' style='2' fill='0'>
 					<POINT pos='2.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,43.40000' style='4' fill='0'>
+				<POLYGON pos='55.40000,43.40000' style='2' fill='0'>
 					<POINT pos='2.60000,0.10000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -2601,19 +2601,19 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,43.50000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,43.50000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.00000' style='4' fill='0'>
+				<POLYGON pos='54.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.00000' style='4' fill='0'>
+				<POLYGON pos='55.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,43.40000' style='4' fill='0'>
+				<POLYGON pos='52.00000,43.40000' style='2' fill='0'>
 					<POINT pos='2.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,43.40000' style='4' fill='0'>
+				<POLYGON pos='55.40000,43.40000' style='2' fill='0'>
 					<POINT pos='2.60000,0.10000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -2656,7 +2656,7 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,40.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,40.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='53.00000,39.00000' style='4' fill='0'>
+				<POLYGON pos='53.00000,39.00000' style='2' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='0.50000,0.00000' arc='0'/>
 					<POINT pos='1.50000,2.00000' arc='0'/>
@@ -2664,11 +2664,11 @@ download the executable.-->
 					<POINT pos='3.50000,2.00000' arc='0'/>
 					<POINT pos='4.00000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='52.00000,40.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='57.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='57.00000,40.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -2704,19 +2704,19 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,43.50000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,43.50000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.00000' style='4' fill='0'>
+				<POLYGON pos='54.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.00000' style='4' fill='0'>
+				<POLYGON pos='55.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,43.40000' style='4' fill='0'>
+				<POLYGON pos='52.00000,43.40000' style='2' fill='0'>
 					<POINT pos='2.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,43.40000' style='4' fill='0'>
+				<POLYGON pos='55.40000,43.40000' style='2' fill='0'>
 					<POINT pos='2.60000,0.10000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -2759,27 +2759,27 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,44.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,44.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.40000' style='4' fill='0'>
+				<POLYGON pos='54.40000,42.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.40000' style='4' fill='0'>
+				<POLYGON pos='55.40000,42.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,44.00000' style='4' fill='0'>
+				<POLYGON pos='52.00000,44.00000' style='2' fill='0'>
 					<POINT pos='2.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,44.00000' style='4' fill='0'>
+				<POLYGON pos='55.40000,44.00000' style='2' fill='0'>
 					<POINT pos='2.60000,0.00000' arc='0'/>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='53.40000,42.40000' style='4' fill='0'>
+				<POLYGON pos='53.40000,42.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,1.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='53.00000,43.00000' style='4' fill='0'>
+				<POLYGON pos='53.00000,43.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -2824,7 +2824,7 @@ download the executable.-->
 				<PIN pos='35.00000,52.00000' which='0' elec='0' direction='3' part='0' number='1' show='3' length='20' number_pos='0' centre_name='0'>Adj/Gnd</PIN>
 				<PIN pos='35.00000,49.00000' which='0' elec='0' direction='3' part='0' number='3' show='3' length='20' number_pos='0' centre_name='0'>In</PIN>
 				<PIN pos='57.00000,52.00000' which='0' elec='0' direction='2' part='0' number='4' show='3' length='20' number_pos='0' centre_name='0'>Out</PIN>
-				<RECTANGLE a='39.00000,47.00000' b='53.00000,54.00000' style='4' fill='0'/>
+				<RECTANGLE a='39.00000,47.00000' b='53.00000,54.00000' style='2' fill='0'/>
 			</TinyCAD>
 		</SYMBOLDEF>
 		<SYMBOLDEF id='29'>
@@ -2863,7 +2863,7 @@ download the executable.-->
 			<REF_POINT power='0' part='0' pos='63.00000,43.00000'/>
 			<TinyCAD>
 				<PIN pos='63.00000,41.00000' which='0' elec='0' direction='2' part='0' number='1' show='3' length='20' number_pos='0' centre_name='0'></PIN>
-				<RECTANGLE a='51.00000,39.00000' b='59.00000,43.00000' style='4' fill='0'/>
+				<RECTANGLE a='51.00000,39.00000' b='59.00000,43.00000' style='2' fill='0'/>
 			</TinyCAD>
 		</SYMBOLDEF>
 		<SYMBOLDEF id='30'>
@@ -2903,27 +2903,27 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,44.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,44.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.40000' style='4' fill='0'>
+				<POLYGON pos='54.40000,42.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.40000' style='4' fill='0'>
+				<POLYGON pos='55.40000,42.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,44.00000' style='4' fill='0'>
+				<POLYGON pos='52.00000,44.00000' style='2' fill='0'>
 					<POINT pos='2.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,44.00000' style='4' fill='0'>
+				<POLYGON pos='55.40000,44.00000' style='2' fill='0'>
 					<POINT pos='2.60000,0.00000' arc='0'/>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='53.40000,42.40000' style='4' fill='0'>
+				<POLYGON pos='53.40000,42.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,1.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='53.00000,43.00000' style='4' fill='0'>
+				<POLYGON pos='53.00000,43.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -2968,7 +2968,7 @@ download the executable.-->
 				<PIN pos='74.00000,94.00000' which='0' elec='0' direction='3' part='0' number='2' show='3' length='20' number_pos='0' centre_name='0'>Gnd</PIN>
 				<PIN pos='74.00000,91.00000' which='0' elec='0' direction='3' part='0' number='1' show='3' length='20' number_pos='0' centre_name='0'>In</PIN>
 				<PIN pos='91.00000,94.00000' which='0' elec='0' direction='2' part='0' number='4' show='3' length='20' number_pos='0' centre_name='0'>Gnd</PIN>
-				<RECTANGLE a='78.00000,89.00000' b='87.00000,96.00000' style='4' fill='0'/>
+				<RECTANGLE a='78.00000,89.00000' b='87.00000,96.00000' style='2' fill='0'/>
 			</TinyCAD>
 		</SYMBOLDEF>
 		<SYMBOLDEF id='32'>
@@ -3008,7 +3008,7 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,40.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,40.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='53.00000,39.00000' style='4' fill='0'>
+				<POLYGON pos='53.00000,39.00000' style='2' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='0.50000,0.00000' arc='0'/>
 					<POINT pos='1.50000,2.00000' arc='0'/>
@@ -3016,11 +3016,11 @@ download the executable.-->
 					<POINT pos='3.50000,2.00000' arc='0'/>
 					<POINT pos='4.00000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='52.00000,40.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='57.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='57.00000,40.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -3063,7 +3063,7 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='63.00000,41.00000' which='0' elec='0' direction='2' part='0' number='1' show='3' length='20' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='63.00000,44.00000' which='0' elec='0' direction='2' part='0' number='2' show='3' length='20' number_pos='0' centre_name='0'></PIN>
-				<RECTANGLE a='53.00000,39.00000' b='59.00000,52.00000' style='4' fill='0'/>
+				<RECTANGLE a='53.00000,39.00000' b='59.00000,52.00000' style='2' fill='0'/>
 				<PIN pos='63.00000,47.00000' which='0' elec='0' direction='2' part='0' number='3' show='3' length='20' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='63.00000,50.00000' which='0' elec='0' direction='2' part='0' number='4' show='3' length='20' number_pos='0' centre_name='0'></PIN>
 			</TinyCAD>
@@ -3105,27 +3105,27 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,44.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,44.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.40000' style='4' fill='0'>
+				<POLYGON pos='54.40000,42.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.40000' style='4' fill='0'>
+				<POLYGON pos='55.40000,42.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,44.00000' style='4' fill='0'>
+				<POLYGON pos='52.00000,44.00000' style='2' fill='0'>
 					<POINT pos='2.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,44.00000' style='4' fill='0'>
+				<POLYGON pos='55.40000,44.00000' style='2' fill='0'>
 					<POINT pos='2.60000,0.00000' arc='0'/>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='53.40000,42.40000' style='4' fill='0'>
+				<POLYGON pos='53.40000,42.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,1.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='53.00000,43.00000' style='4' fill='0'>
+				<POLYGON pos='53.00000,43.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -3168,7 +3168,7 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,40.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,40.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='53.00000,39.00000' style='4' fill='0'>
+				<POLYGON pos='53.00000,39.00000' style='2' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='0.50000,0.00000' arc='0'/>
 					<POINT pos='1.50000,2.00000' arc='0'/>
@@ -3176,11 +3176,11 @@ download the executable.-->
 					<POINT pos='3.50000,2.00000' arc='0'/>
 					<POINT pos='4.00000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='52.00000,40.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='57.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='57.00000,40.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -3223,7 +3223,7 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,40.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,40.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='53.00000,39.00000' style='4' fill='0'>
+				<POLYGON pos='53.00000,39.00000' style='2' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='0.50000,0.00000' arc='0'/>
 					<POINT pos='1.50000,2.00000' arc='0'/>
@@ -3231,11 +3231,11 @@ download the executable.-->
 					<POINT pos='3.50000,2.00000' arc='0'/>
 					<POINT pos='4.00000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='52.00000,40.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='57.00000,40.00000' style='4' fill='0'>
+				<POLYGON pos='57.00000,40.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -3526,14 +3526,6 @@ download the executable.-->
 		<LABEL pos='62.00000,45.00000' direction='3' font='3' color='208000' style='0'>Neutral</LABEL>
 		<POWER pos='34.00000,78.00000' which='1' direction='2'>Live</POWER>
 		<POWER pos='34.00000,81.00000' which='1' direction='2'>Neutral</POWER>
-		<SYMBOL id='17' pos='34.00000,89.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
-			<FIELD type='0' description='Ref' value='C?' show='1' pos='-4.00000,-2.00000'/>
-			<FIELD type='2' description='Name' value='C-Polar' show='0' pos='0.00000,0.00000'/>
-			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
-			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
-			<FIELD type='1' description='Package' value='C_12mm' show='0' pos='1.00000,2.80000'/>
-			<FIELD type='0' description='Value' value='22u' show='1' pos='-7.00000,2.40000'/>
-		</SYMBOL>
 		<WIRE a='34.00000,87.00000' b='36.00000,87.00000'/>
 		<WIRE a='24.00000,87.00000' b='22.00000,87.00000'/>
 		<WIRE a='22.00000,87.00000' b='22.00000,84.00000'/>
@@ -3567,6 +3559,7 @@ download the executable.-->
 			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='1' description='Package' value='C_9mm' show='0' pos='-4.00000,6.80000'/>
 			<FIELD type='0' description='Value' value='150u' show='1' pos='-1.00000,-1.60000'/>
+			<FIELD type='3' description='Mantech' value='72M4430' show='0' pos='-4.00000,9.20000'/>
 		</SYMBOL>
 		<POWER pos='66.00000,92.00000' which='3' direction='1'>Gnd_P</POWER>
 		<POWER pos='74.00000,92.00000' which='3' direction='1'>Gnd_P</POWER>
@@ -3587,6 +3580,7 @@ download the executable.-->
 			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='1' description='Package' value='C_12mm' show='0' pos='1.00000,2.80000'/>
 			<FIELD type='0' description='Value' value='22u' show='1' pos='-7.00000,2.40000'/>
+			<FIELD type='3' description='Mantech' value='13M2568' show='0' pos='1.00000,5.20000'/>
 		</SYMBOL>
 		<WIRE a='34.00000,135.00000' b='36.00000,135.00000'/>
 		<WIRE a='24.00000,135.00000' b='22.00000,135.00000'/>
@@ -3612,14 +3606,6 @@ download the executable.-->
 			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='1' description='Package' value='1206' show='0' pos='-4.00000,6.80000'/>
 			<FIELD type='0' description='Value' value='1u' show='1' pos='-1.00000,-1.60000'/>
-		</SYMBOL>
-		<SYMBOL id='17' pos='76.00000,138.00000' part='0' rotate='3' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
-			<FIELD type='0' description='Ref' value='C?' show='1' pos='-1.00000,-7.00000'/>
-			<FIELD type='2' description='Name' value='C-Polar' show='0' pos='0.00000,0.00000'/>
-			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
-			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
-			<FIELD type='1' description='Package' value='C_9mm' show='0' pos='-4.00000,6.80000'/>
-			<FIELD type='0' description='Value' value='150u' show='1' pos='-1.00000,-1.60000'/>
 		</SYMBOL>
 		<WIRE a='56.00000,126.00000' b='66.00000,126.00000'/>
 		<WIRE a='66.00000,126.00000' b='66.00000,128.00000'/>
@@ -3917,6 +3903,24 @@ download the executable.-->
 		<JUNCTION pos='152.00000,126.00000'/>
 		<POWER pos='222.00000,41.00000' which='1' direction='3'>Bus_P_Mid</POWER>
 		<WIRE a='222.00000,41.00000' b='220.00000,41.00000'/>
+		<SYMBOL id='17' pos='34.00000,89.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='C?' show='1' pos='-4.00000,-2.00000'/>
+			<FIELD type='2' description='Name' value='C-Polar' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='C_12mm' show='0' pos='1.00000,2.80000'/>
+			<FIELD type='0' description='Value' value='22u' show='1' pos='-7.00000,2.40000'/>
+			<FIELD type='3' description='Mantech' value='13M2568' show='0' pos='1.00000,5.20000'/>
+		</SYMBOL>
+		<SYMBOL id='17' pos='76.00000,138.00000' part='0' rotate='3' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='C?' show='1' pos='-1.00000,-7.00000'/>
+			<FIELD type='2' description='Name' value='C-Polar' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='C_9mm' show='0' pos='-4.00000,6.80000'/>
+			<FIELD type='0' description='Value' value='150u' show='1' pos='-1.00000,-1.60000'/>
+			<FIELD type='3' description='Mantech' value='72M4430' show='0' pos='-4.00000,9.20000'/>
+		</SYMBOL>
 	</TinyCAD>
 	<TinyCAD>
 		<NAME>Bus</NAME>
@@ -3933,16 +3937,6 @@ download the executable.-->
 			<DATE>2016-09-25</DATE>
 			<GRID spacing='50.00000' snap='1'/>
 		</DETAILS>
-		<FONT id='0'>
-			<HEIGHT>-13</HEIGHT>
-			<WIDTH>6</WIDTH>
-			<WEIGHT>400</WEIGHT>
-			<ITALIC>0</ITALIC>
-			<UNDERLINE>0</UNDERLINE>
-			<STRIKEOUT>0</STRIKEOUT>
-			<CHARSET>0</CHARSET>
-			<FACENAME>Arial</FACENAME>
-		</FONT>
 		<FONT id='1'>
 			<HEIGHT>-10</HEIGHT>
 			<WIDTH>0</WIDTH>
@@ -3953,12 +3947,22 @@ download the executable.-->
 			<CHARSET>0</CHARSET>
 			<FACENAME>Arial</FACENAME>
 		</FONT>
-		<STYLE id='2'>
+		<FONT id='3'>
+			<HEIGHT>-13</HEIGHT>
+			<WIDTH>6</WIDTH>
+			<WEIGHT>400</WEIGHT>
+			<ITALIC>0</ITALIC>
+			<UNDERLINE>0</UNDERLINE>
+			<STRIKEOUT>0</STRIKEOUT>
+			<CHARSET>0</CHARSET>
+			<FACENAME>Arial</FACENAME>
+		</FONT>
+		<STYLE id='3'>
 			<STYLE>0</STYLE>
 			<COLOR>000000</COLOR>
 			<THICKNESS>1</THICKNESS>
 		</STYLE>
-		<STYLE id='3'>
+		<STYLE id='4'>
 			<STYLE>0</STYLE>
 			<COLOR>FF0000</COLOR>
 			<THICKNESS>1</THICKNESS>
@@ -4012,7 +4016,7 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,40.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,40.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='53.00000,39.00000' style='2' fill='0'>
+				<POLYGON pos='53.00000,39.00000' style='3' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='0.50000,0.00000' arc='0'/>
 					<POINT pos='1.50000,2.00000' arc='0'/>
@@ -4020,11 +4024,11 @@ download the executable.-->
 					<POINT pos='3.50000,2.00000' arc='0'/>
 					<POINT pos='4.00000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,40.00000' style='2' fill='0'>
+				<POLYGON pos='52.00000,40.00000' style='3' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='57.00000,40.00000' style='2' fill='0'>
+				<POLYGON pos='57.00000,40.00000' style='3' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -4067,55 +4071,55 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='60.00000,54.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='71.00000,56.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='63.40000,52.40000' style='2' fill='0'>
+				<POLYGON pos='63.40000,52.40000' style='3' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,52.40000' style='2' fill='0'>
+				<POLYGON pos='66.40000,52.40000' style='3' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='63.40000,52.40000' style='2' fill='0'>
+				<POLYGON pos='63.40000,52.40000' style='3' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='3.10000,1.60000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='62.00000,54.00000' style='2' fill='0'>
+				<POLYGON pos='62.00000,54.00000' style='3' fill='0'>
 					<POINT pos='1.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,54.00000' style='2' fill='0'>
+				<POLYGON pos='66.40000,54.00000' style='3' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='1.60000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='63.40000,56.40000' style='2' fill='0'>
+				<POLYGON pos='63.40000,56.40000' style='3' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,56.40000' style='2' fill='0'>
+				<POLYGON pos='66.40000,56.40000' style='3' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='63.40000,56.40000' style='2' fill='0'>
+				<POLYGON pos='63.40000,56.40000' style='3' fill='0'>
 					<POINT pos='3.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,1.60000' arc='0'/>
 					<POINT pos='3.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='62.00000,58.00000' style='2' fill='0'>
+				<POLYGON pos='62.00000,58.00000' style='3' fill='0'>
 					<POINT pos='1.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,58.00000' style='2' fill='0'>
+				<POLYGON pos='66.40000,58.00000' style='3' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='1.60000,0.00000' arc='0'/>
 				</POLYGON>
 				<PIN pos='60.00000,58.00000' which='0' elec='0' direction='3' part='0' number='3' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<ELLIPSE a='67.50000,55.50000' b='68.50000,56.50000' style='2' fill='1'/>
-				<POLYGON pos='68.00000,54.00000' style='2' fill='0'>
+				<ELLIPSE a='67.50000,55.50000' b='68.50000,56.50000' style='3' fill='1'/>
+				<POLYGON pos='68.00000,54.00000' style='3' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,4.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='68.00000,56.00000' style='2' fill='0'>
+				<POLYGON pos='68.00000,56.00000' style='3' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -4158,7 +4162,7 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,40.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,40.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='53.00000,39.00000' style='2' fill='0'>
+				<POLYGON pos='53.00000,39.00000' style='3' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='0.50000,0.00000' arc='0'/>
 					<POINT pos='1.50000,2.00000' arc='0'/>
@@ -4166,11 +4170,11 @@ download the executable.-->
 					<POINT pos='3.50000,2.00000' arc='0'/>
 					<POINT pos='4.00000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,40.00000' style='2' fill='0'>
+				<POLYGON pos='52.00000,40.00000' style='3' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='57.00000,40.00000' style='2' fill='0'>
+				<POLYGON pos='57.00000,40.00000' style='3' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -4206,19 +4210,19 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,43.50000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,43.50000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.00000' style='2' fill='0'>
+				<POLYGON pos='54.40000,42.00000' style='3' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.00000' style='2' fill='0'>
+				<POLYGON pos='55.40000,42.00000' style='3' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,43.40000' style='2' fill='0'>
+				<POLYGON pos='52.00000,43.40000' style='3' fill='0'>
 					<POINT pos='2.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,43.40000' style='2' fill='0'>
+				<POLYGON pos='55.40000,43.40000' style='3' fill='0'>
 					<POINT pos='2.60000,0.10000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -4254,19 +4258,19 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,43.50000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,43.50000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.00000' style='2' fill='0'>
+				<POLYGON pos='54.40000,42.00000' style='3' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.00000' style='2' fill='0'>
+				<POLYGON pos='55.40000,42.00000' style='3' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,43.40000' style='2' fill='0'>
+				<POLYGON pos='52.00000,43.40000' style='3' fill='0'>
 					<POINT pos='2.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,43.40000' style='2' fill='0'>
+				<POLYGON pos='55.40000,43.40000' style='3' fill='0'>
 					<POINT pos='2.60000,0.10000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -4309,27 +4313,27 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,44.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,44.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.40000' style='2' fill='0'>
+				<POLYGON pos='54.40000,42.40000' style='3' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.40000' style='2' fill='0'>
+				<POLYGON pos='55.40000,42.40000' style='3' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,44.00000' style='2' fill='0'>
+				<POLYGON pos='52.00000,44.00000' style='3' fill='0'>
 					<POINT pos='2.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,44.00000' style='2' fill='0'>
+				<POLYGON pos='55.40000,44.00000' style='3' fill='0'>
 					<POINT pos='2.60000,0.00000' arc='0'/>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='53.40000,42.40000' style='2' fill='0'>
+				<POLYGON pos='53.40000,42.40000' style='3' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,1.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='53.00000,43.00000' style='2' fill='0'>
+				<POLYGON pos='53.00000,43.00000' style='3' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -4372,7 +4376,7 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,40.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,40.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='53.00000,39.00000' style='2' fill='0'>
+				<POLYGON pos='53.00000,39.00000' style='3' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='0.50000,0.00000' arc='0'/>
 					<POINT pos='1.50000,2.00000' arc='0'/>
@@ -4380,11 +4384,11 @@ download the executable.-->
 					<POINT pos='3.50000,2.00000' arc='0'/>
 					<POINT pos='4.00000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,40.00000' style='2' fill='0'>
+				<POLYGON pos='52.00000,40.00000' style='3' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='57.00000,40.00000' style='2' fill='0'>
+				<POLYGON pos='57.00000,40.00000' style='3' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -4420,19 +4424,19 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,43.50000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,43.50000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.00000' style='2' fill='0'>
+				<POLYGON pos='54.40000,42.00000' style='3' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.00000' style='2' fill='0'>
+				<POLYGON pos='55.40000,42.00000' style='3' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,43.40000' style='2' fill='0'>
+				<POLYGON pos='52.00000,43.40000' style='3' fill='0'>
 					<POINT pos='2.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,43.40000' style='2' fill='0'>
+				<POLYGON pos='55.40000,43.40000' style='3' fill='0'>
 					<POINT pos='2.60000,0.10000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -4468,19 +4472,19 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,43.50000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,43.50000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.00000' style='2' fill='0'>
+				<POLYGON pos='54.40000,42.00000' style='3' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.00000' style='2' fill='0'>
+				<POLYGON pos='55.40000,42.00000' style='3' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,43.40000' style='2' fill='0'>
+				<POLYGON pos='52.00000,43.40000' style='3' fill='0'>
 					<POINT pos='2.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,43.40000' style='2' fill='0'>
+				<POLYGON pos='55.40000,43.40000' style='3' fill='0'>
 					<POINT pos='2.60000,0.10000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -4523,27 +4527,27 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,44.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,44.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.40000' style='2' fill='0'>
+				<POLYGON pos='54.40000,42.40000' style='3' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.40000' style='2' fill='0'>
+				<POLYGON pos='55.40000,42.40000' style='3' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,44.00000' style='2' fill='0'>
+				<POLYGON pos='52.00000,44.00000' style='3' fill='0'>
 					<POINT pos='2.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,44.00000' style='2' fill='0'>
+				<POLYGON pos='55.40000,44.00000' style='3' fill='0'>
 					<POINT pos='2.60000,0.00000' arc='0'/>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='53.40000,42.40000' style='2' fill='0'>
+				<POLYGON pos='53.40000,42.40000' style='3' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,1.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='53.00000,43.00000' style='2' fill='0'>
+				<POLYGON pos='53.00000,43.00000' style='3' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -4579,19 +4583,19 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,43.50000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,43.50000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.00000' style='2' fill='0'>
+				<POLYGON pos='54.40000,42.00000' style='3' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.00000' style='2' fill='0'>
+				<POLYGON pos='55.40000,42.00000' style='3' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,43.40000' style='2' fill='0'>
+				<POLYGON pos='52.00000,43.40000' style='3' fill='0'>
 					<POINT pos='2.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,43.40000' style='2' fill='0'>
+				<POLYGON pos='55.40000,43.40000' style='3' fill='0'>
 					<POINT pos='2.60000,0.10000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -4634,37 +4638,37 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='60.00000,55.00000' which='0' elec='0' direction='3' part='0' number='1' show='3' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='66.00000,50.00000' which='0' elec='0' direction='1' part='0' number='2' show='3' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='63.40000,53.40000' style='2' fill='0'>
+				<POLYGON pos='63.40000,53.40000' style='3' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='64.00000,52.40000' style='2' fill='0'>
+				<POLYGON pos='64.00000,52.40000' style='3' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='0.00000,5.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='62.00000,55.00000' style='2' fill='0'>
+				<POLYGON pos='62.00000,55.00000' style='3' fill='0'>
 					<POINT pos='1.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='64.00000,53.40000' style='2' fill='0'>
+				<POLYGON pos='64.00000,53.40000' style='3' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='2.00000,0.10000' arc='0'/>
 				</POLYGON>
 				<PIN pos='66.00000,60.00000' which='0' elec='0' direction='0' part='0' number='3' show='3' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='64.00000,56.40000' style='2' fill='0'>
+				<POLYGON pos='64.00000,56.40000' style='3' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='2.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='64.40000,56.00000' style='2' fill='0'>
+				<POLYGON pos='64.40000,56.00000' style='3' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='1.10000,0.50000' arc='0'/>
 					<POINT pos='0.10000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.00000,52.00000' style='2' fill='0'>
+				<POLYGON pos='66.00000,52.00000' style='3' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,1.50000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.00000,56.40000' style='2' fill='0'>
+				<POLYGON pos='66.00000,56.40000' style='3' fill='0'>
 					<POINT pos='0.00000,1.60000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
@@ -4707,37 +4711,37 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='60.00000,55.00000' which='0' elec='0' direction='3' part='0' number='1' show='3' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='66.00000,50.00000' which='0' elec='0' direction='1' part='0' number='2' show='3' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='63.40000,53.40000' style='2' fill='0'>
+				<POLYGON pos='63.40000,53.40000' style='3' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='64.00000,52.40000' style='2' fill='0'>
+				<POLYGON pos='64.00000,52.40000' style='3' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='0.00000,5.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='62.00000,55.00000' style='2' fill='0'>
+				<POLYGON pos='62.00000,55.00000' style='3' fill='0'>
 					<POINT pos='1.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='64.00000,53.40000' style='2' fill='0'>
+				<POLYGON pos='64.00000,53.40000' style='3' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='2.00000,0.10000' arc='0'/>
 				</POLYGON>
 				<PIN pos='66.00000,60.00000' which='0' elec='0' direction='0' part='0' number='3' show='3' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='64.00000,56.40000' style='2' fill='0'>
+				<POLYGON pos='64.00000,56.40000' style='3' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='2.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='64.40000,56.00000' style='2' fill='0'>
+				<POLYGON pos='64.40000,56.00000' style='3' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='1.10000,0.50000' arc='0'/>
 					<POINT pos='0.10000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.00000,52.00000' style='2' fill='0'>
+				<POLYGON pos='66.00000,52.00000' style='3' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,1.50000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.00000,56.40000' style='2' fill='0'>
+				<POLYGON pos='66.00000,56.40000' style='3' fill='0'>
 					<POINT pos='0.00000,1.60000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
@@ -4780,58 +4784,58 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='53.00000,39.00000' which='0' elec='0' direction='3' part='0' number='1' show='3' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='53.00000,47.00000' which='0' elec='0' direction='3' part='0' number='2' show='3' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='55.00000,41.00000' style='2' fill='0'>
+				<POLYGON pos='55.00000,41.00000' style='3' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,1.00000' arc='1'/>
 					<POINT pos='0.00000,2.00000' arc='2'/>
 				</POLYGON>
-				<POLYGON pos='55.00000,43.00000' style='2' fill='0'>
+				<POLYGON pos='55.00000,43.00000' style='3' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,1.00000' arc='1'/>
 					<POINT pos='0.00000,2.00000' arc='2'/>
 				</POLYGON>
-				<POLYGON pos='55.00000,45.00000' style='2' fill='0'>
+				<POLYGON pos='55.00000,45.00000' style='3' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,1.00000' arc='1'/>
 					<POINT pos='0.00000,2.00000' arc='2'/>
 				</POLYGON>
 				<PIN pos='60.00000,39.00000' which='0' elec='0' direction='2' part='0' number='3' show='3' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,47.00000' which='0' elec='0' direction='2' part='0' number='4' show='3' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='57.00000,41.00000' style='2' fill='0'>
+				<POLYGON pos='57.00000,41.00000' style='3' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,1.00000' arc='1'/>
 					<POINT pos='1.00000,2.00000' arc='2'/>
 				</POLYGON>
-				<POLYGON pos='57.00000,43.00000' style='2' fill='0'>
+				<POLYGON pos='57.00000,43.00000' style='3' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,1.00000' arc='1'/>
 					<POINT pos='1.00000,2.00000' arc='2'/>
 				</POLYGON>
-				<POLYGON pos='57.00000,45.00000' style='2' fill='0'>
+				<POLYGON pos='57.00000,45.00000' style='3' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,1.00000' arc='1'/>
 					<POINT pos='1.00000,2.00000' arc='2'/>
 				</POLYGON>
-				<POLYGON pos='55.00000,39.00000' style='2' fill='0'>
+				<POLYGON pos='55.00000,39.00000' style='3' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,1.00000' arc='1'/>
 					<POINT pos='0.00000,2.00000' arc='2'/>
 				</POLYGON>
-				<POLYGON pos='57.00000,39.00000' style='2' fill='0'>
+				<POLYGON pos='57.00000,39.00000' style='3' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,1.00000' arc='1'/>
 					<POINT pos='1.00000,2.00000' arc='2'/>
 				</POLYGON>
-				<POLYGON pos='56.20000,39.00000' style='2' fill='0'>
+				<POLYGON pos='56.20000,39.00000' style='3' fill='0'>
 					<POINT pos='0.05000,0.00000' arc='0'/>
 					<POINT pos='0.05000,8.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='56.60000,39.00000' style='2' fill='0'>
+				<POLYGON pos='56.60000,39.00000' style='3' fill='0'>
 					<POINT pos='0.15000,0.00000' arc='0'/>
 					<POINT pos='0.15000,8.00000' arc='0'/>
 				</POLYGON>
-				<ELLIPSE a='55.00000,39.25000' b='55.50000,39.75000' style='2' fill='1'/>
-				<ELLIPSE a='57.50000,39.25000' b='58.00000,39.75000' style='2' fill='1'/>
+				<ELLIPSE a='55.00000,39.25000' b='55.50000,39.75000' style='3' fill='1'/>
+				<ELLIPSE a='57.50000,39.25000' b='58.00000,39.75000' style='3' fill='1'/>
 			</TinyCAD>
 		</SYMBOLDEF>
 		<SYMBOLDEF id='15'>
@@ -4878,7 +4882,7 @@ download the executable.-->
 				<PIN pos='73.00000,39.00000' which='0' elec='0' direction='2' part='0' number='11' show='3' length='20' number_pos='0' centre_name='0'>VS</PIN>
 				<PIN pos='73.00000,36.00000' which='0' elec='0' direction='2' part='0' number='12' show='3' length='20' number_pos='0' centre_name='0'>HO</PIN>
 				<PIN pos='73.00000,33.00000' which='0' elec='0' direction='2' part='0' number='13' show='3' length='20' number_pos='0' centre_name='0'>VB</PIN>
-				<RECTANGLE a='56.00000,31.00000' b='69.00000,47.00000' style='2' fill='0'/>
+				<RECTANGLE a='56.00000,31.00000' b='69.00000,47.00000' style='3' fill='0'/>
 			</TinyCAD>
 		</SYMBOLDEF>
 		<SYMBOLDEF id='16'>
@@ -4918,24 +4922,24 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='60.00000,52.00000' which='0' elec='0' direction='3' part='0' number='1' show='3' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='70.00000,52.00000' which='0' elec='0' direction='2' part='0' number='2' show='3' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='63.40000,50.40000' style='2' fill='0'>
+				<POLYGON pos='63.40000,50.40000' style='3' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,50.40000' style='2' fill='0'>
+				<POLYGON pos='66.40000,50.40000' style='3' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='63.40000,50.40000' style='2' fill='0'>
+				<POLYGON pos='63.40000,50.40000' style='3' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='3.10000,1.60000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='62.00000,52.00000' style='2' fill='0'>
+				<POLYGON pos='62.00000,52.00000' style='3' fill='0'>
 					<POINT pos='1.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,52.00000' style='2' fill='0'>
+				<POLYGON pos='66.40000,52.00000' style='3' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='1.60000,0.00000' arc='0'/>
 				</POLYGON>
@@ -4976,7 +4980,7 @@ download the executable.-->
 			</FIELD>
 			<REF_POINT power='0' part='0' pos='57.00000,60.00000'/>
 			<TinyCAD>
-				<RECTANGLE a='39.00000,47.00000' b='53.00000,60.00000' style='2' fill='0'/>
+				<RECTANGLE a='39.00000,47.00000' b='53.00000,60.00000' style='3' fill='0'/>
 				<PIN pos='35.00000,52.00000' which='0' elec='0' direction='3' part='0' number='1' show='3' length='20' number_pos='0' centre_name='0'>VCC1</PIN>
 				<PIN pos='35.00000,49.00000' which='0' elec='0' direction='3' part='0' number='2' show='3' length='20' number_pos='0' centre_name='0'>IN</PIN>
 				<PIN pos='35.00000,55.00000' which='0' elec='0' direction='3' part='0' number='3' show='3' length='20' number_pos='0' centre_name='0'>VCC1</PIN>
@@ -5022,7 +5026,7 @@ download the executable.-->
 			</FIELD>
 			<REF_POINT power='0' part='0' pos='57.00000,60.00000'/>
 			<TinyCAD>
-				<RECTANGLE a='39.00000,47.00000' b='53.00000,60.00000' style='2' fill='0'/>
+				<RECTANGLE a='39.00000,47.00000' b='53.00000,60.00000' style='3' fill='0'/>
 				<PIN pos='35.00000,52.00000' which='0' elec='0' direction='3' part='0' number='1' show='3' length='20' number_pos='0' centre_name='0'>VCC1</PIN>
 				<PIN pos='35.00000,49.00000' which='0' elec='0' direction='3' part='0' number='2' show='3' length='20' number_pos='0' centre_name='0'>IN</PIN>
 				<PIN pos='35.00000,55.00000' which='0' elec='0' direction='3' part='0' number='3' show='3' length='20' number_pos='0' centre_name='0'>VCC1</PIN>
@@ -5033,7 +5037,7 @@ download the executable.-->
 				<PIN pos='57.00000,52.00000' which='0' elec='0' direction='2' part='0' number='8' show='3' length='20' number_pos='0' centre_name='0'>VCC2</PIN>
 			</TinyCAD>
 		</SYMBOLDEF>
-		<SYMBOLDEF id='22'>
+		<SYMBOLDEF id='19'>
 			<NAME type='2'>L</NAME>
 			<REF type='0'>L?</REF>
 			<DESCRIPTION>Inductor</DESCRIPTION>
@@ -5070,204 +5074,204 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,44.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,44.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='52.00000,43.00000' style='2' fill='0'>
+				<POLYGON pos='52.00000,43.00000' style='3' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='2'/>
 					<POINT pos='2.00000,1.00000' arc='1'/>
 				</POLYGON>
-				<POLYGON pos='54.00000,43.00000' style='2' fill='0'>
+				<POLYGON pos='54.00000,43.00000' style='3' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='2'/>
 					<POINT pos='2.00000,1.00000' arc='1'/>
 				</POLYGON>
-				<POLYGON pos='56.00000,43.00000' style='2' fill='0'>
+				<POLYGON pos='56.00000,43.00000' style='3' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='2'/>
 					<POINT pos='2.00000,1.00000' arc='1'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='20'>
+			<NAME type='2'>MUR1560</NAME>
+			<REF type='0'>D?</REF>
+			<DESCRIPTION>Diode - 600V, 15A</DESCRIPTION>
+			<PPP>1</PPP>
+			<FIELD>
+				<NAME>$$SPICE_PROLOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>$$SPICE_EPILOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT>TO-220-2</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Value</NAME>
+				<DEFAULT>MUR1560</DEFAULT>
+				<FT>000000</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='70.00000,56.00000'/>
+			<TinyCAD>
+				<PIN pos='60.00000,54.00000' which='0' elec='0' direction='3' part='0' number='2' show='2' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='70.00000,54.00000' which='0' elec='0' direction='2' part='0' number='1' show='2' length='10' number_pos='0' centre_name='0'></PIN>
+				<POLYGON pos='63.40000,52.40000' style='3' fill='0'>
+					<POINT pos='0.10000,0.10000' arc='0'/>
+					<POINT pos='0.10000,3.10000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='66.40000,52.40000' style='3' fill='0'>
+					<POINT pos='0.10000,0.10000' arc='0'/>
+					<POINT pos='0.10000,3.10000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='63.40000,52.40000' style='3' fill='0'>
+					<POINT pos='0.10000,0.10000' arc='0'/>
+					<POINT pos='3.10000,1.60000' arc='0'/>
+					<POINT pos='0.10000,3.10000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='62.00000,54.00000' style='3' fill='0'>
+					<POINT pos='1.50000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='66.40000,54.00000' style='3' fill='0'>
+					<POINT pos='0.10000,0.00000' arc='0'/>
+					<POINT pos='1.60000,0.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='21'>
+			<NAME type='2'>MUR1560</NAME>
+			<REF type='0'>D?</REF>
+			<DESCRIPTION>Diode - 600V, 15A</DESCRIPTION>
+			<PPP>1</PPP>
+			<FIELD>
+				<NAME>$$SPICE_PROLOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>$$SPICE_EPILOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT>TO-220-2</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Value</NAME>
+				<DEFAULT>MUR1560</DEFAULT>
+				<FT>000000</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='70.00000,56.00000'/>
+			<TinyCAD>
+				<PIN pos='60.00000,54.00000' which='0' elec='0' direction='3' part='0' number='2' show='2' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='70.00000,54.00000' which='0' elec='0' direction='2' part='0' number='1' show='2' length='10' number_pos='0' centre_name='0'></PIN>
+				<POLYGON pos='63.40000,52.40000' style='3' fill='0'>
+					<POINT pos='0.10000,0.10000' arc='0'/>
+					<POINT pos='0.10000,3.10000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='66.40000,52.40000' style='3' fill='0'>
+					<POINT pos='0.10000,0.10000' arc='0'/>
+					<POINT pos='0.10000,3.10000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='63.40000,52.40000' style='3' fill='0'>
+					<POINT pos='0.10000,0.10000' arc='0'/>
+					<POINT pos='3.10000,1.60000' arc='0'/>
+					<POINT pos='0.10000,3.10000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='62.00000,54.00000' style='3' fill='0'>
+					<POINT pos='1.50000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='66.40000,54.00000' style='3' fill='0'>
+					<POINT pos='0.10000,0.00000' arc='0'/>
+					<POINT pos='1.60000,0.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='22'>
+			<NAME type='2'>MUR1560</NAME>
+			<REF type='0'>D?</REF>
+			<DESCRIPTION>Diode - 600V, 15A</DESCRIPTION>
+			<PPP>1</PPP>
+			<FIELD>
+				<NAME>$$SPICE_PROLOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>$$SPICE_EPILOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT>TO-220-2</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Value</NAME>
+				<DEFAULT>MUR1560</DEFAULT>
+				<FT>000000</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='70.00000,56.00000'/>
+			<TinyCAD>
+				<PIN pos='60.00000,54.00000' which='0' elec='0' direction='3' part='0' number='2' show='2' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='70.00000,54.00000' which='0' elec='0' direction='2' part='0' number='1' show='2' length='10' number_pos='0' centre_name='0'></PIN>
+				<POLYGON pos='63.40000,52.40000' style='3' fill='0'>
+					<POINT pos='0.10000,0.10000' arc='0'/>
+					<POINT pos='0.10000,3.10000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='66.40000,52.40000' style='3' fill='0'>
+					<POINT pos='0.10000,0.10000' arc='0'/>
+					<POINT pos='0.10000,3.10000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='63.40000,52.40000' style='3' fill='0'>
+					<POINT pos='0.10000,0.10000' arc='0'/>
+					<POINT pos='3.10000,1.60000' arc='0'/>
+					<POINT pos='0.10000,3.10000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='62.00000,54.00000' style='3' fill='0'>
+					<POINT pos='1.50000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='66.40000,54.00000' style='3' fill='0'>
+					<POINT pos='0.10000,0.00000' arc='0'/>
+					<POINT pos='1.60000,0.00000' arc='0'/>
 				</POLYGON>
 			</TinyCAD>
 		</SYMBOLDEF>
 		<SYMBOLDEF id='23'>
-			<NAME type='2'>MUR1560</NAME>
-			<REF type='0'>D?</REF>
-			<DESCRIPTION>Diode - 600V, 15A</DESCRIPTION>
-			<PPP>1</PPP>
-			<FIELD>
-				<NAME>$$SPICE_PROLOG_PRIORITY</NAME>
-				<DEFAULT>5</DEFAULT>
-				<FT>000002</FT>
-				<VALUE></VALUE>
-				<POS>0.00000,0.00000</POS>
-			</FIELD>
-			<FIELD>
-				<NAME>$$SPICE_EPILOG_PRIORITY</NAME>
-				<DEFAULT>5</DEFAULT>
-				<FT>000002</FT>
-				<VALUE></VALUE>
-				<POS>0.00000,0.00000</POS>
-			</FIELD>
-			<FIELD>
-				<NAME>Package</NAME>
-				<DEFAULT>TO-220-2</DEFAULT>
-				<FT>000001</FT>
-				<VALUE></VALUE>
-				<POS>0.00000,0.00000</POS>
-			</FIELD>
-			<FIELD>
-				<NAME>Value</NAME>
-				<DEFAULT>MUR1560</DEFAULT>
-				<FT>000000</FT>
-				<VALUE></VALUE>
-				<POS>0.00000,0.00000</POS>
-			</FIELD>
-			<REF_POINT power='0' part='0' pos='70.00000,56.00000'/>
-			<TinyCAD>
-				<PIN pos='60.00000,54.00000' which='0' elec='0' direction='3' part='0' number='2' show='2' length='10' number_pos='0' centre_name='0'></PIN>
-				<PIN pos='70.00000,54.00000' which='0' elec='0' direction='2' part='0' number='1' show='2' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='63.40000,52.40000' style='2' fill='0'>
-					<POINT pos='0.10000,0.10000' arc='0'/>
-					<POINT pos='0.10000,3.10000' arc='0'/>
-				</POLYGON>
-				<POLYGON pos='66.40000,52.40000' style='2' fill='0'>
-					<POINT pos='0.10000,0.10000' arc='0'/>
-					<POINT pos='0.10000,3.10000' arc='0'/>
-				</POLYGON>
-				<POLYGON pos='63.40000,52.40000' style='2' fill='0'>
-					<POINT pos='0.10000,0.10000' arc='0'/>
-					<POINT pos='3.10000,1.60000' arc='0'/>
-					<POINT pos='0.10000,3.10000' arc='0'/>
-				</POLYGON>
-				<POLYGON pos='62.00000,54.00000' style='2' fill='0'>
-					<POINT pos='1.50000,0.00000' arc='0'/>
-					<POINT pos='0.00000,0.00000' arc='0'/>
-				</POLYGON>
-				<POLYGON pos='66.40000,54.00000' style='2' fill='0'>
-					<POINT pos='0.10000,0.00000' arc='0'/>
-					<POINT pos='1.60000,0.00000' arc='0'/>
-				</POLYGON>
-			</TinyCAD>
-		</SYMBOLDEF>
-		<SYMBOLDEF id='24'>
-			<NAME type='2'>MUR1560</NAME>
-			<REF type='0'>D?</REF>
-			<DESCRIPTION>Diode - 600V, 15A</DESCRIPTION>
-			<PPP>1</PPP>
-			<FIELD>
-				<NAME>$$SPICE_PROLOG_PRIORITY</NAME>
-				<DEFAULT>5</DEFAULT>
-				<FT>000002</FT>
-				<VALUE></VALUE>
-				<POS>0.00000,0.00000</POS>
-			</FIELD>
-			<FIELD>
-				<NAME>$$SPICE_EPILOG_PRIORITY</NAME>
-				<DEFAULT>5</DEFAULT>
-				<FT>000002</FT>
-				<VALUE></VALUE>
-				<POS>0.00000,0.00000</POS>
-			</FIELD>
-			<FIELD>
-				<NAME>Package</NAME>
-				<DEFAULT>TO-220-2</DEFAULT>
-				<FT>000001</FT>
-				<VALUE></VALUE>
-				<POS>0.00000,0.00000</POS>
-			</FIELD>
-			<FIELD>
-				<NAME>Value</NAME>
-				<DEFAULT>MUR1560</DEFAULT>
-				<FT>000000</FT>
-				<VALUE></VALUE>
-				<POS>0.00000,0.00000</POS>
-			</FIELD>
-			<REF_POINT power='0' part='0' pos='70.00000,56.00000'/>
-			<TinyCAD>
-				<PIN pos='60.00000,54.00000' which='0' elec='0' direction='3' part='0' number='2' show='2' length='10' number_pos='0' centre_name='0'></PIN>
-				<PIN pos='70.00000,54.00000' which='0' elec='0' direction='2' part='0' number='1' show='2' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='63.40000,52.40000' style='2' fill='0'>
-					<POINT pos='0.10000,0.10000' arc='0'/>
-					<POINT pos='0.10000,3.10000' arc='0'/>
-				</POLYGON>
-				<POLYGON pos='66.40000,52.40000' style='2' fill='0'>
-					<POINT pos='0.10000,0.10000' arc='0'/>
-					<POINT pos='0.10000,3.10000' arc='0'/>
-				</POLYGON>
-				<POLYGON pos='63.40000,52.40000' style='2' fill='0'>
-					<POINT pos='0.10000,0.10000' arc='0'/>
-					<POINT pos='3.10000,1.60000' arc='0'/>
-					<POINT pos='0.10000,3.10000' arc='0'/>
-				</POLYGON>
-				<POLYGON pos='62.00000,54.00000' style='2' fill='0'>
-					<POINT pos='1.50000,0.00000' arc='0'/>
-					<POINT pos='0.00000,0.00000' arc='0'/>
-				</POLYGON>
-				<POLYGON pos='66.40000,54.00000' style='2' fill='0'>
-					<POINT pos='0.10000,0.00000' arc='0'/>
-					<POINT pos='1.60000,0.00000' arc='0'/>
-				</POLYGON>
-			</TinyCAD>
-		</SYMBOLDEF>
-		<SYMBOLDEF id='25'>
-			<NAME type='2'>MUR1560</NAME>
-			<REF type='0'>D?</REF>
-			<DESCRIPTION>Diode - 600V, 15A</DESCRIPTION>
-			<PPP>1</PPP>
-			<FIELD>
-				<NAME>$$SPICE_PROLOG_PRIORITY</NAME>
-				<DEFAULT>5</DEFAULT>
-				<FT>000002</FT>
-				<VALUE></VALUE>
-				<POS>0.00000,0.00000</POS>
-			</FIELD>
-			<FIELD>
-				<NAME>$$SPICE_EPILOG_PRIORITY</NAME>
-				<DEFAULT>5</DEFAULT>
-				<FT>000002</FT>
-				<VALUE></VALUE>
-				<POS>0.00000,0.00000</POS>
-			</FIELD>
-			<FIELD>
-				<NAME>Package</NAME>
-				<DEFAULT>TO-220-2</DEFAULT>
-				<FT>000001</FT>
-				<VALUE></VALUE>
-				<POS>0.00000,0.00000</POS>
-			</FIELD>
-			<FIELD>
-				<NAME>Value</NAME>
-				<DEFAULT>MUR1560</DEFAULT>
-				<FT>000000</FT>
-				<VALUE></VALUE>
-				<POS>0.00000,0.00000</POS>
-			</FIELD>
-			<REF_POINT power='0' part='0' pos='70.00000,56.00000'/>
-			<TinyCAD>
-				<PIN pos='60.00000,54.00000' which='0' elec='0' direction='3' part='0' number='2' show='2' length='10' number_pos='0' centre_name='0'></PIN>
-				<PIN pos='70.00000,54.00000' which='0' elec='0' direction='2' part='0' number='1' show='2' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='63.40000,52.40000' style='2' fill='0'>
-					<POINT pos='0.10000,0.10000' arc='0'/>
-					<POINT pos='0.10000,3.10000' arc='0'/>
-				</POLYGON>
-				<POLYGON pos='66.40000,52.40000' style='2' fill='0'>
-					<POINT pos='0.10000,0.10000' arc='0'/>
-					<POINT pos='0.10000,3.10000' arc='0'/>
-				</POLYGON>
-				<POLYGON pos='63.40000,52.40000' style='2' fill='0'>
-					<POINT pos='0.10000,0.10000' arc='0'/>
-					<POINT pos='3.10000,1.60000' arc='0'/>
-					<POINT pos='0.10000,3.10000' arc='0'/>
-				</POLYGON>
-				<POLYGON pos='62.00000,54.00000' style='2' fill='0'>
-					<POINT pos='1.50000,0.00000' arc='0'/>
-					<POINT pos='0.00000,0.00000' arc='0'/>
-				</POLYGON>
-				<POLYGON pos='66.40000,54.00000' style='2' fill='0'>
-					<POINT pos='0.10000,0.00000' arc='0'/>
-					<POINT pos='1.60000,0.00000' arc='0'/>
-				</POLYGON>
-			</TinyCAD>
-		</SYMBOLDEF>
-		<SYMBOLDEF id='26'>
 			<NAME type='1'>ADS1201</NAME>
 			<REF type='0'>U?</REF>
 			<DESCRIPTION>Delta-Sigma Modulator</DESCRIPTION>
@@ -5318,10 +5322,10 @@ download the executable.-->
 				<PIN pos='70.00000,39.00000' which='0' elec='0' direction='2' part='0' number='14' show='3' length='20' number_pos='0' centre_name='0'>MClk</PIN>
 				<PIN pos='70.00000,36.00000' which='0' elec='0' direction='2' part='0' number='15' show='3' length='20' number_pos='0' centre_name='0'>MOut</PIN>
 				<PIN pos='70.00000,42.00000' which='0' elec='0' direction='2' part='0' number='16' show='3' length='20' number_pos='0' centre_name='0'>RefEn</PIN>
-				<RECTANGLE a='50.00000,34.00000' b='66.00000,59.00000' style='2' fill='0'/>
+				<RECTANGLE a='50.00000,34.00000' b='66.00000,59.00000' style='3' fill='0'/>
 			</TinyCAD>
 		</SYMBOLDEF>
-		<SYMBOLDEF id='27'>
+		<SYMBOLDEF id='24'>
 			<NAME type='2'>R</NAME>
 			<REF type='0'>R?</REF>
 			<DESCRIPTION>Resistor</DESCRIPTION>
@@ -5358,7 +5362,7 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,40.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,40.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='53.00000,39.00000' style='2' fill='0'>
+				<POLYGON pos='53.00000,39.00000' style='3' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='0.50000,0.00000' arc='0'/>
 					<POINT pos='1.50000,2.00000' arc='0'/>
@@ -5366,17 +5370,17 @@ download the executable.-->
 					<POINT pos='3.50000,2.00000' arc='0'/>
 					<POINT pos='4.00000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,40.00000' style='2' fill='0'>
+				<POLYGON pos='52.00000,40.00000' style='3' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='57.00000,40.00000' style='2' fill='0'>
+				<POLYGON pos='57.00000,40.00000' style='3' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 				</POLYGON>
 			</TinyCAD>
 		</SYMBOLDEF>
-		<SYMBOLDEF id='28'>
+		<SYMBOLDEF id='25'>
 			<NAME type='2'>Fuse</NAME>
 			<REF type='0'>F?</REF>
 			<DESCRIPTION>Fuse</DESCRIPTION>
@@ -5413,14 +5417,14 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='50.00000,40.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,40.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='52.00000,40.00000' style='2' fill='0'>
+				<POLYGON pos='52.00000,40.00000' style='3' fill='0'>
 					<POINT pos='6.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<RECTANGLE a='53.00000,39.50000' b='57.00000,40.50000' style='2' fill='0'/>
+				<RECTANGLE a='53.00000,39.50000' b='57.00000,40.50000' style='3' fill='0'/>
 			</TinyCAD>
 		</SYMBOLDEF>
-		<SYMBOLDEF id='29'>
+		<SYMBOLDEF id='26'>
 			<NAME type='2'>Term-2 Left</NAME>
 			<REF type='0'>J?</REF>
 			<DESCRIPTION>Terminal</DESCRIPTION>
@@ -5457,7 +5461,7 @@ download the executable.-->
 			<TinyCAD>
 				<PIN pos='63.00000,41.00000' which='0' elec='0' direction='2' part='0' number='1' show='3' length='20' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='63.00000,44.00000' which='0' elec='0' direction='2' part='0' number='2' show='3' length='20' number_pos='0' centre_name='0'></PIN>
-				<RECTANGLE a='53.00000,39.00000' b='59.00000,46.00000' style='2' fill='0'/>
+				<RECTANGLE a='53.00000,39.00000' b='59.00000,46.00000' style='3' fill='0'/>
 			</TinyCAD>
 		</SYMBOLDEF>
 		<OPTIONS>
@@ -5742,7 +5746,7 @@ download the executable.-->
 		<WIRE a='62.00000,50.00000' b='79.00000,50.00000'/>
 		<POWER pos='60.00000,24.00000' which='1' direction='2'>Bus_High</POWER>
 		<WIRE a='62.00000,24.00000' b='79.00000,24.00000'/>
-		<SYMBOL id='23' pos='233.00000,35.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='20' pos='233.00000,35.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='D?' show='1' pos='-1.00000,-7.00000'/>
 			<FIELD type='2' description='Name' value='MUR1560' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -5750,7 +5754,7 @@ download the executable.-->
 			<FIELD type='1' description='Package' value='TO-220-2' show='0' pos='-4.00000,6.80000'/>
 			<FIELD type='0' description='Value' value='MUR1560' show='1' pos='-1.00000,-0.60000'/>
 		</SYMBOL>
-		<SYMBOL id='24' pos='246.00000,35.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='21' pos='246.00000,35.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='D?' show='1' pos='-1.00000,-7.00000'/>
 			<FIELD type='2' description='Name' value='MUR1560' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -5758,7 +5762,7 @@ download the executable.-->
 			<FIELD type='1' description='Package' value='TO-220-2' show='0' pos='-4.00000,6.80000'/>
 			<FIELD type='0' description='Value' value='MUR1560' show='1' pos='-1.00000,-0.60000'/>
 		</SYMBOL>
-		<SYMBOL id='24' pos='233.00000,57.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='21' pos='233.00000,57.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='D?' show='1' pos='-1.00000,-7.00000'/>
 			<FIELD type='2' description='Name' value='MUR1560' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -5766,7 +5770,7 @@ download the executable.-->
 			<FIELD type='1' description='Package' value='TO-220-2' show='0' pos='-4.00000,6.80000'/>
 			<FIELD type='0' description='Value' value='MUR1560' show='1' pos='-1.00000,-0.60000'/>
 		</SYMBOL>
-		<SYMBOL id='25' pos='246.00000,57.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='22' pos='246.00000,57.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='D?' show='1' pos='-1.00000,-7.00000'/>
 			<FIELD type='2' description='Name' value='MUR1560' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -5776,7 +5780,7 @@ download the executable.-->
 		</SYMBOL>
 		<POWER pos='244.00000,59.00000' which='4' direction='1'>Gnd</POWER>
 		<POWER pos='231.00000,59.00000' which='4' direction='1'>Gnd</POWER>
-		<SYMBOL id='22' pos='258.00000,23.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='19' pos='258.00000,23.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='L?' show='1' pos='-7.00000,-1.00000'/>
 			<FIELD type='2' description='Name' value='L' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -5816,7 +5820,7 @@ download the executable.-->
 		<JUNCTION pos='244.00000,45.00000'/>
 		<JUNCTION pos='244.00000,23.00000'/>
 		<JUNCTION pos='141.00000,95.00000'/>
-		<SYMBOL id='26' pos='153.00000,180.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='23' pos='153.00000,180.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='U?' show='1' pos='-20.00000,-25.00000'/>
 			<FIELD type='1' description='Name' value='ADS1201' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -5966,7 +5970,7 @@ download the executable.-->
 		<JUNCTION pos='155.00000,172.00000'/>
 		<JUNCTION pos='155.00000,175.00000'/>
 		<JUNCTION pos='155.00000,178.00000'/>
-		<SYMBOL id='27' pos='165.00000,158.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='24' pos='165.00000,158.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='R?' show='1' pos='-10.00000,-1.00000'/>
 			<FIELD type='2' description='Name' value='R' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -5991,7 +5995,7 @@ download the executable.-->
 		<WIRE a='157.00000,32.00000' b='157.00000,37.00000'/>
 		<JUNCTION pos='157.00000,37.00000'/>
 		<WIRE a='152.00000,37.00000' b='157.00000,37.00000'/>
-		<SYMBOL id='28' pos='146.00000,67.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='25' pos='146.00000,67.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='F?' show='1' pos='-7.00000,-2.00000'/>
 			<FIELD type='2' description='Name' value='Fuse' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -6004,7 +6008,7 @@ download the executable.-->
 		<WIRE a='136.00000,66.00000' b='134.00000,66.00000'/>
 		<WIRE a='146.00000,66.00000' b='148.00000,66.00000'/>
 		<JUNCTION pos='261.00000,23.00000'/>
-		<SYMBOL id='29' pos='256.00000,126.00000' part='0' rotate='4' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='26' pos='256.00000,126.00000' part='0' rotate='4' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J?' show='1' pos='-6.00000,-7.00000'/>
 			<FIELD type='2' description='Name' value='Term-2 Left' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -6098,7 +6102,7 @@ download the executable.-->
 		<WIRE a='60.00000,50.00000' b='62.00000,50.00000'/>
 		<JUNCTION pos='62.00000,24.00000'/>
 		<WIRE a='60.00000,24.00000' b='62.00000,24.00000'/>
-		<NOTE_TEXT a='18.00000,30.00000' b='56.00000,42.00000' direction='3' style='3' fill='2' font='0' color='FF0000' border_style='1'>MAX10 configuration pull-up is 7 kΩ, minimum.
+		<NOTE_TEXT a='18.00000,30.00000' b='56.00000,42.00000' direction='3' style='4' fill='2' font='3' color='FF0000' border_style='1'>MAX10 configuration pull-up is 7 kΩ, minimum.
 ISO721 low threshold is 0.8 V</NOTE_TEXT>
 		<JUNCTION pos='150.00000,95.00000'/>
 	</TinyCAD>
@@ -6127,7 +6131,7 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 			<CHARSET>0</CHARSET>
 			<FACENAME>Arial</FACENAME>
 		</FONT>
-		<STYLE id='3'>
+		<STYLE id='2'>
 			<STYLE>0</STYLE>
 			<COLOR>000000</COLOR>
 			<THICKNESS>1</THICKNESS>
@@ -6177,19 +6181,19 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 			<TinyCAD>
 				<PIN pos='50.00000,43.50000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,43.50000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.00000' style='3' fill='0'>
+				<POLYGON pos='54.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.00000' style='3' fill='0'>
+				<POLYGON pos='55.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,43.40000' style='3' fill='0'>
+				<POLYGON pos='52.00000,43.40000' style='2' fill='0'>
 					<POINT pos='2.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,43.40000' style='3' fill='0'>
+				<POLYGON pos='55.40000,43.40000' style='2' fill='0'>
 					<POINT pos='2.60000,0.10000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -6232,7 +6236,7 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 			<TinyCAD>
 				<PIN pos='50.00000,40.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,40.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='53.00000,39.00000' style='3' fill='0'>
+				<POLYGON pos='53.00000,39.00000' style='2' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='0.50000,0.00000' arc='0'/>
 					<POINT pos='1.50000,2.00000' arc='0'/>
@@ -6240,11 +6244,11 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 					<POINT pos='3.50000,2.00000' arc='0'/>
 					<POINT pos='4.00000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,40.00000' style='3' fill='0'>
+				<POLYGON pos='52.00000,40.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='57.00000,40.00000' style='3' fill='0'>
+				<POLYGON pos='57.00000,40.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -6287,19 +6291,19 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 			<TinyCAD>
 				<PIN pos='50.00000,43.50000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,43.50000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.00000' style='3' fill='0'>
+				<POLYGON pos='54.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.00000' style='3' fill='0'>
+				<POLYGON pos='55.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,43.40000' style='3' fill='0'>
+				<POLYGON pos='52.00000,43.40000' style='2' fill='0'>
 					<POINT pos='2.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,43.40000' style='3' fill='0'>
+				<POLYGON pos='55.40000,43.40000' style='2' fill='0'>
 					<POINT pos='2.60000,0.10000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -6342,19 +6346,19 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 			<TinyCAD>
 				<PIN pos='50.00000,43.50000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,43.50000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.00000' style='3' fill='0'>
+				<POLYGON pos='54.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.00000' style='3' fill='0'>
+				<POLYGON pos='55.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,43.40000' style='3' fill='0'>
+				<POLYGON pos='52.00000,43.40000' style='2' fill='0'>
 					<POINT pos='2.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,43.40000' style='3' fill='0'>
+				<POLYGON pos='55.40000,43.40000' style='2' fill='0'>
 					<POINT pos='2.60000,0.10000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -6397,24 +6401,24 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 			<TinyCAD>
 				<PIN pos='60.00000,52.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='70.00000,52.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='63.40000,50.40000' style='3' fill='0'>
+				<POLYGON pos='63.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,50.40000' style='3' fill='0'>
+				<POLYGON pos='66.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='63.40000,50.40000' style='3' fill='0'>
+				<POLYGON pos='63.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='3.10000,1.60000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='62.00000,52.00000' style='3' fill='0'>
+				<POLYGON pos='62.00000,52.00000' style='2' fill='0'>
 					<POINT pos='1.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,52.00000' style='3' fill='0'>
+				<POLYGON pos='66.40000,52.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='1.60000,0.00000' arc='0'/>
 				</POLYGON>
@@ -6458,72 +6462,72 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 				<PIN pos='81.00000,48.00000' which='0' elec='0' direction='2' part='0' number='3' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='72.00000,44.00000' which='0' elec='0' direction='3' part='0' number='4' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='78.00000,39.00000' which='0' elec='0' direction='1' part='0' number='5' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='75.40000,42.40000' style='3' fill='0'>
+				<POLYGON pos='75.40000,42.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='76.00000,41.40000' style='3' fill='0'>
+				<POLYGON pos='76.00000,41.40000' style='2' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='0.00000,5.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='74.00000,44.00000' style='3' fill='0'>
+				<POLYGON pos='74.00000,44.00000' style='2' fill='0'>
 					<POINT pos='1.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='76.00000,42.40000' style='3' fill='0'>
+				<POLYGON pos='76.00000,42.40000' style='2' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='2.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='76.00000,45.40000' style='3' fill='0'>
+				<POLYGON pos='76.00000,45.40000' style='2' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='2.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='76.40000,45.00000' style='3' fill='0'>
+				<POLYGON pos='76.40000,45.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='1.10000,0.50000' arc='0'/>
 					<POINT pos='0.10000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='78.00000,41.00000' style='3' fill='0'>
+				<POLYGON pos='78.00000,41.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,1.50000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='78.00000,45.40000' style='3' fill='0'>
+				<POLYGON pos='78.00000,45.40000' style='2' fill='0'>
 					<POINT pos='0.00000,5.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
 				<PIN pos='72.00000,52.00000' which='0' elec='0' direction='3' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='78.00000,57.00000' which='0' elec='0' direction='0' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='75.40000,50.40000' style='3' fill='0'>
+				<POLYGON pos='75.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='76.00000,49.40000' style='3' fill='0'>
+				<POLYGON pos='76.00000,49.40000' style='2' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='0.00000,5.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='74.00000,52.00000' style='3' fill='0'>
+				<POLYGON pos='74.00000,52.00000' style='2' fill='0'>
 					<POINT pos='1.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='76.00000,50.40000' style='3' fill='0'>
+				<POLYGON pos='76.00000,50.40000' style='2' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='2.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='76.00000,53.40000' style='3' fill='0'>
+				<POLYGON pos='76.00000,53.40000' style='2' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='2.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='76.40000,53.00000' style='3' fill='0'>
+				<POLYGON pos='76.40000,53.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='1.10000,0.50000' arc='0'/>
 					<POINT pos='0.10000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='78.00000,53.40000' style='3' fill='0'>
+				<POLYGON pos='78.00000,53.40000' style='2' fill='0'>
 					<POINT pos='0.00000,1.60000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<ELLIPSE a='77.50000,47.50000' b='78.50000,48.50000' style='3' fill='1'/>
-				<POLYGON pos='78.00000,48.00000' style='3' fill='0'>
+				<ELLIPSE a='77.50000,47.50000' b='78.50000,48.50000' style='2' fill='1'/>
+				<POLYGON pos='78.00000,48.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -6578,7 +6582,7 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 				<PIN pos='73.00000,39.00000' which='0' elec='0' direction='2' part='0' number='14' show='3' length='20' number_pos='0' centre_name='0'>HO</PIN>
 				<PIN pos='73.00000,36.00000' which='0' elec='0' direction='2' part='0' number='15' show='3' length='20' number_pos='0' centre_name='0'>VB</PIN>
 				<PIN pos='73.00000,33.00000' which='0' elec='0' direction='2' part='0' number='16' show='3' length='20' number_pos='0' centre_name='0'>CSH</PIN>
-				<RECTANGLE a='56.00000,31.00000' b='69.00000,53.00000' style='3' fill='0'/>
+				<RECTANGLE a='56.00000,31.00000' b='69.00000,53.00000' style='2' fill='0'/>
 			</TinyCAD>
 		</SYMBOLDEF>
 		<SYMBOLDEF id='8'>
@@ -6618,24 +6622,24 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 			<TinyCAD>
 				<PIN pos='60.00000,52.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='70.00000,52.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='63.40000,50.40000' style='3' fill='0'>
+				<POLYGON pos='63.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,50.40000' style='3' fill='0'>
+				<POLYGON pos='66.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='63.40000,50.40000' style='3' fill='0'>
+				<POLYGON pos='63.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='3.10000,1.60000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='62.00000,52.00000' style='3' fill='0'>
+				<POLYGON pos='62.00000,52.00000' style='2' fill='0'>
 					<POINT pos='1.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,52.00000' style='3' fill='0'>
+				<POLYGON pos='66.40000,52.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='1.60000,0.00000' arc='0'/>
 				</POLYGON>
@@ -6678,7 +6682,7 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 			<TinyCAD>
 				<PIN pos='50.00000,40.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,40.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='53.00000,39.00000' style='3' fill='0'>
+				<POLYGON pos='53.00000,39.00000' style='2' fill='0'>
 					<POINT pos='0.00000,1.00000' arc='0'/>
 					<POINT pos='0.50000,0.00000' arc='0'/>
 					<POINT pos='1.50000,2.00000' arc='0'/>
@@ -6686,11 +6690,11 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 					<POINT pos='3.50000,2.00000' arc='0'/>
 					<POINT pos='4.00000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,40.00000' style='3' fill='0'>
+				<POLYGON pos='52.00000,40.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='57.00000,40.00000' style='3' fill='0'>
+				<POLYGON pos='57.00000,40.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -6733,19 +6737,19 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 			<TinyCAD>
 				<PIN pos='50.00000,43.50000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,43.50000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.00000' style='3' fill='0'>
+				<POLYGON pos='54.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.00000' style='3' fill='0'>
+				<POLYGON pos='55.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,43.40000' style='3' fill='0'>
+				<POLYGON pos='52.00000,43.40000' style='2' fill='0'>
 					<POINT pos='2.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,43.40000' style='3' fill='0'>
+				<POLYGON pos='55.40000,43.40000' style='2' fill='0'>
 					<POINT pos='2.60000,0.10000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -6788,19 +6792,19 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 			<TinyCAD>
 				<PIN pos='50.00000,43.50000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,43.50000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.00000' style='3' fill='0'>
+				<POLYGON pos='54.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.00000' style='3' fill='0'>
+				<POLYGON pos='55.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,43.40000' style='3' fill='0'>
+				<POLYGON pos='52.00000,43.40000' style='2' fill='0'>
 					<POINT pos='2.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,43.40000' style='3' fill='0'>
+				<POLYGON pos='55.40000,43.40000' style='2' fill='0'>
 					<POINT pos='2.60000,0.10000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -6843,19 +6847,19 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 			<TinyCAD>
 				<PIN pos='50.00000,43.50000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,43.50000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.00000' style='3' fill='0'>
+				<POLYGON pos='54.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.00000' style='3' fill='0'>
+				<POLYGON pos='55.40000,42.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='0.10000,3.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,43.40000' style='3' fill='0'>
+				<POLYGON pos='52.00000,43.40000' style='2' fill='0'>
 					<POINT pos='2.50000,0.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,43.40000' style='3' fill='0'>
+				<POLYGON pos='55.40000,43.40000' style='2' fill='0'>
 					<POINT pos='2.60000,0.10000' arc='0'/>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 				</POLYGON>
@@ -6898,24 +6902,24 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 			<TinyCAD>
 				<PIN pos='60.00000,52.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='70.00000,52.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='63.40000,50.40000' style='3' fill='0'>
+				<POLYGON pos='63.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,50.40000' style='3' fill='0'>
+				<POLYGON pos='66.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='63.40000,50.40000' style='3' fill='0'>
+				<POLYGON pos='63.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='3.10000,1.60000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='62.00000,52.00000' style='3' fill='0'>
+				<POLYGON pos='62.00000,52.00000' style='2' fill='0'>
 					<POINT pos='1.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,52.00000' style='3' fill='0'>
+				<POLYGON pos='66.40000,52.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='1.60000,0.00000' arc='0'/>
 				</POLYGON>
@@ -6959,72 +6963,72 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 				<PIN pos='81.00000,48.00000' which='0' elec='0' direction='2' part='0' number='3' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='72.00000,44.00000' which='0' elec='0' direction='3' part='0' number='4' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='78.00000,39.00000' which='0' elec='0' direction='1' part='0' number='5' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='75.40000,42.40000' style='3' fill='0'>
+				<POLYGON pos='75.40000,42.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='76.00000,41.40000' style='3' fill='0'>
+				<POLYGON pos='76.00000,41.40000' style='2' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='0.00000,5.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='74.00000,44.00000' style='3' fill='0'>
+				<POLYGON pos='74.00000,44.00000' style='2' fill='0'>
 					<POINT pos='1.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='76.00000,42.40000' style='3' fill='0'>
+				<POLYGON pos='76.00000,42.40000' style='2' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='2.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='76.00000,45.40000' style='3' fill='0'>
+				<POLYGON pos='76.00000,45.40000' style='2' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='2.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='76.40000,45.00000' style='3' fill='0'>
+				<POLYGON pos='76.40000,45.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='1.10000,0.50000' arc='0'/>
 					<POINT pos='0.10000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='78.00000,41.00000' style='3' fill='0'>
+				<POLYGON pos='78.00000,41.00000' style='2' fill='0'>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,1.50000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='78.00000,45.40000' style='3' fill='0'>
+				<POLYGON pos='78.00000,45.40000' style='2' fill='0'>
 					<POINT pos='0.00000,5.10000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
 				<PIN pos='72.00000,52.00000' which='0' elec='0' direction='3' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='78.00000,57.00000' which='0' elec='0' direction='0' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='75.40000,50.40000' style='3' fill='0'>
+				<POLYGON pos='75.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='76.00000,49.40000' style='3' fill='0'>
+				<POLYGON pos='76.00000,49.40000' style='2' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='0.00000,5.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='74.00000,52.00000' style='3' fill='0'>
+				<POLYGON pos='74.00000,52.00000' style='2' fill='0'>
 					<POINT pos='1.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='76.00000,50.40000' style='3' fill='0'>
+				<POLYGON pos='76.00000,50.40000' style='2' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='2.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='76.00000,53.40000' style='3' fill='0'>
+				<POLYGON pos='76.00000,53.40000' style='2' fill='0'>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 					<POINT pos='2.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='76.40000,53.00000' style='3' fill='0'>
+				<POLYGON pos='76.40000,53.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='1.10000,0.50000' arc='0'/>
 					<POINT pos='0.10000,1.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='78.00000,53.40000' style='3' fill='0'>
+				<POLYGON pos='78.00000,53.40000' style='2' fill='0'>
 					<POINT pos='0.00000,1.60000' arc='0'/>
 					<POINT pos='0.00000,0.10000' arc='0'/>
 				</POLYGON>
-				<ELLIPSE a='77.50000,47.50000' b='78.50000,48.50000' style='3' fill='1'/>
-				<POLYGON pos='78.00000,48.00000' style='3' fill='0'>
+				<ELLIPSE a='77.50000,47.50000' b='78.50000,48.50000' style='2' fill='1'/>
+				<POLYGON pos='78.00000,48.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
@@ -7079,7 +7083,7 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 				<PIN pos='73.00000,39.00000' which='0' elec='0' direction='2' part='0' number='14' show='3' length='20' number_pos='0' centre_name='0'>HO</PIN>
 				<PIN pos='73.00000,36.00000' which='0' elec='0' direction='2' part='0' number='15' show='3' length='20' number_pos='0' centre_name='0'>VB</PIN>
 				<PIN pos='73.00000,33.00000' which='0' elec='0' direction='2' part='0' number='16' show='3' length='20' number_pos='0' centre_name='0'>CSH</PIN>
-				<RECTANGLE a='56.00000,31.00000' b='69.00000,53.00000' style='3' fill='0'/>
+				<RECTANGLE a='56.00000,31.00000' b='69.00000,53.00000' style='2' fill='0'/>
 			</TinyCAD>
 		</SYMBOLDEF>
 		<SYMBOLDEF id='16'>
@@ -7119,24 +7123,24 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 			<TinyCAD>
 				<PIN pos='60.00000,52.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='70.00000,52.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='63.40000,50.40000' style='3' fill='0'>
+				<POLYGON pos='63.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,50.40000' style='3' fill='0'>
+				<POLYGON pos='66.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='63.40000,50.40000' style='3' fill='0'>
+				<POLYGON pos='63.40000,50.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='3.10000,1.60000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='62.00000,52.00000' style='3' fill='0'>
+				<POLYGON pos='62.00000,52.00000' style='2' fill='0'>
 					<POINT pos='1.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='66.40000,52.00000' style='3' fill='0'>
+				<POLYGON pos='66.40000,52.00000' style='2' fill='0'>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 					<POINT pos='1.60000,0.00000' arc='0'/>
 				</POLYGON>
@@ -7179,27 +7183,27 @@ ISO721 low threshold is 0.8 V</NOTE_TEXT>
 			<TinyCAD>
 				<PIN pos='50.00000,44.00000' which='0' elec='0' direction='3' part='0' number='1' show='1' length='10' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='60.00000,44.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='10' number_pos='0' centre_name='0'></PIN>
-				<POLYGON pos='54.40000,42.40000' style='3' fill='0'>
+				<POLYGON pos='54.40000,42.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,42.40000' style='3' fill='0'>
+				<POLYGON pos='55.40000,42.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,3.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='52.00000,44.00000' style='3' fill='0'>
+				<POLYGON pos='52.00000,44.00000' style='2' fill='0'>
 					<POINT pos='2.50000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='55.40000,44.00000' style='3' fill='0'>
+				<POLYGON pos='55.40000,44.00000' style='2' fill='0'>
 					<POINT pos='2.60000,0.00000' arc='0'/>
 					<POINT pos='0.10000,0.00000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='53.40000,42.40000' style='3' fill='0'>
+				<POLYGON pos='53.40000,42.40000' style='2' fill='0'>
 					<POINT pos='0.10000,0.10000' arc='0'/>
 					<POINT pos='0.10000,1.10000' arc='0'/>
 				</POLYGON>
-				<POLYGON pos='53.00000,43.00000' style='3' fill='0'>
+				<POLYGON pos='53.00000,43.00000' style='2' fill='0'>
 					<POINT pos='1.00000,0.00000' arc='0'/>
 					<POINT pos='0.00000,0.00000' arc='0'/>
 				</POLYGON>
