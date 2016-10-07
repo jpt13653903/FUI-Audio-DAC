@@ -2,6 +2,8 @@
 *.autosave
 *.obj
 *.bak
+*.raw
+*.log
 
 **/db/*
 **/incremental_db/*
