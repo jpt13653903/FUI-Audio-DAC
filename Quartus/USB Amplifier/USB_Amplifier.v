@@ -125,7 +125,7 @@ ClockRecovery ClockRecovery_inst(
  Clk_384k, Clk_48k, Clk_500
 );
 
-assign TP = {FrameNumber[0], PWM, Clk_384k, Clk_500, RemoteStream};
+assign TP = {nPWM, PWM, Clk_384k, RemoteStream};
 //------------------------------------------------------------------------------
 
 reg [15:0]Volume_Log[1:0];
@@ -207,23 +207,39 @@ assign S_PDIF_Out = 1'b0;
 reg [7:0]PWM_Count;
 reg [1:0]PWM;
 
+reg  [7:0]nPWM_Count;
+wire [6:0]nAudio_D[1:0];
+reg  [1:0]nPWM;
+
+// Given the way Clk_384k is generated, the PWM is not guaranteed 50% centred
+assign nAudio_D[0] = (|Audio_D[0]) ? (-Audio_D[0]) : 7'h7F;
+assign nAudio_D[1] = (|Audio_D[1]) ? (-Audio_D[1]) : 7'h7F;
+
 reg tReset;
 always @(posedge Clk) begin
  tReset <= Reset;
 
  if(tReset) begin
-  PWM_Count <= 0;
+   PWM_Count <= 0;
+  nPWM_Count <= 0;
 
  end else begin
   if(pClk_384k == 2'b01) PWM_Count <= 0; 
   else                   PWM_Count <= PWM_Count + 1'b1;
 
-  PWM[0] <= ({1'b0, Audio_D[0]} > PWM_Count);
-  PWM[1] <= ({1'b0, Audio_D[1]} > PWM_Count);
+   PWM[0] <= ({1'b0,  Audio_D[0]} > PWM_Count);
+   PWM[1] <= ({1'b0,  Audio_D[1]} > PWM_Count);
+
+  if(pClk_384k == 2'b10) nPWM_Count <= 0; 
+  else                   nPWM_Count <= nPWM_Count + 1'b1;
+
+  nPWM[0] <= ({1'b0, nAudio_D[0]} > nPWM_Count);
+  nPWM[1] <= ({1'b0, nAudio_D[1]} > nPWM_Count);
  end
 end
 
 assign Audio_Out = Active ? PWM : 2'd0;
+assign LV_LCD_D  = Active ? {1'b0, PWM[0], 1'b0, nPWM[0]} : 4'd0;
 //------------------------------------------------------------------------------
 
 wire      RemoteStream;
@@ -256,7 +272,7 @@ RemoteVolume RemoteVolume_inst(
 //assign LV_LCD_RS   = 1'b1;
 assign LV_LCD_R_nW = 1'b1;
 assign LV_LCD_E    = 1'b1;
-assign LV_LCD_D    = 0;
+//assign LV_LCD_D    = 0;
 //------------------------------------------------------------------------------
 
 assign Red    = 0;
