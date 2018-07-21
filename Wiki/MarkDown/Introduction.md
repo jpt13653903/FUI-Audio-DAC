@@ -36,5 +36,7 @@ The project is developed using:
 - [Quartus Prime Lite](https://www.altera.com/products/design-software/fpga-design/quartus-prime/overview.html)
 - [InkScape](https://inkscape.org/)
 
+The source is available from the [git repository](https://sourceforge.net/p/fui-audio-dac/source/) and [GitHub](https://github.com/jpt13653903/FUI-Audio-DAC).
+
 [[include repo=source path=Wiki/MarkDown/Footer.md]]
 
