@@ -1007,8 +1007,8 @@ download the executable.-->
 			<FIELD type='2' description='Name' value='Term-3 Left' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
-			<FIELD type='1' description='Package' value='RF433_Tx' show='0' pos='1.00000,-3.20000'/>
-			<FIELD type='0' description='Value' value='RF-Link' show='1' pos='-6.00000,2.40000'/>
+			<FIELD type='1' description='Package' value='FS1000A' show='0' pos='1.00000,-3.20000'/>
+			<FIELD type='0' description='Value' value='FS1000A' show='1' pos='-6.00000,2.40000'/>
 			<FIELD type='3' description='Communica' value='P1929638763' show='0' pos='-6.00000,4.80000'/>
 		</SYMBOL>
 		<SYMBOL id='3' pos='77.00000,166.00000' part='0' rotate='3' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>

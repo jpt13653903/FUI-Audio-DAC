@@ -269,7 +269,7 @@ author: "J Taylor"
       inner_pad: 0 0 0 0 0 0
       bottom_pad: 1 1800000 0 0 0
 
-name: "RF433_Tx"
+name: "FS1000A"
 author: "J Taylor"
   units: MIL
   sel_rect: -390 -65 390 815
@@ -733,9 +733,9 @@ part: R5
 
 part: J5
   ref_text: 1016000 101600 0 -3810000 1600000 0
-  package: "RF433_Tx"
-  value: "RF-Link" 1016000 101600 0 -2655620 16017400 1
-  shape: "RF433_Tx"
+  package: "FS1000A"
+  value: "FS1000A" 1016000 101600 0 -2655620 16017400 1
+  shape: "FS1000A"
   pos: 25000000 47000000 0 0 0
 
 part: C5

@@ -14,7 +14,7 @@ S2      Prev@Push-Button-THT
 R11     10k@0603
 R7      100k@0603
 R5      100k@0603
-J5      RF-Link@RF433_Tx
+J5      FS1000A@FS1000A
 C6      100n@0603
 D1      Tx@LED_3mm
 R12     220e@0603

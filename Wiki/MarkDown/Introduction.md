@@ -8,7 +8,7 @@
 
 The FUI Audio DAC is an open-hardware and -firmware project that implements a USB-input fully-digital class-D audio amplifier.  A Microchip PIC-based remote control is also included.
 
-The generic Windows USB&nbsp;audio driver is used to stream 48&nbsp;kSps&nbsp;stereo audio to the amplifier.  The generic Windows&nbsp;HID driver is used to interface a volume control knob and various buttons to the computer.  These buttons are implemented on a remote control, which is implemented by means of an [off-the-shelf 433&nbsp;MHz ASK module](http://www.communica.co.za/Catalog/Details/P1929638763).  Intended functions include *volume up*, *volume down*, *play/pause*, *next track*, *previous track* and *stop* controls.
+The generic Windows USB&nbsp;audio driver is used to stream 48&nbsp;kSps&nbsp;stereo audio to the amplifier.  The generic Windows&nbsp;HID driver is used to interface a volume control knob and various buttons to the computer.  These buttons are implemented on a remote control, which is implemented by means of an [off-the-shelf 433&nbsp;MHz ASK module](http://www.communica.co.za/Catalog/Details/P1929638763) (FS1000A and C218D001C pair).  Intended functions include *volume up*, *volume down*, *play/pause*, *next track*, *previous track* and *stop* controls.
 
 Volume control is implemented as a combination of bus voltage control and audio stream gain control.
 
