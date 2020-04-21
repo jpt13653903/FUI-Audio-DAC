@@ -1,0 +1,6 @@
+Record=TopLevelDocument|FileName=First_Sheet.SCHDOC
+Record=SheetSymbol|SourceDocument=First_Sheet.SCHDOC|Designator=Config_IO|SchDesignator=Config_IO|FileName=Config_IO.SCHDOC|SymbolType=Normal|RawFileName=Config_IO.SCHDOC|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=First_Sheet.SCHDOC|Designator=EEPROM|SchDesignator=EEPROM|FileName=EEPROM.SCHDOC|SymbolType=Normal|RawFileName=EEPROM.SCHDOC|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=First_Sheet.SCHDOC|Designator=FPGA|SchDesignator=FPGA|FileName=FPGA.SCHDOC|SymbolType=Normal|RawFileName=FPGA.SCHDOC|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=First_Sheet.SCHDOC|Designator=Power|SchDesignator=Power|FileName=Power.SCHDOC|SymbolType=Normal|RawFileName=Power.SCHDOC|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=First_Sheet.SCHDOC|Designator=USB|SchDesignator=USB|FileName=USB.SCHDOC|SymbolType=Normal|RawFileName=USB.SCHDOC|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 

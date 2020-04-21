@@ -1,0 +1,198 @@
+P-CAD Design Rule Check Report
+
+======================================================================
+
+C:\Projects\07\0704 - NECSA Supply\PCad\Stage1\Stage1.drc:
+
+
+Design Clearances (in   mm):
+-------------------------------
+Hole-Hole Clearance:    0.3mm
+Board Edge Clearance:   Not Defined
+Silk Screen Clearance:  Not Defined
+
+
+Layer Clearances (in   mm):
+-------------------------------
+
+Layer Name          Pad-Pad  Pad-Line Line-Line   Pad-Via  Via-Line   Via-Via
+
+Top                   0.150     0.150     0.150     0.150     0.150     0.150
+Gnd                   0.150     0.150     0.150     0.150     0.150     0.150
+VCC                   0.150     0.150     0.150     0.150     0.150     0.150
+Bottom                0.150     0.150     0.150     0.150     0.150     0.150
+
+
+Net Class Clearances (in   mm):
+-------------------------------
+Net Class Name      Pad-Pad  Pad-Line Line-Line   Pad-Via  Via-Line   Via-Via
+
+
+
+Net Clearances (In   mm):
+-------------------------
+Net Name            Pad-Pad  Pad-Line Line-Line   Pad-Via  Via-Line   Via-Via
+
+
+Net Class To Net Class Clearances (in   mm):
+--------------------------------------------
+Net Class Names     Pad-Pad  Pad-Line Line-Line   Pad-Via  Via-Line   Via-Via
+
+
+
+Area Checked:
+-------------
+
+DRC Extents:            Entire Workspace
+
+
+DRC Report Options:
+-------------------
+
+Net List Compare:       On
+Clearance Violations:   On
+Text Violations:        Off
+Net List Violations:    On
+Unrouted Nets:          On
+Unconnected Pins:       Off
+Net Length Violations:  Off
+Silk Violations:        Off
+Copper Pour Violations: On
+Plane Violations:       On
+Component Violations:   On
+
+----------------------------------------------------------------------
+
+04-Aug-07  05:37                                            Page    1
+
+P-CAD Design Rule Check Report
+
+======================================================================
+
+Drill Violations:       On
+Test Point Violations:  Off
+
+DRC Errors:
+-----------
+
+
+NETLIST COMPARE:
+
+Netlist filename: C:\Projects\07\0704 - NECSA Supply\PCad\Stage1\Stage1.net
+
+0 warning(s) detected.
+0 error(s) detected.
+
+NETLIST VIOLATIONS:
+
+
+0 warning(s) detected.
+0 error(s) detected.
+
+CLEARANCE VIOLATIONS:
+
+
+0 warning(s) detected.
+0 error(s) detected.
+
+UNROUTED NETS:
+
+
+0 warning(s) detected.
+0 error(s) detected.
+
+COPPER POUR VIOLATIONS:
+
+
+0 warning(s) detected.
+0 error(s) detected.
+
+PLANE VIOLATIONS:
+
+
+0 warning(s) detected.
+0 error(s) detected.
+
+COMPONENT VIOLATIONS:
+
+
+0 warning(s) detected.
+0 error(s) detected.
+
+DRILL VIOLATIONS:
+
+
+0 warning(s) detected.
+0 error(s) detected.
+
+DRC Summary:
+
+----------------------------------------------------------------------
+
+04-Aug-07  05:37                                            Page    2
+
+P-CAD Design Rule Check Report
+
+======================================================================
+
+------------
+
+Netlist Compare:
+	Errors:   0
+	Warnings: 0
+Netlist:
+	Errors:         0
+	Warnings:       0
+	Ignored Errors: 0
+Clearance:
+	Errors:         0
+	Warnings:       0
+	Ignored Errors: 0
+Unrouted Nets:
+	Errors:         0
+	Warnings:       0
+	Ignored Errors: 0
+Copper Pour:
+	Errors:         0
+	Warnings:       0
+	Ignored Errors: 0
+Plane:
+	Errors:         0
+	Warnings:       0
+	Ignored Errors: 0
+Component:
+	Errors:         0
+	Warnings:       0
+	Ignored Errors: 0
+Drilling:
+	Errors:         0
+	Warnings:       0
+	Ignored Errors: 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------
+
+04-Aug-07  05:37                                            Page    3
+

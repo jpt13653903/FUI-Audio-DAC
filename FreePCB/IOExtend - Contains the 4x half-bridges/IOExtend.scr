@@ -1,0 +1,20 @@
+ADD 'H1' 0603 R0 (0.1 0.1);
+ADD 'H2' 0603 R0 (0.2 0.1);
+ADD 'H3' 0603 R0 (0.3 0.1);
+ADD 'H4' 0603 R0 (0.4 0.1);
+
+
+SIGNAL 5V
+   H1 1
+   H2 1
+   H3 1
+   H4 1
+   ;
+SIGNAL GND
+   H3 2
+   H2 2
+   ;
+SIGNAL Comm
+   H1 2
+   H4 2
+   ;
